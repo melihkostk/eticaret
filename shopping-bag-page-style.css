@@ -1,0 +1,315 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body , html{
+    width: 100%;
+    height : 100%;
+    
+}
+
+body{
+    background: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)),
+    url("images/noisy-background.jpg");
+    background-size: cover;
+}
+
+.head .container{
+    display: flex;
+    justify-content:space-between;
+    margin-left: 20px;
+    align-items: center;
+    width: 1400px;
+
+    margin-top: 30px;
+    padding: 20px;   
+}
+
+.head .container .menu-icon{
+    width: 26px;
+    height: 16px;
+    
+}
+
+.left-section a{
+    text-decoration: none;
+    margin: 10px;
+    color: rgb(0,0,0,1);
+    font-size: 18px;
+    font-family: "Beatrice Deck Trial";
+    font-weight: 500;
+    line-height: 100%;
+}
+
+.middle-section{
+    display: flex;
+    justify-content: center;   
+}
+
+.middle-section .amblem{
+    width: 40px;
+    height: 40px;
+    transform: rotate(45deg);
+    background: linear-gradient(
+        45deg,
+        rgba(217,217,217,1) 50%,
+        black 50%
+    );
+}
+
+ 
+.left-section .menu-icon{
+    width: 30px;
+    height: 30px;
+}
+
+.container .right-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right-section .like-button{
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+    margin-right: 20px;
+    background-color: #262222;
+}
+
+.right-section .like-button img{
+    transform: rotate(-45deg);
+    padding-top: 7px;
+    padding-right: 2px;
+}
+
+.right-section .cart-button{
+    height: 50px;
+    width: 76px;
+    border:1px solid #262222;
+    border-radius: 22px;
+    background-color: #262222;
+    color: #F5F5F5;
+
+    font-size: 12px;
+    font-family: "Beatrice Deck Trial";
+}
+
+.right-section .shop-button{
+    height: 50px;
+    width: 50px;
+    background-color: #fff;
+    margin-left: -5px;
+    
+    border: 7px solid rgba(0, 0, 0, 1);
+    border-radius: 100%; 
+}
+
+.right-section .shop-button img{
+    width: 20px;
+    height: 19px;
+    padding-left: 1px;
+    padding-top: 2px;
+}
+
+.right-section .profile-button{
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+    margin-left: 20px;
+    background-color: #262222;
+    color: #F5F5F5;
+}
+
+.right-section .profile-button img{
+    padding-top: 4px;
+    opacity: 1;
+}   
+
+.container .sb-title{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 30px;
+}
+
+.container .sb-title .fav-icon{
+    width: 15px;
+    height: 15px;
+
+    transform: rotate(-45deg);
+}
+
+.container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.container .left-part{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 30px;
+}
+
+.container .left-part .product-container img{
+    width: 265px;
+    height: 314px;
+    border: 1px solid rgba(217,217,217,1);
+
+}
+
+.container .left-part .product-container .product-t{
+    font-family: Beatrice Deck Trial;
+    font-weight: 500;
+    font-style: medium;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: 0px;
+    color: rgba(0, 0, 0, 0.66);
+}
+
+.container .left-part .product-container .product-d{
+    font-family: Beatrice Deck Trial;
+    font-weight: 500;
+    font-style: medium;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 0px;
+    color: rgba(0, 0, 0, 1);
+}
+
+.container .left-part .transaction{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.container .left-part .transaction img{
+    width: 20px;
+    height: 20px;
+    border: none;
+}
+
+.container .left-part .transaction .color-box{
+    width: 25px;
+    height: 25px;
+    background-color: rgba(0, 0, 0, 1);
+}
+
+.container .left-part .transaction .buttons .increase,.amount,.decrease{
+    width: 25px;
+    height: 23px;
+
+    border: 1px solid rgba(138, 138, 138, 1);
+    text-align: center;
+
+    font-family: "Beatrice Deck Trial";
+    font-size: 14px;
+    
+}
+
+.container .right-part{
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100%;
+    gap: 20px;
+
+    border: 1px solid rgba(217, 217, 217, 1);
+    padding-top: 60px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 30px;
+
+
+}
+
+.container .right-part h3{
+    font-family: Beatrice Deck Trial;
+    font-weight: 500;
+    font-style: medium;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 1px;
+
+    margin-bottom: 15px;
+
+}
+
+.container .right-part p{
+    font-family: Beatrice Deck Trial;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: 1px;
+
+}
+
+.container .right-part .sub-total{
+    margin-left: 120px;
+    
+}
+
+.container .right-part .shipping{
+    margin-left: 125px;
+}
+
+.container .right-part .total{
+    margin-left: 47px;
+}
+
+.container .right-part .tax-inc{
+    margin-left: 3px;
+
+    font-family: Beatrice Deck Trial;
+    font-weight: 500;
+    font-style: medium;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: 1px;
+
+    color :rgba(0, 0, 0, 0.66);
+   
+}
+
+.container .right-part hr{
+    
+    border: 1px solid rgba(217, 217, 217, 1);
+    width: 229px;
+    text-align: center;
+}
+
+.container .right-part label{
+    font-family: Beatrice Deck Trial;
+    font-weight: 250;
+    font-style: Thin;
+    font-size: 11px;
+    line-height: 100%;
+    letter-spacing: 0px;
+
+    color :rgba(0, 0, 0, 0.66);
+} 
+
+.container .right-part button{
+    width: 229px;
+    height: 40px;
+    opacity: 1;
+    
+    font-family: Beatrice Deck Trial;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: 0px;
+    text-align: center;
+
+    background-color: rgba(217, 217, 217, 1);
+    border: none;
+}

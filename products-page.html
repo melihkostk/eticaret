@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="products-page.css">
+    <link rel="stylesheet" href="products-page-style.css">
     <link href="https://fonts.cdnfonts.com/css/beatrice-display-trial" rel="stylesheet">
 </head>
 <body>
@@ -14,7 +14,7 @@
                 <img class="menu-icon" src="icons/menu.png" alt="">
                 <a href="#">Home</a>
                 <a href="#">Collections</a>
-                <a href="#">Details</a>
+                <a href="#">Deals</a>
             </div>
             
             <div class="middle-section">
@@ -40,16 +40,23 @@
         <div class="container">
             <div class="left-part">
                 <img src="images/black-clothes.jpg">
+                <div class="small-images">
+                    <img src="images/black-clothes.jpg">
+                    <img src="images/small-image2.jpg">
+                    <img src="images/small-image3.jpg">
+                    <img src="images/small-image4.jpg">
+                    <img src="images/small-image5.jpg">
+                </div>    
             </div>
 
             <div class="right-part">
                 <h3>ABSTRACT PRINT SHIRT</h3>
-                <p>$99</p>
-                <p>MRP incl. of all taxes</p>
+                <p class="cost">$99</p>
+                <p class="tax">MRP incl. of all taxes</p>
 
-                <p>Relaxed-fit shirt. Camp collar and short sleeves. Button-up front.</p>
+                <p class="description">Relaxed-fit shirt. Camp collar and short sleeves. Button-up front.</p>
 
-                <p>Color</p>
+                <p class="color-title">Color</p>
                 
                 <div class="colors">
                     <div class ="cream-box"></div>
@@ -57,12 +64,10 @@
                     <div class="black-box"></div>
                     <div class="green-box"></div>
                     <div class="white-box"></div>
-                    <div class="blue-box"></div>
-                    
+                    <div class="blue-box"></div>   
                 </div>
-
-                <p>Size</p>
-
+                
+                <p class="size-title">Size</p>
                 <div class="size">
                     <div>
                         <p>XS</p>
@@ -84,11 +89,15 @@
                     </div>
                 </div>
                 
-                <p>FIND YOUR SIZE |  MEASUREMENT GUIDE</p>
+                <p class="measure">FIND YOUR SIZE |  MEASUREMENT GUIDE</p>
 
                 <button class="add-button">ADD</button>
             </div>
+
+            <img class="black-fav-icon" src="icons/black-favorite-icon.png">
         </div>
     </section>
+
+    <br><br><br>
 </body>
 </html>

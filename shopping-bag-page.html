@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="shopping-bag-page-style.css">
+    <link href="https://fonts.cdnfonts.com/css/beatrice-display-trial" rel="stylesheet">
+</head>
+<body>
+    <header class ="head">
+        <div class = "container">
+            <div class="left-section">
+                <img class="menu-icon" src="icons/menu.png" alt="">
+                <a href="#">Home</a>
+                <a href="#">Collections</a>
+                <a href="#">New</a>
+            </div>
+            
+            <div class="middle-section">
+                <div class="amblem"></div>
+            </div>
+
+            <div class = "right-section">
+                <button class = "like-button">
+                    <img src="icons/favorite-icon.png">
+                </button>
+                <button class = "cart-button">Cart</button>
+                <button class = "shop-button">
+                    <img src="icons/shopping-bag.png">
+                </button>
+                <button class = "profile-button">
+                    <img src="icons/account-icon.png">
+                </button>    
+            </div>
+
+        </div>
+    </header>
+
+    <section>
+          <div class="sb-title">
+                <p>SHOPPING BAG</p>
+                <img class="fav-icon" src="icons/black-favorite-icon.png">
+                <p>FAVOURITES</p>
+            </div>
+
+        <div class="container"> 
+            <div class="left-part">
+                <div class="product-container">
+                    <img src="images/buyyed-product.jpg">
+                    <p class="product-t">Cotton T Shirt</p>
+                    <p class="product-d">Full Sleeve Zipper</p>
+                    <p>$99</p>
+                </div>
+
+                <div class="transaction">
+                    <img src="icons/close-icon.png">
+                    <p>L</p>
+                    <div class="color-box"></div>
+                    
+                    <div class="buttons">    
+                        <div class="increase">+</div>
+                        <div class="amount">1</div>
+                        <div class="decrease">-</div>
+                    </div>
+                        <img src="icons/refresh.png">
+                </div>
+
+                <div class="product-container">
+                    <img src="images/buyyed-product2.jpg">
+                    <p class="product-t">Cotton T Shirt</p>
+                    <p class="product-d">Basic Slim Fit T-Shirt</p>
+                    <p>$99</p>
+                </div>
+
+                <div class="transaction">
+                    <img src="icons/close-icon.png">
+                    <p>L</p>
+                    <div class="color-box"></div>
+                    
+                    <div class="buttons">
+                        <div class="increase">+</div>
+                        <div class="amount">1</div>
+                        <div class="decrease">-</div>
+                    </div>
+                    <img src="icons/refresh.png">
+                </div>
+            </div>
+
+            <div class="right-part">
+                <h3>ORDER SUMMARY</h3>
+                <p>Subtotal<span class="sub-total">$180</span></p>
+                <p>Shipping<span class="shipping">$10</span></p>
+                <hr>
+                <h3>TOTAL<span class="tax-inc">(TAX INCL.)</span><span class="total">$190</span></h3>
+                
+                <input type="checkbox" id="accept">
+                <label for ="accept">I agree to the Terms and Conditions</label>
+                <button>CONTINUE</button>
+
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
