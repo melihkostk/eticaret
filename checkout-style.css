@@ -16,14 +16,18 @@ body{
 
 
 header img{
-    width: 70px;
-    height: 50px;
+    width: 59.5px;
+    height: 17px;
     opacity: 1;
     border-width: 1.5px;
+    transform: rotate(180deg);
+
+    margin-top: 60px;
+    margin-left: 40px;
 }
 
 .titles{
-    margin-top: 80px;
+    margin-top: 60px;
     margin-left: 40px;
 }
 
@@ -66,9 +70,8 @@ header img{
 .products .container {
     display: flex;
     justify-content: space-around;
-    gap: 570px;
-
     margin-top: 50px;
+    gap: 450px;
 }
 
 .products .container .left-part form{
@@ -76,6 +79,45 @@ header img{
     flex-direction: column;
     gap: 10px;
 }
+
+.products .container .left-part button{
+    width: 242px;
+    height: 44px;
+    opacity: 1;
+    background-color: rgba(217, 217, 217, 1);
+    border: none;
+
+    font-family: Beatrice Deck Trial;
+    font-weight: 500;
+    font-style: medium;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 0px;
+
+    text-align:left;
+    padding-left: 30px;
+
+    margin-left: 248px;
+    margin-top: 10px;
+
+    display: flex;
+    
+    align-items: center;
+
+    
+
+}
+
+.products .container .left-part button img{
+    width: 30px;
+    height: 30px;
+    margin-left: 100px;
+}
+
+
+
+
+
 
 .products .container .left-part form h3{
     font-family: Beatrice Trial;
@@ -209,6 +251,21 @@ header img{
     line-height: 100%;
     letter-spacing: 0px;
     text-transform: capitalize;
+    
+
+}
+
+.container .right-part .product-t span{
+    margin-left: 70px;
+    font-family: Beatrice Deck Trial;
+    font-weight: 500;
+    font-style: medium;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: 0px;
+    text-decoration: underline;
+    text-decoration-style: solid;
+    text-decoration-thickness: 0%;
 
 }
 
@@ -231,7 +288,10 @@ header img{
     letter-spacing: 1px;
     color: rgba(0, 14, 138, 1);
     margin-top: auto;
+}
 
+.container .right-part .amount span{
+    margin-left: 180px; /*Sor*/
 }
 
 
