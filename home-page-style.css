@@ -447,15 +447,21 @@ body{
 .collections{
     margin-top: 60px;
     margin-left: 10px;
+
+    
 }
 
 .collections .container{
 
     display: flex;
+    flex-direction: column;
     justify-content: flex-start;
-    gap: 30px;
+    gap: 10px;
     
+}
 
+.collections .container .bottom{
+    display: flex;
 }
 
 .collections h1{
@@ -497,18 +503,63 @@ body{
     
 }
 
-/*.collections .container .filter{
+.collections .container .filter{
     display: flex;
     justify-content:space-between;
     align-items: center;
-    gap: 10px;
-    
-}*/
+    border-bottom: 1px solid rgba(223, 223, 223, 1);
+
+}
+
+.collections .container .filter .left-filter{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 30px;
+    margin-left: 50px;
+}
+
+.collections .container .filter .right-filter{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    column-gap: 100px;
+    align-items: flex-start;
+    margin-right: 50px;
+}
+
+.collections .container .filter .right-filter .sorts{
+    color:rgba(94, 94, 94, 1);
+}
+
+.collections .container .filter .right-filter p{
+    font-family: Beatrice Trial;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 14px;
+    line-height: 40px;
+    letter-spacing: 0px;
+    color: rgba(0, 0, 0, 1);
+}
+
+.collections .container .filter .right-filter .sorts p:nth-child(n+2){
+    color:rgba(94, 94, 94, 1);
+    margin-top: -15px;
+}
+
+.collections .container .filter .left-filter{
+    font-family: Beatrice Trial;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 16px;
+    line-height: 40px;
+    letter-spacing: 0px;
+
+}
 
 .collections .container .product-container{
    margin-left: 22px;
-   position: relative;
-    
+   position: relative;    
 }
 
 .collections .container .product-container>img{
