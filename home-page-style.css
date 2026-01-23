@@ -641,6 +641,32 @@ body{
   
 }
 
+.collections .more-button{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap:-30px;
+}
+
+.collections .more-button p{
+    font-family: Beatrice Trial;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 16px;
+    line-height: 40px;
+    letter-spacing: 0px;
+    color:rgba(138, 138, 138, 1);
+
+}
+
+.collections .more-button img{
+    margin-top: -14px;
+    height: 20px;
+    transform: rotate(90deg);
+
+}
+
 .design {
     margin-top: 230px;
 }
