@@ -416,13 +416,9 @@ body{
 
     margin-top: 7px;
     margin-left: 7px;
+    display: flex;
+    justify-content: space-between;
 
-
-
-}
-
-.new-this-week .container .product-container span{
-    margin-left:auto;
 }
 
 .new-this-week .container .product-container .add-button{
@@ -431,7 +427,7 @@ body{
     background-color: rgba(220, 220, 220, 0.44);
     border: 1px rgba(12, 12, 12, 1);
     position: absolute;
-    bottom: 35px;
+    bottom: 38px;
     left: 150px;
 
     font-size: 10px;
@@ -440,21 +436,9 @@ body{
   
 }
 
-.new-this-week .container .product-container .add-button img{
-    height: 18px;
-    width: 18px; 
-    padding-top:9px;
-    
-    font-size: 8px;
-    color: rgba(220, 220, 220, 0.44);
-    border: 1px rgba(12, 12, 12, 1);
-}
-
 .collections{
     margin-top: 60px;
-    margin-left: 10px;
-
-    
+    margin-left: 10px;  
 }
 
 .collections .container{
@@ -595,12 +579,16 @@ body{
     line-height: 100%;
     letter-spacing: 0px;
     margin-top: 7px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .collections .container .product-container .add-button img{
     position: absolute;
-    bottom: 35px;
-    left: 165px;
+    bottom: 38px;
+    left: 171px;
+    bottom: 3px;
+    left: 6px;
 }
 
 .collections .container .product-container .add-button{
@@ -616,12 +604,6 @@ body{
     text-align: center;
     color: rgba(12, 12, 12, 1);
   
-}
-
-.collections .container .product-container .add-button img{
-    position: absolute;
-    bottom: 3px;
-    left: 6px;
 }
 
 .design {
