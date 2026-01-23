@@ -255,7 +255,11 @@ body{
     text-align: start;
 
     padding-left: 30px;
-    
+    background-image: url(icons/right-arrow.png);
+    background-position: 90%;
+    background-size: 55px 16px;
+    background-repeat: no-repeat;
+   
 
 }
 
@@ -418,6 +422,7 @@ body{
     margin-left: 7px;
     display: flex;
     justify-content: space-between;
+
 
 }
 
