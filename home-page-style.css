@@ -266,7 +266,8 @@ body{
 .new-colection .container .left-part .back-button{
     width: 40px;
     height: 40px;
-    border:1px solid rgba(163, 163, 163, 1)
+    border:1px solid rgba(163, 163, 163, 0.66);
+    background-color: transparent;
 
 }
 .new-colection .container .left-part .back-button img{
@@ -275,13 +276,13 @@ body{
     
     text-align: center;
     padding: 0px;
+    opacity: 0.66;
 
 }
 
 .new-colection .container .left-part .forward-button img{
     width: 13px;
     height: 13px;
-    
     text-align: center;
     padding: 0px;
 }
@@ -293,8 +294,8 @@ body{
     height: 40px;
 
     margin-left: 10px;
-
-    border:1px solid rgba(163, 163, 163, 1)
+    border:1px solid rgba(163, 163, 163, 1);
+    background-color: transparent;
 }
 
 .new-colection .container .right-part{
@@ -437,8 +438,37 @@ body{
 
     font-size: 10px;
     text-align: center;
-    color: rgba(12, 12, 12, 1);
-  
+    color: rgba(12, 12, 12, 1); 
+}
+
+.new-this-week .buttons{
+    display: flex;
+    justify-content: center;
+    column-gap: 8px;
+}
+
+.new-this-week .buttons button{
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(163, 163, 163, 1);
+    text-align: center;
+    margin-top: 50px;
+    background-color: transparent;
+    
+
+}
+
+.new-this-week .buttons button img{
+    width: 13px;
+    height: 13px;
+    opacity: 1;
+}
+
+.new-this-week .buttons button:nth-child(1){
+    opacity: 0.66;
+}
+.new-this-week .buttons button:nth-child(1) img{
+    opacity: 0.66;
 }
 
 .collections{
