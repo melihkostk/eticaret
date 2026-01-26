@@ -393,10 +393,7 @@ body{
     text-align: center;
 
     margin-top: -10px;
-}
-
-.product .container .right-part {
-
+    cursor: pointer;
 }
 
 @media (max-width: 768px) {
