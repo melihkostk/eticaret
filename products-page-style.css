@@ -344,23 +344,38 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+    gap: 5px;
 }
 
-.product .container .right-part .size div{
+.product .container .right-part input{
+    display: none;
+    
+}
+
+.product .container .right-part .size label{
+    position: relative;
+}
+
+.product .container .right-part span{
     width: 35.24px;
     height: 36.17px;
-    border: 1px solid rgba(163, 163, 163, 1);
-}
+    display: inline-block;
+    border: 2px solid #ccc;
+   
+    font-weight: bold;
+    transition: all 0.2s;
 
-.product .container .right-part .size div p{
+    border: 1px solid rgba(163, 163, 163, 1);
+
     font-family: Beatrice Deck Trial;
     font-weight: 500;
-    font-style: medium;
+    font-style: Medium;
     font-size: 10px;
     line-height: 36.17px;
-    letter-spacing: 1px;
+    letter-spacing: 0px;
     text-align: center;
+    cursor: pointer;
+
 }
 
 .product .container .right-part button{
@@ -378,6 +393,10 @@ body{
     text-align: center;
 
     margin-top: -10px;
+}
+
+.product .container .right-part {
+
 }
 
 @media (max-width: 768px) {
