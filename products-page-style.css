@@ -33,6 +33,7 @@ body{
     font-family: "Beatrice Deck Trial";
     font-weight: 500;
     line-height: 100%;
+    cursor: pointer;
 }
 
 .middle-section{
@@ -55,6 +56,7 @@ body{
 .left-section .menu-icon{
     width: 30px;
     height: 30px;
+    cursor: pointer;
 }
 
 .container .right-section{
@@ -69,6 +71,8 @@ body{
     border-radius: 100%;
     margin-right: 20px;
     background-color: #262222;
+    cursor: pointer;
+    
 }
 
 .right-section .like-button img{
@@ -87,6 +91,7 @@ body{
 
     font-size: 12px;
     font-family: "Beatrice Deck Trial";
+    cursor: pointer;
 }
 
 .right-section .shop-button{
@@ -97,6 +102,7 @@ body{
     
     border: 7px solid rgba(0, 0, 0, 1);
     border-radius: 100%;
+    cursor: pointer;
 
     
 }
@@ -115,6 +121,7 @@ body{
     margin-left: 20px;
     background-color: #262222;
     color: #F5F5F5;
+    cursor: pointer;
 }
 
 .right-section .profile-button img{
