@@ -362,3 +362,50 @@ body{
     margin-top: -10px;
 }
 
+@media (max-width: 768px) {
+
+    body {
+    padding-bottom: 50px; 
+  }
+    .product .container{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        
+    }
+
+    .product .container .left-part{
+        display: flex;
+        flex-direction: column;
+        margin: 0px;
+        width: 100%;
+    }
+    .product .container .left-part img{
+        width: 100%;
+    }
+    .product .container .left-part .small-images{
+        flex-direction: row;
+    }
+    .product .container .right-part{
+        border: none;
+        padding: 0px;
+        margin: 0px;
+        width: 100%;
+        overflow: hidden;
+    }
+    .product .container .right-part button{
+        display: block;
+        position:fixed;
+        width: 100%;
+    
+    }
+    .head .container{
+        width: 100%;
+        flex-wrap: nowrap;
+    }
+    .head .container .left-section{
+        display: flex;
+    }
+}
+
