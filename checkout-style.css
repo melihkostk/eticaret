@@ -101,10 +101,7 @@ header img{
     margin-top: 10px;
 
     display: flex;
-    
     align-items: center;
-
-    
 
 }
 
@@ -353,6 +350,38 @@ header img{
 
     display: flex;
     justify-content: space-between;
+
+}
+
+@media (max-width: 768px) {
+  .products .container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 30px;
+    
+  }
+
+  .products .container .left-part{
+    margin-left: 40px;
+  }
+ 
+
+  .products .container .left-part button{
+    display: flex;
+    justify-content: space-between;
+    gap: 100px;
+    align-items: center;
+    width: 100%;
+    margin: 0px;
+    padding-right: auto;
+   
+    margin-top: 20px;
+  }
+
+ 
+
+
 
 }
 
