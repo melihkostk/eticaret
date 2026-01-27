@@ -10,6 +10,10 @@ body , html{
     
 }
 
+body button,a,input {
+    cursor: pointer;
+}
+
 body{
     background: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)),
     url("images/noisy-background.jpg");
