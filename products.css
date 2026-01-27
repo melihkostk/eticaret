@@ -144,6 +144,84 @@ body{
     margin-top: 160px;
 }
 
+.products .menu-container .menu{
+    
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.products .menu-container .menu ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-family: Beatrice Deck Trial;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 2px;
+    background-color: transparent;
+
+}
+
+.products .menu-container .menu .menu-title{
+    cursor: pointer;
+    font-weight: bold;
+    padding: 20px;
+    background: #f3f3f3;
+    border-bottom: 1px dashed rgba(201, 201, 201, 1);
+    display: flex;
+    justify-content: space-between;
+    gap:90px;
+    background-color: transparent;
+
+}
+
+.products .menu-container .menu .menu-title span img{
+    width: 80%;
+    height: 80%;
+
+}
+
+.products .menu-container .menu .sub-menu{
+    display: none;
+    padding: 10px;
+    margin-left: 10px;
+    
+}
+
+.products .menu-container .menu .sub-menu input{
+    display: inline;
+    height: 60%;
+    width: 10%;
+}
+
+.products .menu-container .menu .sub-menu p{
+    display: inline;
+    text-align: center;
+}
+.products .menu-container .menu .sub-menu li {
+    padding: 5px 0;
+    font-family: Beatrice Deck Trial;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: 2px;
+    color: rgba(1, 1, 1, 0.66);
+
+}
+.products .menu-container .menu ul li:active{
+    border: none;
+}
+
+.products .menu-container .menu ul li:active + .sub-menu{
+    display: block;
+}
+
 .products .menu-container h3{
     font-family: Beatrice Deck Trial;
     font-weight: 700;
