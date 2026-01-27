@@ -226,6 +226,9 @@ body{
     gap: 30px;
 }
 
+.new-colection .container .left-part .buttons .direction{
+    display: flex;
+}
 
 .new-colection .container .left-part h1{
     font-family: "Beatrice Deck Trial";
@@ -334,6 +337,7 @@ body{
     filter: none;
     border: 1px solid rgba(215, 215, 215, 1);
     background-size: cover;
+    object-fit: cover;
     
       
 }
@@ -416,6 +420,7 @@ body{
     height: 314px;
     border: 1px solid rgba(215, 215, 215, 1);
     margin: 0px 7px;
+    object-fit: cover;
       
 }
 
@@ -613,6 +618,7 @@ body{
     width: 366px;
     height: 376px;
     border: 1px solid rgba(215, 215, 215, 1); 
+    object-fit: cover;
     
 }
 
@@ -742,6 +748,8 @@ body{
     height: 389px;
     opacity: 1;
     border: 1px solid rgba(215, 215, 215, 1);
+    object-fit:cover;
+    padding: 0;
 
 }
 
