@@ -78,6 +78,7 @@ header img{
     display: flex;
     flex-direction: column;
     gap: 10px;
+    
 }
 
 .products .container .left-part button{
@@ -121,6 +122,7 @@ header img{
     letter-spacing: 0px;
     text-transform: uppercase;
     color: rgba(0, 0, 0, 1);
+    
 
 }
 .products .container .left-part form .sa-title{
@@ -132,10 +134,9 @@ header img{
     
     border: 1px solid rgba(217, 217, 217, 1);
     
-    width: 468px;
+    width: 100%;
     height: 44px;
-    top: 309px;
-    left: 50px;
+    
     opacity: 1;
     border:1px solid rgba(217, 217, 217, 1);
     padding-left: 20px;  
@@ -144,17 +145,18 @@ header img{
 
 .products .container .left-part form .name{
     display: flex;
-    width: 490px;
-    height: 44px;   /*Sor*/
-    gap: 7px;
+    gap: 1rem;
+    
+    
+}
 
+.products .container .left-part form .name input{
+    width: 100%;
 }
 
 .products .container .left-part form .city-p{
     display: flex;
-    width: 490px;
-    height: 44px; /*Sor*/
-    gap: 7px;
+    gap: 1rem;
 }
 
 .container form input::placeholder{
@@ -284,14 +286,13 @@ header img{
 }
 
 .container .right-part .amount span{
-    margin-left: 180px; /*Sor*/
+    margin-left: 180px; 
+
 }
-
-
 .container .right-part .product-d{
     display: flex;
     flex-direction: column;
-    row-gap: 7px;  /*Sor*/
+    row-gap: 7px;  
 
 }
 
@@ -353,34 +354,197 @@ header img{
 
 }
 
-@media (max-width: 768px) {
-  .products .container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    row-gap: 30px;
+
+@media (min-width: 2560px) {
+
+    .main-container{
+       display: grid;
+        grid-template-rows: repeat(3, 1fr,1fr,2fr);
+        grid-template-columns: repeat(2,1fr,1fr);
+        gap: 24px;
+        row-gap: 3rem;
+        column-gap: 1rem;
+        max-width: 100%;
+        
+    }
+
+    .main-container .titles h1{
+        font-size: 4rem;
+    }
+
+    .main-container .titles .container p{
+        font-size: 1.5rem;
+    }
     
-  }
+    .main-container .products .container form input{
+        width: 40vw;
+        padding: 1rem;
+    }
+    .main-container .products .container .left-part form input::placeholder{
+        font-size: 1.2rem;
+        opacity: 0.66;
+        
+    }
 
-  .products .container .left-part{
-    margin-left: 40px;
-  }
- 
+    .main-container .products .container .left-part button{
+       width: 50%;
+       
+    }
 
-  .products .container .left-part button{
-    display: flex;
-    justify-content: space-between;
-    gap: 100px;
-    align-items: center;
-    width: 100%;
-    margin: 0px;
-    padding-right: auto;
+    .main-container .products .container{
+        align-items: center;
+    }
+
+    .main-container .products .container form h3{
+        font-size: 1.5rem;
+    }
+
+    .main-container .products .container .left-part form .name input{
+        width: 50%;  
+    }
+
+    .main-container .products .container .left-part button{
+        margin: 0;
+        width: 100%;
+        padding: 2rem;
+        margin-top: 1rem;
+        font-size: 1.5rem;
+        justify-content: space-between;
+    }
+    .main-container .products .container .left-part form .city-p input{
+        width: 50%;  
+    }
+
+    .main-container .products .container .right-part{
+        transform: scale(1.7);
+        
+    }
+
    
-    margin-top: 20px;
-  }
+}
 
- 
+@media (max-width: 769px) {
 
+    *{
+        padding: 0;
+        margin: 0;
+    }
+
+    html,body{
+        width: 100%;
+        height: 100%;
+    }
+
+    .main-container header{
+        margin-left: -1.5rem;
+        margin-bottom: 1rem;
+    }
+
+
+    .main-container{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+
+    }
+
+    .main-container header{
+        margin-top: -30px;
+        padding:0
+    }
+
+    .main-container .titles{
+        margin: 0;
+        padding: 0;
+        justify-content: space-between;
+        margin-left: 1rem;
+        
+    }
+
+
+    .main-container .titles h1{
+        font-size: 20px;
+    }
+    
+    .main-container .titles .container{
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .main-container .titles .container p{
+        font-size: 12px;
+    }
+
+    .products .container{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: start;
+        margin-left: 0.6rem;
+        gap: 1rem;
+    }
+
+    .products .container .left-part{
+        align-self: flex-start;
+        margin: 0;
+        padding: 0;
+
+    }
+
+    .products .container .left-part form{
+        width: 100%;
+        margin-left: 0.4rem;
+        margin-top: -3rem;
+       
+    }
+    
+    .products .container .left-part form h3{
+        font-size: 12px;
+    }
+
+    .products .container .left-part form input {
+        width: 100%;
+    }
+
+    .products .container .left-part .name{
+        width: 100%;
+    }
+
+  
+    .products .container .left-part .name input {
+         width: 100%;
+         box-sizing: border-box;
+    }
+
+    .products .container .left-part .city-p input{
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .products .container .left-part button{
+        width: 100%;
+        margin: 10px 0;
+        justify-content: space-between;
+        padding-right: 30px;
+        align-self: flex-start;
+    }
+
+    .products .container .right-part{
+        align-self: flex-start;
+         
+    }
+
+    .products .container .right-part .t-amount{
+        right: 3rem;
+        top: 1rem;
+    }
+
+    .products .container .right-part .product-container{
+        
+        padding: 0px;
+        border: none;
+    }
 
 
 }
