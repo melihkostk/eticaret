@@ -494,3 +494,309 @@ body{
     letter-spacing: 0px;
     color: rgba(0, 0, 0, 1);
 }
+@media(min-width:2560px){
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .main-container .head .container{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;  
+    }
+
+    .main-container .head .container .left-section a{
+        font-size: 2rem;
+    }
+
+    .main-container .head .container .right-section button{
+        width: 4rem;
+        height: 4rem;
+    }
+
+    .main-container .head .container .right-section .cart-button{
+        width: 6rem;
+        font-size: 1.5rem;
+    }
+    .main-container .head .right-section .shop-button a img{
+        width: 60%;
+        height: 60%;
+        padding: 0;
+    }
+
+    .main-container .head .right-section .profile-button img{
+        width: 60%;
+        height: 60%;
+        padding: auto;
+    }
+    .main-container .products .menu-container h3{
+        font-size: 3.5rem;
+    }
+
+    .main-container .products .menu-container .size-title{
+        font-size: 2rem;
+        
+    }
+
+    .main-container .products .menu-container .sizes{
+        gap: 0.5rem;
+        justify-content: flex-start;
+    }
+
+    .main-container .products .menu-container .sizes div{
+        width: 3.5rem;
+        height: 100%;
+        text-align: center;
+        font-size: 1.5rem;
+        padding: 0.5rem;
+        
+    }
+
+    .main-container .products .menu-container .menu ul li{
+        font-size: 2rem;
+        text-wrap: nowrap;
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+        border-top: 0.1rem dashed rgba(1, 1, 1, 0.1);
+        border-bottom: 0.1rem dashed rgba(1, 1, 1, 0.1);
+    }
+
+    .main-container .products .menu-container .menu ul .sub-menu li p{
+        font-size: 1.5rem;
+    }
+
+    .main-container .products .menu-container .menu ul .sub-menu li p span{
+        font-size: 1.5rem;
+    }
+
+    .main-container .container .top .left-part p{
+        font-size: 2rem;
+    }
+    .main-container .container .top .left-part p span{
+        font-size: 2rem;
+    }
+    .main-container .container .top .left-part h1{
+        font-size: 2.5rem;
+    }
+    .main-container .container .top .right-part button{
+        font-size: 1rem;
+        width: 100%;
+        height: 100%;
+        padding: 1rem 2rem;
+        text-align: center;
+        text-wrap: nowrap;
+    }
+
+    .main-container .container .bottom{
+        grid-template-columns: 1fr 1fr 1fr;
+
+    }
+    .main-container .container .bottom .product-container .product-t{
+        font-size: 1.5rem;
+    }
+    .main-container .container .bottom .product-container .product-d{
+        font-size: 1.5rem;
+        display: flex;
+        gap: 3rem;
+    }
+    .main-container .container .bottom .product-container .product-d span{
+        font-size: 1.5rem;
+    }
+    .main-container .container .bottom .product-container img{
+        width: 100%;
+        height: 70%;
+    }
+
+}
+
+
+@media(max-width:426px){
+
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .main-container{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .main-container .head .container{
+        justify-content: center;
+        gap: 30rem;
+    }
+
+    .main-container .head .left-section a{
+        display: none;
+    }
+
+    .main-container .head .left-section img{
+        width: 3rem;
+        height: auto;
+    }
+
+    .main-container .head .middle-section div{
+        width: 4rem;
+        height: 4rem;
+    }
+
+    .main-container .head .right-section .like-button{
+        display: none;
+    }
+
+    .main-container .head .right-section .cart-button{
+        display: none;
+    }
+
+    .main-container .head .right-section .shop-button{
+        width: 6rem;
+        height: 6rem;
+        border-width: 0.8rem;
+    }
+    .main-container .head .right-section .profile-button{
+        width: 6rem;
+        height: 6rem;
+    }
+
+    .main-container .head .right-section .shop-button a img{
+        width: 60%;
+        height: 60%;
+        padding: 0;
+    }
+
+    .main-container .head .right-section .profile-button img{
+        width: 60%;
+        height: 60%;
+        padding: auto;
+    }
+
+    .main-container .products {
+        gap: 3rem;
+        align-items: flex-start;
+    }
+
+    .main-container .products .menu-container{
+        gap: 2.5rem;
+        margin: 0;
+        margin-top: 19rem;
+    }
+
+    .main-container .products .menu-container h3{
+        font-size: 3rem;
+    }
+
+    .main-container .products .menu-container .size-title{
+        font-size: 2rem;
+        
+    }
+
+    .main-container .products .menu-container .sizes{
+        gap: 0.5rem;
+        justify-content: flex-start;
+    }
+
+    .main-container .products .menu-container .sizes div{
+        width: 3.5rem;
+        height: 100%;
+        text-align: center;
+        font-size: 1.5rem;
+        padding: 0.5rem;
+        
+    }
+
+    .main-container .products .menu-container .menu ul li{
+        font-size: 2rem;
+        text-wrap: nowrap;
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+        border-top: 0.1rem dashed rgba(1, 1, 1, 0.1);
+        border-bottom: 0.1rem dashed rgba(1, 1, 1, 0.1);
+    }
+
+    .main-container .products .menu-container .menu ul .sub-menu li p{
+        font-size: 1.5rem;
+    }
+
+    .main-container .products .menu-container .menu ul .sub-menu li p span{
+        font-size: 1.5rem;
+    }
+
+    .main-container .container .top {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5rem;
+    }
+
+    .main-container .container .top .left-part{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .main-container .container .top .left-part h1{
+        font-size: 3rem;
+    }
+
+    .main-container .container .top .left-part p{
+        font-size: 2rem;
+    }
+
+    .main-container .container .top .left-part p span{
+        font-size: 2rem;
+    }
+
+    .main-container .container .top .left-part input{
+        width: 100%;
+        margin: 0;
+    }
+
+    .main-container .container .top .left-part input::placeholder{
+        font-size: 1.5rem;
+        padding-right: 1rem;
+    }
+
+    
+
+    .main-container .container .top .right-part{
+        gap: 1rem;
+    }
+
+    .main-container .container .top .right-part button{
+        font-size: 1.5rem;
+        width: 13rem;
+        height: 100%;
+        padding: 1rem;
+        text-wrap: nowrap;
+    
+    }
+
+    .main-container .container .bottom{
+        margin: 0;
+        grid-template-columns: auto auto ;
+        row-gap: 0.1rem;
+    }
+
+    
+
+    .main-container .container .bottom .product-container img{
+        width: 100%;
+        height: 70%;
+        object-fit:fill;
+    }
+
+    .main-container .container .bottom .product-container .product-t{   
+        font-size: 2rem;
+    }
+
+    .main-container .container .bottom .product-container .product-d{
+        gap:3rem;
+        font-size: 2rem;
+    }
+
+    .main-container .container .bottom .product-container .product-d span{
+        font-size: 2rem;
+    }
+}
