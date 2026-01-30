@@ -10,6 +10,7 @@ body , html{
     
 }
 
+
 body button,a,input {
     cursor: pointer;
 }
@@ -20,13 +21,16 @@ body{
     background-size: cover;
 }
 
+.main-container{
+    display: flex;
+    flex-direction: column;
+}
+
 .head .container{
     display: flex;
     justify-content:space-between;
     margin-left: 20px;
     align-items: center;
-    width: 1400px;
-
     margin-top: 30px;
     padding: 20px;   
 }
@@ -35,6 +39,10 @@ body{
     width: 26px;
     height: 16px;
     
+}
+
+.middle-section{
+    display: none;
 }
 
 
@@ -387,39 +395,190 @@ body{
     border: none;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 2560px){
+
+   
+    *{
+        margin: 0;
+        padding: 0;
+        
+    }
+
+    .main-container{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        
+       
+    
+    }
+
     .head .container{
+        display: flex;
+        justify-content: center;
+        gap: 110rem;
+        flex-wrap: nowrap;
+       
+    }
+
+    .main-container .head .left-section{
+        display: flex;
+        justify-content: space-between;
+        gap: 3rem;
+    }
+
+    .main-container .head .left-section img{
+        width: 3rem;
+        height: 3rem;
+    }
+
+    .main-container .head .left-section a{
+        font-size: 2rem;
+    }
+
+    .main-container .head .middle-section div{
+        width: 4rem;
+        height: 4rem;
+    }
+
+    .main-container .head .right-section button{
+        width: 5.2rem;
+        height: 5rem;
+        font-size: 1.3rem;
+    }
+
+     .main-container .head .right-section .cart-button{
+        width: 7rem;
+        
+    }
+
+    .main-container .head .right-section button img{
+        width: 50%;
+        height: auto;
+        opacity: 1;
+    }
+
+    .main-container .bag .sb-title p{
+        font-size: 1.5rem;
+    }
+
+    .main-container .bag .sb-title img{
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+
+    .main-container .container{
+        display: flex;
+        justify-content: center;
+        padding: 0;
+        gap: 90rem;
+        
+    }
+
+    .main-container .container .left-part{
+        transform: scale(1.5);
+        transform-origin: top left;
+    }
+
+    .main-container .container .right-part{
+        transform: scale(1.5);
+        transform-origin: top left;
+        
+        
+    }
+   
+} 
+
+@media (max-width: 426px) {
+    *{
+        padding: 0;
+        margin: 0;
+    }
+
+    .head .container {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    text-align: center;
-    width: 100%;
-    height: 100%;
-    flex-wrap:nowrap;
-    gap: 10px;
+    gap: 5rem;
 
   }
-   
-  .container{
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-    }
 
   .head .container .left-section{
     display: flex;
+  }
+
+  .head .container .middle-section{
+    display: flex;
+    
+  }
+
+  .head .container .middle-section .amblem{
+    width: 40px;
+    height: 40px;
+    transform: rotate(45deg);
+    background: linear-gradient(
+        45deg,
+        rgba(217,217,217,1) 50%,
+        black 50%
+    );
+  }
+
+  .head .container .left-section a{
+    display: none;
+  }
+
+  .head .container .right-part ,.like-button,.cart-button{
+    display: none;
+  }
+
+  .head .container .right-section{
+    display: flex;
+    flex-direction: row;
+    gap: 0.4rem;
+
+  }
+
+  .head .container .right-section .profile-button{
+    margin: 0;
+  }
+
+  .head .container .right-section .shop-button{
+    margin: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-width: 5px;
+  }
+
+   .head .container .left-section{
+    display: flex;
     align-items: center;
   }
-    .container{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-    }
 
     .container .left-part{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        border-style: none;
+  }
+    .container .left-part .product-container .product-d{
         display: flex;
-        flex-direction: column;
+        justify-content: space-between;
+        width: max-content;
     }
 
+    .bag .container{
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        
+    }
+
+    .container .right-part{
+        align-self: start;
+        
+    }
 }
+
+
+
+
