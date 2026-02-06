@@ -4,14 +4,12 @@
     box-sizing: border-box;
 }
 
-body , html{
-    width: 100%;
-    height : 100%;
-    
-}
-
 body button,a{
     cursor: pointer;
+}
+
+body , html{
+    width: 100wv;
 }
 
 body{
@@ -25,8 +23,6 @@ body{
     justify-content:space-between;
     margin-left: 20px;
     align-items: center;
-    width: 1400px;
-
     margin-top: 30px;
     padding: 20px;   
 }
@@ -178,11 +174,11 @@ body{
 
     position: relative;
 
-    background-image: url("icons/search-icon.svg");   /*bak*/
+    background-image: url("icons/search-icon.svg");   
     background-repeat: no-repeat;
     background-size: 20px;
     background-position: 10px center;
-     background-clip: padding-box;
+    background-clip: padding-box;
     
 }
 
@@ -201,21 +197,22 @@ body{
     margin-top: 70px;
     margin-left: 40px;
 }
+
 .new-colection .container{
     display: flex;
     justify-content:flex-start;
-    align-items: center;
-    gap: 10px;
+    align-items: flex-start;
+    gap: 1rem;
        
 }
 
 .new-colection .container .left-part{
    display: flex;
    flex-direction: column;
-   align-items: space-between;
-   justify-content: center;
-   gap: 165px;
-
+   align-items: flex-start;
+   justify-content: space-between;
+   gap: 13rem;
+   
 }
 
 
@@ -223,6 +220,7 @@ body{
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    justify-self: flex-end;
     gap: 30px;
 }
 
@@ -241,7 +239,7 @@ body{
 }
 
 .new-colection .container .left-part h1 span{
-    display: block;   /*Sor*/
+    display: block;   
     margin-top: -30px;
 }
 
@@ -282,10 +280,8 @@ body{
     letter-spacing: 2px; 
     text-align: start;
     padding-left: 8px;
-    color:rgba(0, 0, 0, 1)
+    color:rgba(0, 0, 0, 1);
 
-    
-  
 }
 
 .new-colection .container .left-part .back-button{
@@ -298,7 +294,6 @@ body{
 .new-colection .container .left-part .back-button img{
     width: 13px;
     height: 13px;
-    
     text-align: center;
     padding: 0px;
     opacity: 0.66;
@@ -312,8 +307,6 @@ body{
     padding: 0px;
 }
 
-
-
 .new-colection .container .left-part .forward-button{
     width: 40px;
     height: 40px;
@@ -326,31 +319,39 @@ body{
 .new-colection .container .right-part{
     display: flex;
     align-items:center;
-    justify-content: start;
-   
+    justify-content: flex-start;
+    gap: 1rem;
      
-} 
+}
 
-.new-colection .container .right-part .white-clothes{
-    width: 356px;
-    height: 366px;
+.new-colection .container .right-part img{
+    width: 25.3%;
+    height: 100%;
     filter: none;
     border: 1px solid rgba(215, 215, 215, 1);
-    background-size: cover;
+    
+}
+
+/*.new-colection .container .right-part .white-clothes{
+    width: 100%;
+    height: auto;
+    filter: none;
+    border: 1px solid rgba(215, 215, 215, 1);
+   
     object-fit: cover;
     
       
 }
 
 .new-colection .container .right-part .black-clothes{
-    width: 356px;
-    height: 366px;
+    width: 100%;
+    height: auto;
     filter: none;
     border: 1px solid rgba(215, 215, 215, 1);
-    margin-left: 30px;
+    
     object-fit: cover;   
    
-}
+}*/
 
 .new-this-week{
     margin-left: 50px;
@@ -416,16 +417,19 @@ body{
 
 
 .new-this-week .container .product-container > img{
-    width: 305px;
-    height: 314px;
+    width: 100%;
+    height: auto;
     border: 1px solid rgba(215, 215, 215, 1);
-    margin: 0px 7px;
     object-fit: cover;
+    
       
 }
 
 .new-this-week .container .product-container{
     position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 
 .new-this-week .container .product-container .product-type{
@@ -434,7 +438,7 @@ body{
     font-weight: 500;
     color: rgba(0, 0, 0, 0.66);
     line-height: 100%;
-    margin-left: 7px;
+    
 }
 
 .new-this-week .container .product-container .product-description{
@@ -446,8 +450,7 @@ body{
     line-height: 100%;
     letter-spacing: 0px;
 
-    margin-top: 7px;
-    margin-left: 7px;
+   
     display: flex;
     justify-content: space-between;
 
@@ -460,8 +463,10 @@ body{
     background-color: rgba(220, 220, 220, 0.44);
     border: 1px rgba(12, 12, 12, 1);
     position: absolute;
-    bottom: 38px;
-    left: 150px;
+    bottom: 2.7rem;
+    left: 9rem;
+    margin-left: auto;
+    
 
     font-size: 10px;
     text-align: center;
@@ -567,8 +572,8 @@ body{
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    gap: 30px;
     margin-left: 50px;
+    gap: 2rem;
 }
 
 .collections .container .filter .right-filter{
@@ -744,8 +749,8 @@ body{
 }
 
 .design .container .image-container img{
-    width: 317px;
-    height: 389px;
+    width: 100%;
+    height: auto;
     opacity: 1;
     border: 1px solid rgba(215, 215, 215, 1);
     object-fit:cover;
@@ -760,13 +765,15 @@ body{
 .footer{
     background-color: rgba(228, 224, 224, 0.66);
     height: 80%;
+    width: 100%;
+    
 }
 
 .footer .container {
     display: flex;
     justify-content: space-around;
     align-items: center;
-
+    width: 100%;
     padding-top: 180px;
 }
 
@@ -825,11 +832,9 @@ footer .container .left-section .language-title{
 }
 
 .footer .container .right-section .technologies-title{
-
     align-self:flex-start;  
     row-gap: 30px;
 
-    
 }
 
 
@@ -892,6 +897,673 @@ footer .container .left-section .language-title{
 
     width: max-content;
 }
+
+@media(min-width:2560px){
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    
+    .main-container .head .container{
+        display: flex;
+        align-items: center;
+    }
+    .main-container .head .container .left-section a{
+        font-size: 2.5rem;
+    }
+    .main-container .head .container .left-section img{
+        width: 2rem;
+        height: 2rem;
+    }
+    .main-container .head .container .middle-section{
+        width: 3rem;
+        height: 3rem;
+    }
+    .main-container .head .container .right-section button{
+        width: 5rem;
+        height: 5rem;
+        font-size: 1.5rem;
+    }
+
+    .main-container .head .container .right-section .cart-button{
+        width: 7rem;
+    }
+    .main-container .head .container .right-section button img{
+        width: 50%;
+        height: auto;
+        font-size: 1.5rem;
+    }
+
+    .main-container .gender .container a{
+        font-size: 2rem;
+    }
+    .main-container .gender .container input{
+        width: 30%;
+        height: 5rem;
+        text-align: center;
+        margin: 0;
+    }
+    .main-container .gender .container input::placeholder{
+        font-size: 1.5rem;
+        
+    }
+    .main-container .new-colection .left-part{
+        display: flex;
+        flex-direction: column;
+        gap: 15rem;
+    }
+    
+    .main-container .new-colection .left-part .buttons .gts-button{
+        width: 100%;
+        height: 4rem;
+        font-size: 1.5rem;
+        align-self: flex-end;
+    }
+    .main-container .new-colection .left-part .buttons .gts-button img{
+        width: 4rem;
+       
+    }
+    .main-container .new-colection .container .left-part .top h1{
+        font-size: 6rem;
+    }
+     .main-container .new-colection .container .left-part .top p{
+        font-size: 2rem;
+    }
+    .main-container .new-colection .container .left-part .buttons .direction button{
+       width: 4rem;
+       height: 4rem;
+       
+    }
+    .main-container .new-colection .container .left-part .buttons .direction button img{
+        width: 60%;
+        height: 60%;
+    }
+    .main-container .new-colection .container .right-part img{
+        width: 100%;
+        height: 40rem;
+        object-fit: cover;
+    }
+    .main-container .new-this-week h1{
+        font-size: 6rem;
+    }
+    .main-container .new-this-week h1 .amount{
+        font-size: 2rem;
+        position: absolute;
+        bottom: 7rem;
+        left: 33rem;
+    }
+    .main-container .new-this-week p{
+        font-size: 2rem;
+        bottom: 10rem;
+        left: 50rem;
+    }
+    .main-container .new-this-week .container .product-container .product-type{
+        font-size: 2rem;
+    }
+    .main-container .new-this-week .container .product-container .product-description{
+        font-size: 2rem;
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        
+    }
+    
+    .main-container .new-this-week .container .product-container{
+        width: 100%;
+        
+    }
+    .main-container .new-this-week .container .product-container img{
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        height: 80%;
+    }
+    .main-container .new-this-week .container .product-container .add-button{
+        bottom: 4.7rem;
+        width: 4rem;
+        height: 4rem;
+        left: 16rem;
+       
+    }
+    .main-container .new-this-week .buttons button{
+        width: 5rem;
+        height: 5rem;
+    }
+    .main-container .new-this-week .buttons button img{
+        width: 60%;
+        height: 60%;
+    }
+    .main-container .collections h1{
+        font-size: 6rem;
+    }
+    .main-container .collections .container .filter .left-filter a{
+        font-size: 2.5rem;
+    }
+    .main-container .collections .container .filter .right-filter{
+        column-gap: 10rem;
+    }
+    .main-container .collections .container .filter .right-filter p{
+        font-size: 2rem;
+    }
+    .main-container .collections .container .filter .right-filter .sorts{
+        gap: 3rem;
+    }
+    .main-container .collections .bottom{
+        gap: 2rem;
+        margin: 0;
+    }
+   
+    .main-container .collections .bottom .product-container .product-description{
+        font-size: 2rem;
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+    }
+    
+    .main-container .collections .bottom .product-container .product-type{
+         font-size: 2rem;
+    }
+    
+    .main-container .collections .bottom .product-container{
+        width: 100%;
+        
+    }
+    .main-container .collections .bottom .product-container img{
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        height: 60%;
+        object-fit: cover;
+    }
+    .main-container .collections .bottom .product-container .add-button{
+        bottom: 4.7rem;
+        width: 4rem;
+        height: 4rem;
+        left: 16rem;
+       
+    }
+    .main-container .more-button{
+        margin-top: -5rem;
+        margin-bottom: 12rem;
+    }
+
+    .main-container .more-button p{
+        font-size: 2rem;
+    }
+
+    .main-container .more-button img{
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .main-container .design{
+        margin:0;
+    }
+
+    .main-container .design .container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10rem;
+        
+    }
+
+    .main-container .design .container .text-container{
+        gap: 1rem;
+        align-items: center;
+    }
+
+
+    .main-container .design .container .text-container h1{
+        font-size: 6rem;
+    }
+
+    .main-container .design .container .text-container p{
+        font-size: 2rem;
+        line-height: 100%;
+        width: 50%;
+          
+    }
+    .main-container .design .container .image-container {
+        justify-content: center;
+        align-items: stretch;
+        height: 100%;
+    }
+
+    .main-container .design .container .image-container img{
+        width: 20%;
+        height: auto;
+        margin: 0; 
+        object-fit: cover;
+    }
+    .main-container .footer .container{
+        align-items: flex-start;
+    }
+    .main-container .footer .container .left-section .info h3{
+        font-size: 2rem;
+    }
+     .main-container .footer .container .left-section .info p{
+        font-size: 1.5rem;
+    }
+    .main-container .footer .container .left-section .languages h3{
+        font-size: 2rem;
+    }
+     .main-container .footer .container .left-section .languages p{
+        font-size: 1.5rem;
+    }
+     .main-container .footer .container .right-section{
+        align-items: flex-start;
+
+    }
+    .main-container .footer .container .right-section h3{
+        font-size: 2rem;
+    }
+    .main-container .footer .container .right-section p{
+        font-size: 10rem;
+    }
+     .main-container .footer .container .right-section .near{
+        font-size: 2rem;
+        position: absolute;
+        bottom: 18rem;
+        left: 20rem;
+    }
+}
+
+@media(max-width:1180px){
+
+    .main-container .collections .container .bottom .product-container > img{
+        width: 100%;
+    }
+
+    .main-container .design .container .image-container{
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+        
+    }
+    .main-container .design .container .image-container img{
+        width: 20%;
+    }
+   
+
+}
+
+@media(max-width:768px){   
+
+   * {
+    box-sizing: border-box;
+  }
+
+  .main-container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3rem;
+    
+  }
+
+  .main-container .head{
+    width: 100%;
+   
+  }
+
+  .main-container .head .container {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+
+  }
+
+   .main-container .head .left-section a {
+    display: none;
+  }
+
+  .menu-icon {
+    display: block;
+    width: 22px;
+  }
+
+  .middle-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+
+  .middle-section .amblem{
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .right-section {
+    display: flex;
+    gap: 6px;
+  }
+
+  .right-section button {
+    padding: 4px;
+  }
+
+  .right-section img {
+    width: 18px;
+  }
+
+  .cart-button {
+    display: none;
+  }
+  .like-button{
+    display: none;
+  }
+  .main-container .gender .container{
+    margin: 0;
+  }
+
+  .main-container .gender .container a{
+    font-size: 1.5rem;
+  }
+
+  .main-container .gender{
+    display: block;
+  }
+
+  .main-container .gender .container .search-box input{
+    width: 100%;
+  }
+
+  .main-container .new-colection{
+    margin: 0;
+  }
+  
+  
+  .main-container .new-colection .container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    margin: 0;
+    
+  }
+
+  .main-container .new-colection .container .left-part{
+        gap: 1rem;
+  }
+  .main-container .new-colection .container .right-part{
+        gap: 0rem;
+        justify-content: space-between;
+  }
+
+  .main-container .new-colection .container .right-part img{
+    width: 40%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .new-colection .container .left-part .buttons button{
+    display: none;
+  }
+
+  .new-colection .container .left-part .top{
+    margin: 0;
+  }
+
+  .main-container .new-this-week{
+    margin: 0;
+  }
+
+  .main-container .new-this-week .container{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .main-container .new-this-week .container .product-container .add-button{
+    display: none;
+  }
+  
+  .new-this-week .container .product-container > img{
+        width: 100%;
+        aspect-ratio: 3 / 4;
+        object-fit: cover;
+    }
+   
+    
+    .new-this-week .container .product-container .product-description{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        
+    }
+
+  .main-container .collections{
+    margin: 0;
+  }
+
+  .main-container .collections h1{
+    margin: 0;
+  }
+  .main-container .collections .container .filter{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 3rem;
+    
+  }
+
+  .main-container .collections .container .filter .left-filter{
+    margin: 0;
+  }
+  .collections .container .filter .left-filter{
+    gap: 1rem;
+  }
+
+
+  .main-container .collections .container .filter .right-filter{
+    margin: 0;
+    gap: 1rem;
+    line-height: 100%;
+  }
+
+  .collections .container .product-container{
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    gap: 1.5rem;
+  }
+  .collections .container .bottom {
+    gap: 1rem;
+  }
+  .collections .container .bottom .product-container>img{
+        width: 100%;
+        height: auto;
+  }
+  .collections .container .bottom .product-container .product-description{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .design{
+    margin: 0;
+  }
+
+  .design .container .image-container img{
+    width: 100%;
+    height: auto;
+  }
+
+  .design .container .image-container{
+    justify-content: space-around;
+  }
+
+    .design .container .image-container .style2{
+        margin-top: 2rem;
+    }
+    .design .container .image-container .style4{
+        margin-top: 2rem;
+        
+    }
+
+  .design .container{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .add-button{
+    display: none;
+  }
+
+
+  .design .container .text-container p{
+        width: 100%;
+        font-size: 1rem;
+        line-height: 100%;
+  }
+
+  .design .container .text-container h1{
+    font-size: 3rem;
+    margin: 0;
+  }
+
+  .footer .container{
+    width: 100%;
+    padding:6.5rem;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 3rem;
+    box-sizing: border-box;
+  }
+
+  .footer .container .right-section p{
+    font-size: 3rem;
+  }
+  .footer .container .right-section .near{
+        left: 5rem;
+        width: 100%;
+        top: 2rem;
+  }
+}
+@media(max-width:426px){
+     .main-container .new-this-week .container{
+        display: flex;
+        flex-direction: column;
+    }
+    .main-container .collections .container .bottom{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media(max-width:376px){
+    .main-container .collections .container .filter{
+        gap: 1rem;
+    }
+    .main-container .footer .container .right-section .near{
+        font-size: 0.5rem;    
+    }
+    .main-container .footer .container .left-section .info h3{
+        font-size: 0.6rem;
+    }
+    .main-container .footer .container .left-section .info p{
+        font-size: 0.5rem;
+    }
+     .main-container .footer .container .left-section .languages h3{
+        font-size: 0.5rem;
+    }
+    .main-container .footer .container .left-section .languages p{
+        font-size: 0.5rem;
+    }
+    .main-container .footer .container .right-section h3{
+        font-size: 0.6rem;
+    }
+    .main-container .footer .container{
+        gap: 0.5rem;
+    }
+    
+    .main-container .design .text-container p{
+        margin: 0;
+        line-height: 100%;
+        width: 100%;
+    }
+    .main-container .collections .container .filter .right-filter{
+        margin: 0;
+        gap: 1rem;
+        line-height: 100%;
+    }
+    .main-container .new-this-week .container{
+        display: flex;
+        flex-direction: column;
+    }
+    .main-container .collections .container .bottom{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media(max-width:320px){
+
+    .main-container .gender .container a{
+        font-size: 1rem;
+    }
+    .main-container{
+        gap: 1rem;
+    }
+    .main-container .new-colection .container .left-part .top h1{
+        font-size: 2.5rem;
+    }
+    .main-container .new-colection .container .right-part{
+        display: flex;
+        justify-content: flex-start;
+        gap: 1rem;
+        
+    }
+    .main-container .new-this-week h1{
+        font-size: 2.5rem;
+    }
+    .main-container .new-this-week .see-all{
+        display: none;
+    }
+    .main-container .new-this-week .amount{
+        left: 6.5rem;
+        bottom:4rem;
+    }
+    .main-container .new-this-week .container .product-container:last-child{
+        display: none;
+    }
+    .main-container .collections h1{
+        font-size: 2.5rem;
+    }
+    .main-container .collections .container .filter{
+        display: flex;
+        flex-direction: column;
+    }
+    .main-container .collections .container .filter .right-filter{
+        gap: 0;
+    }
+    .main-container .design .container{
+        gap:4rem;
+    }
+    .main-container .design .container .text-container h1{
+        font-size: 2.5rem;
+    }
+    .main-container .design .container .text-container p{
+        font-size: 1rem;
+    }
+    .main-container .footer .container{
+        gap: 1rem;
+    }
+
+    .main-container .new-this-week .container{
+        display: flex;
+        flex-direction: column;
+    }
+    .main-container .collections .container .bottom{
+        display: flex;
+        flex-direction: column;
+    }
+    
+}
+
+
 
 
 
