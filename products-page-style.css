@@ -1,23 +1,28 @@
 *{
     padding: 0px;
     margin: 0px;
+    box-sizing: border-box;
 }
 
 
 body{
     background: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)),
     url("images/noisy-background.jpg");
-    background-size: cover;}
+    background-size: cover;
+    box-sizing: border-box;
+}
 
 .head{
     margin-top: 30px;
     padding: 20px; 
+    width: 100%;
 }
 
 .head .container{
     display: flex;
     justify-content:space-between;
-    align-items: center;
+    align-self: flex-start;
+    
        
 }
 
@@ -25,6 +30,11 @@ body{
     width: 26px;
     height: 16px;
     
+}
+
+.left-section{
+    display: flex;
+    align-items: center;
 }
 
 .left-section a{
@@ -40,12 +50,12 @@ body{
 
 .middle-section{
     display: flex;
-    justify-content: center;   
+    justify-content: center;
 }
 
 .middle-section .amblem{
-    width: 40px;
-    height: 40px;
+    width: 2.5rem;
+    height: 2.5rem;
     transform: rotate(45deg);
     background: linear-gradient(
         45deg,
@@ -131,14 +141,18 @@ body{
     opacity: 1;
 }   
 
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6rem;
+}
+
 .product .container{
     display: flex;
     justify-content: center;
     align-items: center;
- 
-    margin-top: 90px;
-
-    gap: 100px;
+    flex-wrap: wrap;
     
 }
 
@@ -153,30 +167,33 @@ body{
 .product .container .left-part{
    
     display: flex;
-    justify-content: space-around;
-    gap: 30px;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+    flex: 2 1 0;
+    min-width: 0;
+    
 }
 
 .product .container .left-part >img{
-    width: 367px;
-    height: 438px;
+    width: 50%;
+    height: 100%;
     border: 1px solid rgba(217, 217, 217, 1);
+    object-fit: cover;
 
 }
 
 .product .container .left-part .small-images{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
+    gap: 1rem;
+
 }
 
 .product .container .left-part .small-images img{
-    width: 64px;
-    height: 78px;
+    width: 3rem;
+    height: auto;
     opacity: 0.44;
-    border-width: 1px;
-    display: block;
     border: 1px solid rgba(217, 217, 217, 1);
 }
 
@@ -190,15 +207,14 @@ body{
     display: flex;
     flex-direction: column;
     align-items:flex-start;
+    align-self: center;
     
     gap: 25px;
-
-    padding-top: 60px;
-    padding-left: 40px;
-    padding-right: 40px;
-    padding-bottom: 10px;
+    padding: 3rem;
 
     position: relative;
+    flex: 1 1 0;
+    min-width: 0;
     
 }
 
@@ -264,7 +280,7 @@ body{
 }
 
 .product .container .right-part .description{
-    width:245px;
+   
     letter-spacing: 2px;
     margin-bottom: 40px;
     margin-top: 10px;   
@@ -290,21 +306,10 @@ body{
 
 }
 
-.product .container .right-part .colors input{
-    visibility: hidden;
-    width: 35.24px;
-    height: 36.17px;
-
-}
-.product .container .right-part .colors label{
-    width: 35.24px;
-    height: 36.17px;
-}
 
 .product .container .right-part .colors span{
     display: block;
-    width: 100%;
-    height: 100%;
+    min-width: 0;
     border: 2px solid transparent;
 }
 
@@ -363,6 +368,8 @@ body{
 
 .product .container .right-part .size label{
     position: relative;
+    flex: 1 1 0;
+    min-width: 0;
 }
 
 .product .container .right-part span{
@@ -389,7 +396,7 @@ body{
 
 .product .container .right-part button{
     background-color: rgba(217, 217, 217, 1);
-    width: 100%;
+    width: 85%;
     height: 40px;
     border: none;
 
@@ -406,15 +413,6 @@ body{
 }
 
 @media(min-width:2560px){
-    
-    body , html{
-        width: 100%;
-        height: 100%;
-    }
-    *{
-        margin: 0;
-        padding: 0;
-    }
 
     .main-container{
         display: flex;
@@ -458,45 +456,51 @@ body{
         opacity: 1;
     }
 
-    
-
     .main-container .product .container{
         display: flex;
-        justify-content: center;
-        gap: 50rem;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 30rem;
+    }
 
-    }
     .main-container .product .container .left-part{
-        transform: scale(1.6);
+       align-items: center;
+    
     }
-    .main-container .product .container .right-part{
-        transform: scale(1.6);
+
+    .main-container .product .container .left-part > img{
+        width: 100%;
+        height: auto;
+    }
+
+    .main-container .product .container .left-part .small-images img{
+        width: 41%;
+        height: auto;
+    }
+
+     .main-container .product .container .right-part{
+        width: auto;
+     }
+
+    .main-container .product .container .right-part h3{
+        font-size: 1.5rem;
+    }
+
+    .main-container .product .container .right-part p{
+        font-size: 1.5rem;
+    }
+
+    .main-container .product .container .right-part .colors label{
+        width: 4rem;
+        height: 4rem;
+    } 
+    
 }
-}
+
 
 @media (max-width: 769px) {
-
-    *{
-        margin: 0;
-        padding: 0;
-    }
-
-    .head{
-        margin-top: -10px;
-    }
-
-    .main-container{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 3px;
-    }
-
-    .head {
-        align-self: flex-end;
-    }
-
-    .head .container .left-section{
+   
+    .head .container .left-section a{
         display: none;
     }
 
@@ -517,15 +521,21 @@ body{
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-start;
+        gap: 0.1rem;
         
     }
+    .main-container .head{
+        width: 100%;
+    }
 
+   
     .product .container{
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
+        gap: 1rem;
         
     }
 
@@ -533,22 +543,21 @@ body{
         display: flex;
         flex-direction: column;
         margin:0px;
-        width: 100%;
-        margin-top: -90px;
+        align-items: center;
+        
     }
     .product .container .left-part img{
-        width: auto;
+        width: 100%;
+        height: auto;
         border: none;
-        background: transparent;
+        z-index: -1;
+    
     }
     .product .container .left-part .small-images{
         flex-direction: row;
     }
     .product .container .right-part{
-
         padding: 20px;
-        margin-top: -50px;
-        overflow: hidden;
         gap: 20px;
     }
     .product .container .right-part button{
@@ -563,5 +572,77 @@ body{
     
     }
     
+}
+
+@media (max-width: 320px){
+    .main-container{
+        display: flex;
+        flex-direction: column;
+        align-items: stretch; 
+    }
+    .product .container .left-part,
+    .product .container .right-part {
+        flex: 1 1 100%;
+        width: 100%;
+    }      
+    .product .container .small-images{
+        display: flex;
+        flex-direction: row; 
+        justify-content: space-between; 
+        gap: 4px; 
+        width: 100%;     
+    }
+    .product .container .small-images img{
+        flex: 1 1 0;    
+        min-width: 0;     
+        max-width: 100%;  
+        aspect-ratio: 1 / 1; 
+        height: auto;
+        object-fit: cover;
+    }
+    .product .container .right-part .description{
+        width: 100%;
+        max-width: 100%;
+    }
+    .product .container .right-part{
+        padding: 1rem;
+    }
+    .head{
+        box-sizing: border-box;
+        flex: 1 1 100%;
+        width: 100%;
+        margin: 0;
+    }
+    .head .container .right-section button{
+        border-width: 0.1rem;
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .head .container .right-section button img{
+        width: 1rem;
+        height: 1rem;
+    }
+    .product .container .right-part .colors {
+        flex-wrap: wrap;
+        gap: 8px;
+        justify-content: flex-start;
+    }
+    .product .container .right-part .size {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+    }
+    .product .container .right-part .size span {
+        height: 40px;
+        line-height: 40px;
+        font-size: 12px;
+  }
+
+}
+@media (max-width: 130px){
+    .head .container .right-section{
+        display: none;
+    }
 }
 
