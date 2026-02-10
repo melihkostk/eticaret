@@ -715,10 +715,11 @@ body{
 
 .design .image-container{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    gap: 30px;
-    height: 100%;
+    gap: 1rem;
+   
+    
     
 }
 
@@ -757,10 +758,26 @@ body{
     padding: 0;
 
 }
-
-.design .container .image-container .style2,.style4{
-    margin-top: 130px;
+.design .container .image-container .style1{
+    flex: 1;
 }
+.design .container .image-container .style2{
+    flex: 1;
+    margin: 0;
+}
+.design .container .image-container .style3{
+    flex:1;
+}
+.design .container .image-container .style4{
+    flex: 1;
+    margin: 0;
+    object-fit: cover;
+    align-self: stretch;
+
+    
+}
+
+
 
 .footer{
     background-color: rgba(228, 224, 224, 0.66);
