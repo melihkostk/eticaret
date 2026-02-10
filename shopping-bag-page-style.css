@@ -26,7 +26,8 @@ body{
     margin-left: 20px;
     align-items: center;
     margin-top: 30px;
-    padding: 20px;   
+    padding: 20px;
+       
 }
 
 .head .container .menu-icon{
@@ -403,10 +404,13 @@ body{
         align-items: flex-start; 
     }
 
+    .head{
+        width: 100%;
+    }
+
     .head .container{
         display: flex;
-        justify-content: center;
-        gap: 110rem;
+        justify-content: space-between;
         flex-wrap: nowrap;
        
     }
@@ -475,13 +479,14 @@ body{
     .main-container{
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
     }
 
     .head .container {
     display: flex;
     justify-content: space-between;
     gap: 1rem;
+    margin: 0;
     
   }
   .head {
@@ -545,8 +550,8 @@ body{
 
     .container .left-part{
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 1rem;
+        grid-template-columns: 1fr auto;
+        gap: 0.5rem;
         border: none;
   }
     .container .left-part .transaction{
@@ -560,7 +565,7 @@ body{
     .container .left-part .product-container .product-d{
         display: flex;
         justify-content: space-between;
-        width: max-content;
+       
     }
 
     .bag .container{
@@ -574,13 +579,11 @@ body{
         display: none;
     }
 
-    .container .right-part{
-        align-self: flex-start;
-    }
-
     @media(max-width:768px){
-        .container .right-part{
-            align-self: center;
+        .main-container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
     }
 
@@ -599,7 +602,7 @@ body{
         .main-container{
             display: flex;
             flex-direction: column;
-            align-items: flex-end;
+            align-items: center;
         }
         .container .right-part{
             align-self: center;
