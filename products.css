@@ -12,8 +12,11 @@ body{
     background: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)),
     url("images/noisy-background.jpg");
     background-size: cover;
-    min-height: 100vh;
-    min-width: 100vw;
+   
+}
+
+.head {
+    width: 100%;
 }
 
 .head .container{
@@ -21,7 +24,7 @@ body{
     justify-content:space-between;
     margin-left: 20px;
     align-items: center;
-    width: 100%;
+    
 
     margin-top: 30px;
     padding: 20px;   
@@ -131,7 +134,7 @@ body{
     display: flex;
     justify-content: flex-start;
     gap: 1rem;
-    width: 100%;
+    
 }
 
 .products .menu-container {
@@ -322,7 +325,7 @@ body{
     grid-template-columns: 1fr 2fr;
     justify-content: flex-start;
     align-items: flex-end;
-    column-gap: 30px;
+    gap: 0.3rem;
     
     
 }
@@ -476,6 +479,7 @@ body{
     position: absolute;
     bottom: 42.5px;
     left: 445px;
+    display: none;
 }
 
 .products .container .product-container .bcolor-box{
@@ -486,6 +490,7 @@ body{
     position: absolute;
     bottom: 42.5px;
     left: 770px;
+    display: none;
 }
 
 .products .container .product-container .cost{
@@ -650,6 +655,9 @@ body{
         display: grid;
         grid-template-columns: auto auto auto auto;   
     }
+    .products .container .bottom .product-container .bcolor-box{
+        display: none;
+    }
 }
 
 @media(max-width:716px){
@@ -668,7 +676,7 @@ body{
     .main-container{
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
     }
     .main-container .head{
         width: 100%;
@@ -732,6 +740,7 @@ body{
         gap: 2.5rem;
         margin: 0;
         display: none;
+        
           
     }
 
@@ -802,12 +811,12 @@ body{
     }
 
     .main-container .container .top .left-part input{
-        width: 100%;
+        width: 95%;
         margin: 0;
     }
 
     .main-container .container .top .left-part input::placeholder{
-        font-size: 1.5rem;
+        font-size: 1rem;
         padding-right: 1rem;
     }
 
@@ -820,7 +829,7 @@ body{
     }
 
     .main-container .container .top .right-part button{
-        font-size: 1.5rem;
+        font-size: 1rem;
         width: 100%;
         height: 100%;
         padding: 1rem;
@@ -831,27 +840,37 @@ body{
     .main-container .container .bottom{
         margin: 0;
         grid-template-columns: auto ;
-        row-gap: 0.1rem;
+        row-gap: 2rem;
+    }
+
+    .main-container .products{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     
     .main-container .container .bottom .product-container img{
         width: 100%;
-        height: 70%;
+        height: auto;
         object-fit:fill;
     }
 
     .main-container .container .bottom .product-container .product-t{   
-        font-size: 2rem;
+        font-size: 1rem;
     }
 
     .main-container .container .bottom .product-container .product-d{
         gap:3rem;
-        font-size: 2rem;
+        font-size: 1rem;
     }
 
     .main-container .container .bottom .product-container .product-d span{
-        font-size: 2rem;
+        font-size: 1rem;
+    }
+
+    .main-container .container .bottom .product-container .bcolor-box{
+        display: none;
     }
 }
 
@@ -859,10 +878,29 @@ body{
     .products .container .top .right-part{
         display: grid;
         grid-template-columns: auto auto;
+        align-self: center;
     }
 }
 
-@media(max-width:426px){
+@media(max-width:428px){
+    .main-container .head .container{
+        display: flex;
+        justify-content: space-between;
+    }
+    
+
+    .main-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .main-container .container .top .left-part p{
+        align-self: center;
+    }
+    .main-container .container .top .left-part h1{
+        align-self: center;
+    }
     .products .container .top .right-part{
         display: grid;
         grid-template-columns: auto auto ;
@@ -875,6 +913,9 @@ body{
      }
     .products .container .bottom{
         gap: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
     .products .container .bottom .product-container img{
         width: 100%;
@@ -882,17 +923,16 @@ body{
     .products .container .bottom .product-container .product-d{
         display: flex;
         flex-direction: column;
-        gap: 1rem;
-        font-size: 1.5rem;
+        gap: 0.5rem;
+        font-size: 1rem;
+    }
+    .products .container .bottom .product-container .product-d span{
+        font-size: 1rem;
     }
     .products .container .bottom .product-container .product-t{
-        font-size: 1.5rem;
+        font-size: 1rem;
     }
-    .main-container{
-        display: flex;
-        flex-direction: column;
-        align-items: center; 
-    }
+    
     .main-container .container .left-part p{
         align-self: flex-start;
     }
@@ -904,7 +944,10 @@ body{
 @media(max-width:320px){
     .products .container .top .right-part{
         display: grid;
-        grid-template-columns: auto;
+        grid-template-columns: auto auto;
+    }
+    .products .container .top .right-part button{
+        font-size: 1rem;
     }
 
     .products .container .top .left-part p{
