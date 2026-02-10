@@ -1318,6 +1318,9 @@ footer .container .left-section .language-title{
   .main-container .new-this-week .container .product-container .add-button{
     display: none;
   }
+  .main-container .new-this-week .container .product-container .product-description{
+    gap:0.1rem;
+  }
   
   .new-this-week .container .product-container > img{
         width: 100%;
