@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="shopping-bag-page-style.css">
     <link href="https://fonts.cdnfonts.com/css/beatrice-display-trial" rel="stylesheet">
 </head>
-<body>
+<body class="sbp">
     <div class="main-container">
         <header class ="head">
             <div class = "container">
@@ -59,9 +59,9 @@
                         <div class="color-box"></div>
                         
                         <div class="buttons">    
-                            <div class="increase">+</div>
+                            <button class="increase">+</button>
                             <div class="amount">1</div>
-                            <div class="decrease">-</div>
+                            <button class="decrease">-</button>
                         </div>
                             <img class="refresh-icon" src="icons/refresh.png">
                     </div>
@@ -79,9 +79,9 @@
                         <div class="color-box"></div>
                         
                         <div class="buttons">
-                            <div class="increase">+</div>
+                            <button class="increase">+</button>
                             <div class="amount">1</div>
-                            <div class="decrease">-</div>
+                            <button class="decrease">-</button>
                         </div>
                         <img class="refresh-icon" src="icons/refresh.png">
                     </div>
@@ -89,18 +89,19 @@
 
                 <div class="right-part">
                     <h3>ORDER SUMMARY</h3>
-                    <p>Subtotal<span class="sub-total">$180</span></p>
-                    <p>Shipping<span class="shipping">$10</span></p>
+                    <p class="subt">Subtotal<span class="sub-total">$180</span></p>
+                    <p class="shp">Shipping<span class="shipping">$10</span></p>
                     <hr>
-                    <h3>TOTAL<span class="tax-inc">(TAX INCL.)</span><span class="total">$190</span></h3>
+                    <h3 class="ttl">TOTAL<span class="tax-inc">(TAX INCL.)</span><span class="total">$190</span></h3>
                     
                     <input type="checkbox" id="accept">
                     <label for ="accept">I agree to the Terms and Conditions</label>
-                    <button>CONTINUE</button>
+                    <button class="continue-button">CONTINUE</button>
 
                 </div>
             </div>
         </section>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
