@@ -109,8 +109,22 @@ body{
     border: 7px solid rgba(0, 0, 0, 1);
     border-radius: 100%;
     cursor: pointer;
+    position: relative;
+}
 
-    
+.right-section .shop-button .total-amount{
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: red;
+    position: absolute;
+    border-radius: 100%;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    text-align: center;
+    font-family: "Beatrice Deck Trial";
+    color: white;
+    font-size: 1rem;
+    font-weight: 700;
 }
 
 .right-section .shop-button img{
@@ -154,9 +168,6 @@ body{
 
     color: rgb(0,0,0,1);
     text-decoration: none;
-
-
-    
 }
 .gender .container .search-box input{
     width: 367px;
@@ -195,7 +206,7 @@ body{
 
 .new-colection {
     margin-top: 70px;
-    margin-left: 40px;
+    margin-left: 2rem;
 }
 
 .new-colection .container{
@@ -354,7 +365,7 @@ body{
 }*/
 
 .new-this-week{
-    margin-left: 50px;
+    margin-left: 2rem;
     margin-top: 100px;
     position: relative;
 }
@@ -379,7 +390,7 @@ body{
 .new-this-week .container{
     display: flex;
     justify-content:flex-start;
-    gap: 30px;
+    gap: 2rem;
     align-items: center;
 }
 
@@ -505,7 +516,7 @@ body{
 
 .collections{
     margin-top: 60px;
-    margin-left: 10px;  
+    margin-left: 2rem;  
 }
 
 .collections .container{
@@ -527,7 +538,7 @@ body{
     font-size: 48px;
     color: rgba(0, 0, 0, 1);
     letter-spacing: 2px;
-    margin-left: 50px;
+    /*margin-left: 50px;*/
 
     width: max-content;
 }
@@ -572,7 +583,6 @@ body{
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    margin-left: 50px;
     gap: 2rem;
 }
 
