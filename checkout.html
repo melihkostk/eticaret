@@ -25,23 +25,24 @@
         <section class="products">
             <div class="container">
                 <div class="left-part">
-                    <form>
+                    <form name = "myForm">
                         <h3>CONTACT INFO</h3>
-                        <input type="email" placeholder="Email">
-                        <input type="tel" placeholder="Phone">
+                        <input type="email" placeholder="Email" id="email" required>
+                        <input type="tel" placeholder="Phone" id =tel>
                         <h3 class="sa-title">SHIPPING ADDRESS</h3>
                         <div class="name">
-                            <input type="text" placeholder="First Name">
-                            <input type="text" placeholder="Last Name">
+                            <input type="text" placeholder="First Name" id="fName">
+                            <input type="text" placeholder="Last Name" id="lName">
                         </div>
-                        <input type="text" placeholder="Country">
-                        <input type="text" placeholder="State/Religion">
-                        <input type="text" placeholder="Address">
+                        <input type="text" placeholder="Country" id="country">
+                        <input type="text" placeholder="State/Religion" id="state">
+                        <input type="text" placeholder="Address" id="address">
                         <div class="city-p">
-                            <input type="text" placeholder="City">
-                            <input type="text" placeholder="Postal Code">
+                            <input type="text" placeholder="City" id="city">
+                            <input type="text" placeholder="Postal Code" id="postal">
                         </div>
-                    </form> 
+                    </form>
+                     
                     <button>
                         Shipping
                         <img src="icons/right-arrow.png">
@@ -57,8 +58,9 @@
                                 <p class="product-t">Basic Heavy T-Shirt</p>
                                 <p class="product-s">Black/L</p>
                             </div>
-                            <div>
-                                <p class="amount">(1)<span class="cost">$99</span></p>
+                            <div class="amount-co">
+                                <p class="amount">(1)</p>
+                                <p class="cost">$99</p>
                             </div>
                         </div>  
                     </div>
@@ -71,8 +73,9 @@
                                 <p class="product-t">Basic Fit T-Shirt</p>
                                 <p class="product-s">Black/L</p>
                             </div>
-                            <div>
-                                <p class="amount">(1)<span class="cost">$99</span></p>
+                            <div class="amount-co">
+                                <p class="amount">(1)</p>
+                                <p class="cost">$99</p>
                             </div>
                         </div>  
                     </div>
@@ -83,7 +86,7 @@
 
                     <p class="sub-t">Subtotal<span class="t-cost">$180.00</span></p>
                     <p class="shipping">Shipping<span>Calculate at next step</span></p>
-                    <p class="total">Total<span>$180</span></p>
+                    <p class="total">Total<span class="total-c">$180</span></p>
                 </div>
             </div>  
         </section>
