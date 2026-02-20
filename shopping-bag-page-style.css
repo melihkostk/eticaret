@@ -25,8 +25,8 @@ body{
     justify-content:space-between;
     margin-left: 20px;
     align-items: center;
-    margin-top: 30px;
     padding: 20px;
+   
        
 }
 
@@ -97,6 +97,20 @@ body{
     
     border: 7px solid rgba(0, 0, 0, 1);
     border-radius: 100%; 
+    position: relative;
+}
+.right-section .shop-button .total-amount{
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: red;
+    position: absolute;
+    border-radius: 100%;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    text-align: center;
+    font-family: "Beatrice Deck Trial";
+    color: white;
+    font-size: 1rem;
 }
 
 .right-section .shop-button img{
@@ -216,18 +230,28 @@ body{
     color: rgba(0, 0, 0, 1);
     margin-top: 7px;
     width: 100%;
+    display: inline;
+    justify-content: space-between;
+    gap: 5rem;
+}
+
+.container .left-part .product-container .p-info{
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
-.container .left-part .product-container .product-d .fsz-cost{
+.container .left-part .product-container .cost{
+     font-family: Beatrice Deck Trial;
+    font-weight: 500;
+    font-style: medium;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 0px;
+    color: rgba(0, 0, 0, 1);
     margin-left: auto;
+    display: inline;
 }
-
-.container .left-part .product-container .product-d .bsf-cost{
-    margin-left: auto;
-}
-
 
 .container .left-part .transaction{
     display: flex;
