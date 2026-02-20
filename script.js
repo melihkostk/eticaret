@@ -1,6 +1,8 @@
- //HOME PAGE SCRIPTLERI
+//HOME PAGE SCRIPTLERI
 if(document.body.className === "hp"){
-
+    const totalProduct = document.querySelector(".total-amount")
+    totalProduct.textContent = localStorage.getItem("Total Amount")
+   
     const addButton = document.querySelectorAll(".add-button");
 
     addButton.forEach(button=>{
@@ -24,8 +26,6 @@ if(document.body.className === "hp"){
             localStorage.setItem("Description" , product.description);
             localStorage.setItem("Price" , product.price);
             localStorage.setItem("Image" , product.photo);
-
-            console.log(product)
 
             setTimeout(window.location.replace("products-page.html") , 3000);
         })
@@ -63,6 +63,10 @@ if(document.body.className === "p"){
 
 //PRODUCT PAGE SCRIPTLERI 
 if(document.body.className === "pp"){
+
+    const totalProduct = document.querySelector(".total-amount")
+    totalProduct.textContent = localStorage.getItem("Total Amount")
+
     const smallImages = document.querySelectorAll(".small-images");
     const mainImage = document.querySelector(".photo");
     const colors = document.querySelector(".colors");
@@ -72,8 +76,10 @@ if(document.body.className === "pp"){
     const addBasket = document.querySelector(".add-button");
     const productTitle = document.querySelector(".product-title")
     const cost = document.querySelector(".cost")
+    const firstSmallImage = document.querySelector('.small-images img');
     
     mainImage.src = localStorage.getItem("Image")
+    firstSmallImage.src = localStorage.getItem("Image")
     productTitle.textContent = localStorage.getItem("Type")
     cost.textContent = localStorage.getItem("Price")
  
@@ -98,19 +104,28 @@ if(document.body.className === "pp"){
     })
 
     addBasket.addEventListener("click", function(){
-        window.location.replace("shopping-bag-page.html");
-    }
-)}
+        setTimeout(window.location.replace("shopping-bag-page.html"),3000);
+    })
+
+    const favIcon = document.querySelector(".black-fav-icon")
+    favIcon.addEventListener("click" , () => {
+        const favorite = {
+        }
+    })
+}
 
 //SHOPPING-BAG-PAGE SCRIPTLERI 
 if(document.body.className ==="sbp"){
+
+    const totalProduct = document.querySelector(".total-amount")
+    totalProduct.textContent = localStorage.getItem("Total Amount")
+
     const increaseButton = document.querySelectorAll('.increase');
     const decreaseButton = document.querySelectorAll('.decrease');
     const amount = document.querySelectorAll('.amount');
     const refreshButton = document.querySelectorAll('.refresh-icon');
-    const cost = document.querySelector(".sub-total");
-    const fszCost = document.querySelector(".fsz-cost");
-    const bsfCost = document.querySelector(".bsf-cost");
+    const subCost = document.querySelector(".sub-total"); 
+    const productCost = document.querySelectorAll(".cost")
     const totalCost = document.querySelector(".total");
     const shipping = document.querySelector(".shipping");
     const product = document.querySelectorAll("product-container");
@@ -121,11 +136,25 @@ if(document.body.className ==="sbp"){
     const size = document.querySelectorAll(".size")
     let productTitle = document.querySelectorAll(".product-t")
     let productDescription = document.querySelectorAll(".product-d")
-    
+
+    let amount1 = Number(localStorage.getItem("Amount1")) 
+    let amount2 = Number(localStorage.getItem("Amount2")) 
+    let price = localStorage.getItem("Price")
+    let productTotal = (amount1*price.replace("$", "")) + (amount2*price.replace("$",""))
+    subCost.textContent = "$" + productTotal;
+
+    totalCost.textContent = "$" + (parseInt(productTotal) + parseInt(shipping.textContent.replace("$","")));
+
+
+    amount.forEach((div , index) => {
+        div.textContent = localStorage.getItem("Amount" + (index+1))
+    })
+
     increaseButton.forEach((button, index) => {
         button.addEventListener("click", () => {
             Number(amount[index].textContent);
             amount[index].textContent = Number(amount[index].textContent) + 1;
+            localStorage.setItem("Amount" + (index+1) ,amount[index].textContent);
         });
     });
 
@@ -134,6 +163,7 @@ if(document.body.className ==="sbp"){
             if(amount[index].textContent > 1){
                 Number(amount[index].textContent);
                 amount[index].textContent = Number(amount[index].textContent) - 1;
+                localStorage.setItem("Amount" + (index+1) ,amount[index].textContent);
             }
         });
     });
@@ -141,9 +171,11 @@ if(document.body.className ==="sbp"){
     refreshButton.forEach((img , index) => {
         img.addEventListener("click" , () => {
             amount[index].textContent = 1;
+            localStorage.setItem("Amount" + (index+1) ,"1");
         })
     })
-
+  
+  
     mainImage.forEach((img , index) =>{
         img.src = localStorage.getItem("Image");
     })
@@ -177,15 +209,12 @@ if(document.body.className ==="sbp"){
         item.textContent = localStorage.getItem("Size");
     })
 
-    fszCost.textContent = localStorage.getItem("Price");
-    bsfCost.textContent = localStorage.getItem("Price")
-
     productTitle.forEach(item => {
         item.textContent = localStorage.getItem("Type")
     })
 
     productDescription.forEach(item => {
-        item.textContent = localStorage.getItem("Description")
+        item.textContent = localStorage.getItem("Description").replace("$99" , "");
     })
 
     continueButton.addEventListener("click" , () => {
@@ -200,7 +229,6 @@ if(document.body.className ==="sbp"){
 
 //CHECKOUT PAGE SCRIPTLERI
 if(document.body.className === "cp"){
-    
     const productImage = document.querySelectorAll(".product-img");
     productImage.forEach(item => {
         item.src = localStorage.getItem("Image");
@@ -218,13 +246,155 @@ if(document.body.className === "cp"){
 
     const productDescription = document.querySelectorAll(".product-s")
     productDescription.forEach(item => {
-        item.textContent = localStorage.getItem("Description")
+        let description = localStorage.getItem("Description")
+        description = description.replace("$99" , "")
+        item.textContent = description
     })
 
-    const cost = document.querySelectorAll(".cost")
-    cost.forEach(item => {
-        item.textContent = localStorage.getItem("Price")
+    const productAmount = document.querySelectorAll(".amount")
+    productAmount.forEach((item , index) => {
+        item.textContent = "(" + localStorage.getItem("Amount"+(index+1)) + ")"
     })
+
+    const totalAmountDiv = document.querySelector(".t-amount");
+    const totalAmount = totalAmountDiv.querySelector("p")
+    totalAmount.textContent = Number(Number(localStorage.getItem("Amount1")) + Number(localStorage.getItem("Amount2"))) 
+    localStorage.setItem("Total Amount", totalAmount.textContent)
+
+    const shippingButtonInput = document.querySelector("button")
+    const form = document.querySelector("form")
+
+    function validateForm(e) {
+
+        function setError(inputType) {
+            inputType.classList.add("error")
+            inputType.classList.remove("success")
+        }
+
+        function setSuccess(inputType) {
+            inputType.classList.add("success")
+            inputType.classList.remove("error");   
+        }
+
+        const emailInput = document.getElementById("email")
+        const phoneInput = document.getElementById("tel")
+        const firstNameInput = document.getElementById("fName")
+        const lastNameInput = document.getElementById("lName")
+        const countryInput = document.getElementById("country")
+        const stateInput = document.getElementById("state")
+        const addressInput = document.getElementById("address")
+        const cityInput = document.getElementById("city")
+        const postalCodeInput = document.getElementById("postal")
+        const form = document.querySelector("form")
+
+        let email = emailInput.value.trim();
+        let phone = phoneInput.value.trim();
+        let fName = firstNameInput.value.trim();
+        let lName = lastNameInput.value.trim();
+        let country = countryInput.value.trim();
+        let state = stateInput.value.trim();
+        let address = addressInput.value.trim();
+        let city = cityInput.value.trim();
+        let postal = postalCodeInput.value.trim();
+
+
+        if (email === "" ) {
+            setError(emailInput);
+            emailInput.placeholder = "Place enter a valid email address"
+
+        }
+
+        else{
+            setSuccess(emailInput)
+        }
+
+        if (phone === "") {
+            setError(phoneInput)
+            phoneInput.placeholder = "Please enter a valid phone number"
+        }
+
+        else{
+            setSuccess(phoneInput)
+        }
+
+        if (fName === "") {
+            setError(firstNameInput)
+            firstNameInput.placeholder = "Please enter a valid name"
+        }
+        else{
+            setSuccess(firstNameInput)
+        }
+         
+        if (lName === "") {
+            setError(lastNameInput)
+            lastNameInput.placeholder = "Please enter a valid surname"
+        }
+        else{
+            setSuccess(lastNameInput)
+        }
+        if (country === ""){
+            setError(countryInput)
+            country.placeholder = "Please enter a valid country"
+        }
+        else{
+            setSuccess(countryInput)
+        }
+        if(state === "" ){
+            setError(stateInput)
+            stateInput.placeholder = "Please enter a valid state"
+        }
+        else{
+            setSuccess(stateInput)
+        }
+        if(address === ""){
+            setError(addressInput)
+            addressInput.placeholder = "Please enter a valid address"
+        }
+        else{
+            setSuccess(addressInput)
+        }
+
+        if (city === "") {
+            setError(cityInput)
+            cityInput.placeholder = "Please enter a city"
+        }
+        else{
+            setSuccess(cityInput)
+        }
+
+        if (postal === "") {
+            setError(postalCodeInput)
+            postalCodeInput.placeholder = "Please enter a valid postal code"
+            return false
+        }
+
+        else{
+            setSuccess(postalCodeInput)
+        }
+
+        return true;
+    };
+
+    shippingButtonInput.addEventListener("click" , () => {
+        validateForm();
+        if(validateForm()){
+            form.submit()
+            alert("Form sended")
+            setTimeout(window.location.replace("index.html"),3000)
+        }
+    })
+
+    let amount1 = Number(localStorage.getItem("Amount1")) 
+    let amount2 = Number(localStorage.getItem("Amount2")) 
+    let price = localStorage.getItem("Price")
+    
+    let total = (amount1 * price.replace("$" , "")) + (amount2 * price.replace("$" , ""))
+
+    const totalPrice = document.querySelector(".t-cost");
+    totalPrice.textContent = "$" + total;
+
+    const totalCost = document.querySelector(".total-c")
+    totalCost.textContent = "$" + total;
 }
 
 
