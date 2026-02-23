@@ -1,36 +1,76 @@
 //HOME PAGE SCRIPTLERI
 if(document.body.className === "hp"){
-    const totalProduct = document.querySelector(".total-amount")
-    totalProduct.textContent = localStorage.getItem("Total Amount")
-   
+
+    const searchInput = document.querySelector("input")
+    const products = document.querySelectorAll(".product-container");
+
+    searchInput.addEventListener("input", function () {
+
+    const searchValue = this.value.toLowerCase();
+
+    products.forEach(product => {
+
+        const title = product
+            .querySelector(".product-description")
+            .textContent
+            .toLowerCase();
+
+        if (title.includes(searchValue)) {
+            product.style.display = "block";
+        } 
+        
+        else {
+            product.style.display = "none";
+        }
+
+    });
+
+});
+
+    let totalProduct = document.querySelector(".total-amount");
+    let cart = JSON.parse(localStorage.getItem("Cart")) || [];
+
+    let total = 0;
+
+    cart.forEach(item => {
+        total += Number(item.quantity); 
+    });
+
+    totalProduct.textContent = total;
+    
     const addButton = document.querySelectorAll(".add-button");
 
     addButton.forEach(button=>{
         button.addEventListener("click" , function(){
 
-            const card = this.closest(".product-container");
+            const productCard = this.closest(".product-container");
 
-            const productTitle = card.querySelector(".product-type").textContent;
-            const productDescription = card.querySelector(".product-description").textContent;
-            const productPrice = card.querySelector(".cost").textContent;
-            const productImage = card.querySelector(".product-img").src;
-            
             const product = {
-                title:productTitle,
-                description:productDescription,
-                price:productPrice,
-                photo:productImage
+                title: productCard.querySelector(".product-type").textContent,
+                description: productCard.querySelector(".product-description").textContent,
+                price: productCard.querySelector(".cost").textContent,
+                photo: productCard.querySelector(".product-img").src,
+                size:null,
+                color:null,
+                quantity:1
             }
 
-            localStorage.setItem("Type" , product.title);
-            localStorage.setItem("Description" , product.description);
-            localStorage.setItem("Price" , product.price);
-            localStorage.setItem("Image" , product.photo);
+        
+            let cart = JSON.parse(localStorage.getItem("Cart")) || [];
 
-            setTimeout(window.location.replace("products-page.html") , 3000);
+            cart.push(product);
+
+            localStorage.setItem("Cart", JSON.stringify(cart));
+
+            totalProduct.textContent = cart.length;
+           
+            setTimeout(() => {
+                window.location.replace("products-page.html");
+            }, 1000);
         })
     })
 }
+
 //PRODUCTS SCRIPTLERI
 if(document.body.className === "p"){
 
@@ -63,9 +103,16 @@ if(document.body.className === "p"){
 
 //PRODUCT PAGE SCRIPTLERI 
 if(document.body.className === "pp"){
-
     const totalProduct = document.querySelector(".total-amount")
-    totalProduct.textContent = localStorage.getItem("Total Amount")
+    let cart = JSON.parse(localStorage.getItem("Cart")) || [];
+    
+    let total = 0;
+
+    cart.forEach(item => {
+        total += Number(item.quantity); 
+    });
+
+    totalProduct.textContent = total;
 
     const smallImages = document.querySelectorAll(".small-images");
     const mainImage = document.querySelector(".photo");
@@ -77,35 +124,52 @@ if(document.body.className === "pp"){
     const productTitle = document.querySelector(".product-title")
     const cost = document.querySelector(".cost")
     const firstSmallImage = document.querySelector('.small-images img');
-    
-    mainImage.src = localStorage.getItem("Image")
-    firstSmallImage.src = localStorage.getItem("Image")
-    productTitle.textContent = localStorage.getItem("Type")
-    cost.textContent = localStorage.getItem("Price")
- 
+
+    if (cart.length > 0) {
+        const lastProduct = cart[cart.length - 1];
+        mainImage.src = lastProduct.photo;
+        firstSmallImage.src = lastProduct.photo;
+        productTitle.textContent = lastProduct.title;
+        cost.textContent = lastProduct.price
+    }
+
     smallImages.forEach(function(img){
     img.addEventListener("click" , function(e){
         mainImage.src = e.target.getAttribute("src");
         e.target.style.opacity = 1;
     })
 })
- 
+
+    let selectedSize = null;
+    let selectedColor = null;
+
     size.forEach(item => {
-        item.addEventListener("click" , function(e){
-            localStorage.setItem("Size" , e.target.textContent);
-        })
-    })
+        item.addEventListener("click", function(){
+            selectedSize = this.textContent;
+            cart[cart.length-1].size = selectedSize
+            localStorage.setItem("Cart",JSON.stringify(cart))
+    });
+    });
 
     color.forEach(item => {
-        item.addEventListener("click" , function(){
-            const colorValue = window.getComputedStyle(this).backgroundColor;
-            localStorage.setItem("Color" , colorValue);
-        })
-    })
+        item.addEventListener("click", function(e){
+            selectedColor = window.getComputedStyle(this).backgroundColor;
+            cart[cart.length-1].color = selectedColor
+            localStorage.setItem("Cart" , JSON.stringify(cart))
+        });
+    });
 
     addBasket.addEventListener("click", function(){
-        setTimeout(window.location.replace("shopping-bag-page.html"),3000);
-    })
+       
+        if(selectedColor && selectedSize){
+            window.location.replace("shopping-bag-page.html");
+        } 
+
+        else {
+            alert("Please select color and size");
+        }
+});
+ 
 
     const favIcon = document.querySelector(".black-fav-icon")
     favIcon.addEventListener("click" , () => {
@@ -114,72 +178,96 @@ if(document.body.className === "pp"){
     })
 }
 
+
 //SHOPPING-BAG-PAGE SCRIPTLERI 
 if(document.body.className ==="sbp"){
 
+    let cart = JSON.parse(localStorage.getItem("Cart")) || [];
+
     const totalProduct = document.querySelector(".total-amount")
-    totalProduct.textContent = localStorage.getItem("Total Amount")
+    
+    let total = 0;
 
-    const increaseButton = document.querySelectorAll('.increase');
-    const decreaseButton = document.querySelectorAll('.decrease');
-    const amount = document.querySelectorAll('.amount');
-    const refreshButton = document.querySelectorAll('.refresh-icon');
-    const subCost = document.querySelector(".sub-total"); 
-    const productCost = document.querySelectorAll(".cost")
-    const totalCost = document.querySelector(".total");
-    const shipping = document.querySelector(".shipping");
-    const product = document.querySelectorAll("product-container");
-    const continueButton = document.querySelector(".continue-button");
-    const acceptCheckBox = document.getElementById("accept");
-    const productColor = document.querySelectorAll(".color-box")
-    const mainImage = document.querySelectorAll(".product-img")
-    const size = document.querySelectorAll(".size")
-    let productTitle = document.querySelectorAll(".product-t")
-    let productDescription = document.querySelectorAll(".product-d")
-
-    let amount1 = Number(localStorage.getItem("Amount1")) 
-    let amount2 = Number(localStorage.getItem("Amount2")) 
-    let price = localStorage.getItem("Price")
-    let productTotal = (amount1*price.replace("$", "")) + (amount2*price.replace("$",""))
-    subCost.textContent = "$" + productTotal;
-
-    totalCost.textContent = "$" + (parseInt(productTotal) + parseInt(shipping.textContent.replace("$","")));
-
-
-    amount.forEach((div , index) => {
-        div.textContent = localStorage.getItem("Amount" + (index+1))
-    })
-
-    increaseButton.forEach((button, index) => {
-        button.addEventListener("click", () => {
-            Number(amount[index].textContent);
-            amount[index].textContent = Number(amount[index].textContent) + 1;
-            localStorage.setItem("Amount" + (index+1) ,amount[index].textContent);
-        });
+    cart.forEach(item => {
+        total += Number(item.quantity); 
     });
 
+    totalProduct.textContent = total;
+   
+    const continueButton = document.querySelector(".continue-button");
+    const acceptCheckBox = document.getElementById("accept");
+    const leftPart = document.querySelector(".left-part");
+
+    leftPart.innerHTML = "";
+
+    cart.forEach((item, index) => {
+        leftPart.innerHTML += `
+            <div class="product-container" data-index="${index}">
+                <img class="product-img" src="${item.photo}">
+                <p class="product-t">${item.title}</p>
+                <div class = "p-info">
+                    <p class="product-d">${item.description}</p>
+                    <p class="cost">${item.price}</p>
+                </div>
+            </div>
+            <div class="transaction">
+                <img class="close-icon" src="icons/close-icon.png">
+                <p class="size">L</p>
+                <div class="color-box"></div>
+                        
+                <div class="buttons">    
+                    <button class="increase">+</button>
+                    <div class="amount">1</div>
+                    <button class="decrease">-</button>
+                </div>
+                <img class="refresh-icon" src="icons/refresh.png">
+            </div>
+        `;
+    });
+   
+    const sizes = document.querySelectorAll(".size")
+    const colors = document.querySelectorAll(".color-box")
+
+    sizes.forEach((size, index) => {
+        size.innerHTML = cart[index].size;
+    });
+
+    colors.forEach((color , index) => {
+        color.style.backgroundColor = cart[index].color;
+    })
+
+
+    const amount = document.querySelectorAll('.amount');
+    const increaseButton = document.querySelectorAll(".increase")
+    increaseButton.forEach((button, index) => {
+    button.addEventListener("click", () => {
+        cart[index].quantity += 1;
+        amount[index].textContent = cart[index].quantity;
+        localStorage.setItem("Cart" , JSON.stringify(cart));
+
+    });
+});
+    
+    const decreaseButton = document.querySelectorAll('.decrease');
     decreaseButton.forEach((button, index) => {
-        button.addEventListener("click" , () => {
-            if(amount[index].textContent > 1){
-                Number(amount[index].textContent);
-                amount[index].textContent = Number(amount[index].textContent) - 1;
-                localStorage.setItem("Amount" + (index+1) ,amount[index].textContent);
+        button.addEventListener("click", () => {
+            if (cart[index].quantity > 1) {
+                cart[index].quantity -= 1;
+                amount[index].textContent = cart[index].quantity;
+                localStorage.setItem("Cart" , JSON.stringify(cart));
             }
         });
     });
 
-    refreshButton.forEach((img , index) => {
-        img.addEventListener("click" , () => {
+    const refreshButton = document.querySelectorAll('.refresh-icon');
+    refreshButton.forEach((btn, index) => {
+        btn.addEventListener("click", () => {
+            cart[index].quantity = 1;
             amount[index].textContent = 1;
-            localStorage.setItem("Amount" + (index+1) ,"1");
-        })
-    })
+            localStorage.setItem("Cart" , JSON.stringify(cart));
+        });
+    });
   
-  
-    mainImage.forEach((img , index) =>{
-        img.src = localStorage.getItem("Image");
-    })
-
     document.addEventListener("click", function(e) {
         if (e.target.classList.contains("close-icon")) {
             
@@ -195,27 +283,10 @@ if(document.body.className ==="sbp"){
             if (!leftPart.querySelector(".product-container")) {
                 leftPart.remove()
                 rightPart.remove()
+                localStorage.clear()
             } 
         }
     });
-
-
-    productColor.forEach(item =>  {
-        const savedColor = localStorage.getItem("Color");
-        item.style.backgroundColor = savedColor;
-    })
-
-    size.forEach(item=> {
-        item.textContent = localStorage.getItem("Size");
-    })
-
-    productTitle.forEach(item => {
-        item.textContent = localStorage.getItem("Type")
-    })
-
-    productDescription.forEach(item => {
-        item.textContent = localStorage.getItem("Description").replace("$99" , "");
-    })
 
     continueButton.addEventListener("click" , () => {
         if(acceptCheckBox.checked){
@@ -229,40 +300,67 @@ if(document.body.className ==="sbp"){
 
 //CHECKOUT PAGE SCRIPTLERI
 if(document.body.className === "cp"){
-    const productImage = document.querySelectorAll(".product-img");
-    productImage.forEach(item => {
-        item.src = localStorage.getItem("Image");
-    })
 
-    const backButton = document.querySelector(".forward-arrow");
-    backButton.addEventListener("click" , () => {
+    const backButton = document.querySelector(".forward-arrow")
+    const cost = document.querySelector(".t-cost")
+    const totalCost = document.querySelector(".total-c")
+    const form = document.querySelector("form")
+    
+
+    backButton.addEventListener("click" ,() => {
         window.location.replace("shopping-bag-page.html")
     })
+    
+    let cart = JSON.parse(localStorage.getItem("Cart")) || [];
 
-    const productType = document.querySelectorAll(".product-t")
-    productType.forEach(item => {
-        item.textContent = localStorage.getItem("Type");
+    const products = document.querySelector(".products-area");
+    products.innerHTML = ""
+
+    let subtotal = 0;
+    let totalProduct = 0;
+
+    const colorMap = {
+        "rgb(217,217,217)": "Cream",
+        "rgb(169,169,169)": "Grey",
+        "rgb(0,0,0)": "Black",
+        "rgb(166,214,202)": "Green",
+        "rgb(255,255,255)": "White",
+        "rgb(185,193,232)": "Light Purple"
+    };
+
+
+    cart.forEach((item,index) => {
+
+        totalProduct += parseInt(item.quantity)
+        const totalAmount = document.querySelector(".t-amount")
+        totalAmount.textContent = "(" + totalProduct + ")"
+
+        let priceNumber = parseInt(item.price.replace(/[^0-9.]/g, ""));
+        subtotal += priceNumber * item.quantity
+        
+        let color = item.color.replace(/\s/g, "");
+        let colorName = colorMap[color] || "Empty  Color";
+
+        products.innerHTML += `
+            <div class="product-container" data-index="${index}">
+                    <img class="product-img" src="${item.photo}">
+                    <div class="product-d">
+                        <div>
+                            <p class="product-t">"${item.title}"</p>
+                            <p class="product-s">${colorName}/${item.size}</p>
+                        </div>
+                        <div class="amount-co">
+                            <p class="amount">(${item.quantity})</p>
+                            <p class="cost">${(item.price)}</p>
+                        </div>
+                    </div>  
+            </div>
+        `;
     })
+    cost.textContent = "$" + subtotal.toFixed(2);
+    totalCost.textContent = "$" + subtotal.toFixed(2);
 
-    const productDescription = document.querySelectorAll(".product-s")
-    productDescription.forEach(item => {
-        let description = localStorage.getItem("Description")
-        description = description.replace("$99" , "")
-        item.textContent = description
-    })
-
-    const productAmount = document.querySelectorAll(".amount")
-    productAmount.forEach((item , index) => {
-        item.textContent = "(" + localStorage.getItem("Amount"+(index+1)) + ")"
-    })
-
-    const totalAmountDiv = document.querySelector(".t-amount");
-    const totalAmount = totalAmountDiv.querySelector("p")
-    totalAmount.textContent = Number(Number(localStorage.getItem("Amount1")) + Number(localStorage.getItem("Amount2"))) 
-    localStorage.setItem("Total Amount", totalAmount.textContent)
-
-    const shippingButtonInput = document.querySelector("button")
-    const form = document.querySelector("form")
+    
 
     function validateForm(e) {
 
@@ -275,6 +373,7 @@ if(document.body.className === "cp"){
             inputType.classList.add("success")
             inputType.classList.remove("error");   
         }
+
 
         const emailInput = document.getElementById("email")
         const phoneInput = document.getElementById("tel")
@@ -301,7 +400,6 @@ if(document.body.className === "cp"){
         if (email === "" ) {
             setError(emailInput);
             emailInput.placeholder = "Place enter a valid email address"
-
         }
 
         else{
@@ -375,8 +473,11 @@ if(document.body.className === "cp"){
         return true;
     };
 
+    const shippingButtonInput = document.querySelector("button")
     shippingButtonInput.addEventListener("click" , () => {
+        
         validateForm();
+        
         if(validateForm()){
             form.submit()
             alert("Form sended")
@@ -384,17 +485,7 @@ if(document.body.className === "cp"){
         }
     })
 
-    let amount1 = Number(localStorage.getItem("Amount1")) 
-    let amount2 = Number(localStorage.getItem("Amount2")) 
-    let price = localStorage.getItem("Price")
     
-    let total = (amount1 * price.replace("$" , "")) + (amount2 * price.replace("$" , ""))
-
-    const totalPrice = document.querySelector(".t-cost");
-    totalPrice.textContent = "$" + total;
-
-    const totalCost = document.querySelector(".total-c")
-    totalCost.textContent = "$" + total;
 }
 
 
