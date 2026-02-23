@@ -170,8 +170,9 @@ body{
     line-height: 40px;
     letter-spacing: 0px;
     text-transform: uppercase;
-    color:rgba(138, 138, 138, 1)
-
+    color:rgba(138, 138, 138, 1);
+    cursor: pointer;
+    
 }
 
 .container .sb-title .fav-icon{
