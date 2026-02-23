@@ -237,8 +237,8 @@ body{
     transform: rotate(-45deg);
 
     position: absolute;
-    top: 12rem;
-    right: 14.7rem;
+    top: 0.5rem;
+    right: 0.5rem;
     cursor: pointer;
 }
 
@@ -629,6 +629,7 @@ body{
         flex: 1 1 100%;
         width: 100%;
         margin: 0;
+        position: relative;
     }
     .head .container .right-section button{
         border-width: 0.1rem;
@@ -636,9 +637,16 @@ body{
         height: 2rem;
     }
 
+    .black-fav-icon{
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 14rem;
+    }
+
     .head .container .right-section button img{
-        width: 1rem;
-        height: 1rem;
+        width: 70%;
+        height: 75%;
     }
     .product .container .right-part .colors {
         flex-wrap: wrap;
@@ -654,7 +662,11 @@ body{
         height: 40px;
         line-height: 40px;
         font-size: 12px;
-  }
+    }
+    .total-amount{
+        position: absolute;
+        top: 0;
+    }
 
 }
 @media (max-width: 130px){
