@@ -69,6 +69,11 @@ if(document.body.className === "hp"){
             }, 1000);
         })
     })
+
+    const seeAllButton = document.querySelector(".see-all")
+    seeAllButton.addEventListener("click" , () => {
+        window.location.replace("products.html")
+    })
 }
 
 //PRODUCTS SCRIPTLERI
