@@ -62,7 +62,7 @@ if(document.body.className === "hp"){
 
             localStorage.setItem("Cart", JSON.stringify(cart));
 
-            totalProduct.textContent = cart.length;
+    
            
             setTimeout(() => {
                 window.location.replace("products-page.html");
@@ -74,29 +74,69 @@ if(document.body.className === "hp"){
 //PRODUCTS SCRIPTLERI
 if(document.body.className === "p"){
 
+    const searchInput = document.querySelector(".search")
+
+    const productTitles = document.querySelectorAll(".product-container");
+
+    searchInput.addEventListener("input", function () {
+
+    const searchValue = this.value.toLowerCase();
+
+    products.forEach(product => {
+
+        const title = product
+            .querySelector(".product-d")
+            .textContent
+            .toLowerCase();
+
+        if (title.includes(searchValue)) {
+            product.style.display = "block";
+        } 
+        
+        else {
+            product.style.display = "none";
+        }
+
+    });
+
+});
+
     const products = document.querySelectorAll(".product-container");
     
     products.forEach(item =>{
         item.addEventListener("click" , function(e){
-            const productTitle = this.querySelector(".product-t").textContent;
-            const productDescription = this.querySelector(".product-d").textContent;
-            const productPrice = this.querySelector(".cost").textContent;
-            const productImage = this.querySelector(".product-img").src;
             
+           const productCard = this.closest(".product-container");
+
             const product = {
-                title:productTitle,
-                description:productDescription,
-                price:productPrice,
-                photo:productImage
+                title: productCard.querySelector(".product-t").textContent,
+                description: productCard.querySelector(".product-d").textContent,
+                price: productCard.querySelector(".cost").textContent,
+                photo: productCard.querySelector(".product-img").src,
+                size:null,
+                color:null,
+                quantity:1
             }
-            
-            localStorage.setItem("Type" , product.title);
-            localStorage.setItem("Description" , product.description);
-            localStorage.setItem("Price" , product.price);
-            localStorage.setItem("Image" , product.photo);
-            
-            setTimeout(window.location.replace("products-page.html") , 3000)
+
+            let cart = JSON.parse(localStorage.getItem("Cart")) || [];
+
+            cart.push(product);
+
+            localStorage.setItem("Cart", JSON.stringify(cart));
+
+            setTimeout(() => {
+                window.location.replace("products-page.html");
+            }, 1000);
         })
+    })
+
+    const filter = document.querySelector(".filter-title")
+    const menu = document.querySelector(".menu-container")
+    console.log(filter)
+    
+    filter.addEventListener("click" , () => {
+        menu.classList.toggle("active");
+        console.log("a")
     })
 
 }
@@ -168,16 +208,25 @@ if(document.body.className === "pp"){
         else {
             alert("Please select color and size");
         }
-});
+    });
  
-
-    const favIcon = document.querySelector(".black-fav-icon")
+    const favIcon = document.querySelector(".black-fav-icon");
     favIcon.addEventListener("click" , () => {
-        const favorite = {
-        }
+
+        favIcon.classList.toggle("active");
+        
+        let favorites = JSON.parse(localStorage.getItem("Favorites")) || [];
+
+        const newFavorite = {
+            title: document.querySelector(".product-title").textContent,
+            price: document.querySelector(".cost").textContent,
+            photo: document.querySelector(".photo").src,
+    };
+
+        favorites.push(newFavorite);
+        localStorage.setItem("Favorites", JSON.stringify(favorites));
     })
 }
-
 
 //SHOPPING-BAG-PAGE SCRIPTLERI 
 if(document.body.className ==="sbp"){
@@ -295,6 +344,23 @@ if(document.body.className ==="sbp"){
         else{
             window.alert("Please Agree Terms And Conditions To Continue")
         }
+    })
+
+    const favoritePage = document.querySelector(".fav")
+    
+    favoritePage.addEventListener("click" , () => {
+
+        let favorites = JSON.parse(localStorage.getItem("Favorites")) || [];
+        leftPart.innerHTML = "";
+
+        favorites.forEach((item , index) => {
+             leftPart.innerHTML += `
+             <div class="product-container" data-index = ${index}>
+                        <img class = "product-img" src="${item.photo}">
+                    <p class="product-t">${item.title}</p>
+            </div>
+        `;
+        })
     })
 }
 
