@@ -143,7 +143,10 @@ body{
     align-items: flex-start;
     gap: 2rem;
     margin-top: 160px;
-    
+    display: none;
+}
+.products .menu-container.active{
+    display: block;
 }
 
 .products .menu-container .menu{
@@ -153,7 +156,13 @@ body{
     row-gap: 0.1rem;
     justify-content: flex-start;
     align-items: flex-start;
+    display: block;
+    z-index: 10;
     
+}
+
+.products .menu-container:active{
+    display: block;
 }
 
 .products .menu-container .menu ul{
@@ -194,6 +203,15 @@ body{
     padding: 10px;
     margin-left: 10px;
     
+}
+.products .menu-container .size-title{
+    margin-bottom: 1rem;
+}
+
+.filter-title{
+    cursor: pointer;
+    font-family: Beatrice Deck Trial;
+    height: max-content;
 }
 
 .products .menu-container .menu .sub-menu input{
@@ -740,8 +758,7 @@ body{
         gap: 2.5rem;
         margin: 0;
         display: none;
-        
-          
+         
     }
 
     .main-container .products .menu-container h3{
