@@ -242,6 +242,10 @@ body{
     cursor: pointer;
 }
 
+.product .container .black-fav-icon:active{
+    background-color: red;
+}
+
 .product .container .right-part h3{
     font-family: Beatrice Deck Trial;
     font-weight: 500;
