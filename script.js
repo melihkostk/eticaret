@@ -24,7 +24,6 @@ if(document.body.className === "hp"){
         }
 
     });
-
 });
 
     let totalProduct = document.querySelector(".total-amount");
@@ -40,7 +39,7 @@ if(document.body.className === "hp"){
     
     const addButton = document.querySelectorAll(".add-button");
 
-    addButton.forEach(button=>{
+    addButton.forEach((button,index)=>{
         button.addEventListener("click" , function(){
 
             const productCard = this.closest(".product-container");
@@ -54,18 +53,15 @@ if(document.body.className === "hp"){
                 color:null,
                 quantity:1
             }
-
         
             let cart = JSON.parse(localStorage.getItem("Cart")) || [];
 
             cart.push(product);
 
             localStorage.setItem("Cart", JSON.stringify(cart));
-
-    
-           
+              
             setTimeout(() => {
-                window.location.replace("products-page.html");
+                window.location.href = `products-page.html?id=${index+1}`;
             }, 1000);
         })
     })
@@ -101,9 +97,7 @@ if(document.body.className === "p"){
         else {
             product.style.display = "none";
         }
-
     });
-
 });
 
     const products = document.querySelectorAll(".product-container");
@@ -160,14 +154,79 @@ if(document.body.className === "pp"){
 
     const smallImages = document.querySelectorAll(".small-images");
     const mainImage = document.querySelector(".photo");
-    const colors = document.querySelector(".colors");
+    /*const colors = document.querySelector(".colors");
     const color = colors.querySelectorAll("label");
     const sizes = document.querySelector(".size");
-    const size = sizes.querySelectorAll("span");
+    const size = sizes.querySelectorAll("span");*/
     const addBasket = document.querySelector(".add-button");
     const productTitle = document.querySelector(".product-title")
     const cost = document.querySelector(".cost")
     const firstSmallImage = document.querySelector('.small-images img');
+
+    let URL = new URLSearchParams(document.location.search);
+    let productId = URL.get("id");
+
+    let selectedSize = null;
+    let selectedColor = null;
+
+    document.querySelector(".size").innerHTML = "";
+    document.querySelector(".colors").innerHTML = "";
+
+    fetch('product.json')
+        .then(res =>res.json())
+        .then(data => {
+            data.products.forEach((item) => {
+                if(productId === item.id){
+                    item.sizes.forEach(size => {
+                        document.querySelector(".size").innerHTML += `
+                            <label class="size-${size}">
+                                <input type="checkbox" name="size" value="${size}">
+                                <span>${size}</span>
+                            </label> 
+                    `;
+                    })
+                    item.colors.forEach(color => {
+                        document.querySelector(".colors").innerHTML += `
+                            <label class="${color}-box">
+                                <input type="checkbox" name="color" value="${color}">
+                                <span></span>
+                            </label>
+                    `;
+                }) 
+            }
+        })
+        const colors = document.querySelector(".colors");
+        const color = colors.querySelectorAll("label");
+        const sizes = document.querySelector(".size");
+        const size = sizes.querySelectorAll("span");
+
+        size.forEach(item => {
+            item.addEventListener("click", function(e){
+                if(e.target.tagName === "SPAN"){
+                    size.forEach(b => b.classList.remove('active')); 
+                    this.classList.add("active")
+                    
+                    selectedSize = this.textContent;
+                    cart[cart.length-1].size = selectedSize
+                    localStorage.setItem("Cart",JSON.stringify(cart))
+                }
+            });
+        });
+
+        color.forEach(item => {
+            item.addEventListener("click", function(e){
+                if(e.target.tagName === "SPAN") {
+                    color.forEach(b => b.classList.remove('active')); 
+                    this.classList.add("active")
+                    
+                    selectedColor = window.getComputedStyle(this).backgroundColor;
+                    cart[cart.length-1].color = selectedColor
+                    localStorage.setItem("Cart" , JSON.stringify(cart))
+                }
+            });
+        });
+    }
+    )
 
     if (cart.length > 0) {
         const lastProduct = cart[cart.length - 1];
@@ -182,26 +241,7 @@ if(document.body.className === "pp"){
         mainImage.src = e.target.getAttribute("src");
         e.target.style.opacity = 1;
     })
-})
-
-    let selectedSize = null;
-    let selectedColor = null;
-
-    size.forEach(item => {
-        item.addEventListener("click", function(){
-            selectedSize = this.textContent;
-            cart[cart.length-1].size = selectedSize
-            localStorage.setItem("Cart",JSON.stringify(cart))
-    });
-    });
-
-    color.forEach(item => {
-        item.addEventListener("click", function(e){
-            selectedColor = window.getComputedStyle(this).backgroundColor;
-            cart[cart.length-1].color = selectedColor
-            localStorage.setItem("Cart" , JSON.stringify(cart))
-        });
-    });
+    })
 
     addBasket.addEventListener("click", function(){
        
@@ -366,7 +406,25 @@ if(document.body.className ==="sbp"){
         `;
         })
     })
+
+
+    //Sepet sayfasında sepetteki ürünlerin fiyatının toplamını doğru bir şekilde yazalım
+    const subTotal = document.querySelector(".sub-total");
+    const shippingCost = document.querySelector(".shipping")
+    const totalCost = document.querySelector(".total")
+
+    let cost = 0;
+
+    cart.forEach(item => {
+        let priceNumber = parseInt(item.price.replace(/[^0-9.]/g, ""));
+        cost += priceNumber * item.quantity
+    })
+
+    subTotal.textContent = "$"+cost;
+
+    totalCost.textContent = "$" + parseInt(cost + Number(shippingCost.textContent.replace("$","")))
 }
+ 
 
 //CHECKOUT PAGE SCRIPTLERI
 if(document.body.className === "cp"){
