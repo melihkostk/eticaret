@@ -212,6 +212,7 @@ body{
     cursor: pointer;
     font-family: Beatrice Deck Trial;
     height: max-content;
+    margin-bottom: 1rem;
 }
 
 .products .menu-container .menu .sub-menu input{

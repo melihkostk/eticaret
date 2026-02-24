@@ -135,13 +135,12 @@ if(document.body.className === "p"){
         })
     })
 
-    const filter = document.querySelector(".filter-title")
+    const menuIcon = document.querySelector(".menu-icon")
     const menu = document.querySelector(".menu-container")
-    console.log(filter)
     
-    filter.addEventListener("click" , () => {
+    menuIcon.addEventListener("click" , () => {
         menu.classList.toggle("active");
-        console.log("a")
+        
     })
 
 }
