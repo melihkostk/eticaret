@@ -1,0 +1,104 @@
+{
+"products":[
+{
+  "id": "1",
+  "type": "V Neck T-shirt",
+  "name": "Embroidered Seersucker Shirt",
+  "price": "$99",
+  "sizes": ["XS", "S", "M", "L"],
+  "colors": [
+    "green",
+    "grey",
+    "white",
+    "cream"
+  ]
+},
+
+{
+    "id": "2",
+    "type": "Cotton T Shirt",
+    "name": "Basic Slim Fit T-Shirt",
+    "price": "$99",
+    "sizes": ["M", "L", "XL", "2X"],
+    "colors": [
+        "black",
+        "grey",
+        "white",
+        "blue",
+        "cream"
+    ]
+},
+
+{
+    "id": "3",
+    "type": "Henley T-Shirt",
+    "name": "Blurred Print T-Shirt",
+    "price": "$99",
+    "sizes": ["XS", "S", "M", "L", "XL", "2X"],
+    "colors": [
+        "green",
+        "black",
+        "grey",
+        "white",
+        "blue",
+        "cream"
+    ]
+},
+
+{
+    "id": "4",
+    "type": "Crewneck T-Shirt",
+    "name": "Full Sleeve Zipper",
+    "price": "$99",
+    "sizes": ["XS", "S","XL", "2X"],
+    "colors": [
+        "green",
+        "black",
+        "blue",
+        "cream"
+    ]
+},
+
+{
+    "id": "5",
+    "type": "Cotton T Shirt",
+    "name": "Basic Heavy Weight T-Shirt",
+    "price": "99",
+    "sizes": ["XS", "S", "M", "L", "XL", "2X"],
+    "colors": [
+        "green",
+        "black",
+        "grey",
+        "white",
+        "blue",
+        "cream"
+    ]
+},
+
+{
+    "id": "6",
+    "type": "Cotton Jeans",
+    "name": "Soft Wash Straight Fit Jeans",
+    "price": "$99",
+    "sizes": ["XS", "S", "M", "L"],
+    "colors": [
+        "black",
+        "white"
+    ]
+},
+
+{
+    "id": "7",
+    "type": "Cotton T Shirt",
+    "name": "Basic Heavy Weight T-shirt",
+    "price": "$99",
+    "sizes": ["XS","2X"],
+    "colors": [
+        "green",
+        "black",
+        "grey",
+        "white"
+    ]
+}
+]
+}
