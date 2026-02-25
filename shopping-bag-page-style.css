@@ -207,6 +207,7 @@ body{
     height: auto;
     display: block;
     border: 1px solid rgba(217,217,217,1);
+    object-fit: cover;
 
 }
 
@@ -599,6 +600,7 @@ body{
     }
     .container .left-part img{
         width: 100%;
+        object-fit: cover;
     
     }
     .container .left-part .product-container .product-d{
