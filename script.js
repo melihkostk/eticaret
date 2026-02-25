@@ -300,7 +300,7 @@ if(document.body.className ==="sbp"){
                 <img class="product-img" src="${item.photo}">
                 <p class="product-t">${item.title}</p>
                 <div class = "p-info">
-                    <p class="product-d">${item.description}</p>
+                    <p class="product-d">${item.description.replace("$99","")}</p>
                     <p class="cost">${item.price}</p>
                 </div>
             </div>
@@ -330,7 +330,16 @@ if(document.body.className ==="sbp"){
         color.style.backgroundColor = cart[index].color;
     })
 
+    const subT =  document.querySelector(".sub-total")
+    subT.textContent = ""
 
+    let cost = 0;
+    cart.forEach(item => {
+       cost += parseInt(item.price.replace("$",""))
+       subT.textContent = "$"+cost
+       
+    })
+  
     const amount = document.querySelectorAll('.amount');
     const increaseButton = document.querySelectorAll(".increase")
     increaseButton.forEach((button, index) => {
@@ -476,12 +485,12 @@ if(document.body.className === "cp"){
     let totalProduct = 0;
 
     const colorMap = {
-        "rgb(217,217,217)": "Cream",
-        "rgb(169,169,169)": "Grey",
-        "rgb(0,0,0)": "Black",
-        "rgb(166,214,202)": "Green",
-        "rgb(255,255,255)": "White",
-        "rgb(185,193,232)": "Light Purple"
+        "rgb(217, 217, 217)": "Cream",
+        "rgb(169, 169, 169)": "Grey",
+        "rgb(0, 0, 0)": "Black",
+        "rgb(166, 214, 202)": "Green",
+        "rgb(255, 255, 255)": "White",
+        "rgb(185, 193, 232)": "Light Purple"
     };
 
 
@@ -491,18 +500,17 @@ if(document.body.className === "cp"){
         const totalAmount = document.querySelector(".t-amount")
         totalAmount.textContent = "(" + totalProduct + ")"
 
-        let priceNumber = parseInt(item.price.replace(/[^0-9.]/g, ""));
+        let priceNumber = parseInt(item.price.replace("$", ""));
         subtotal += priceNumber * item.quantity
-        
-        let color = item.color.replace(/\s/g, "");
-        let colorName = colorMap[color] || "Empty  Color";
+    
+        let colorName = colorMap[item.color] || "Empty Color";
 
         products.innerHTML += `
             <div class="product-container" data-index="${index}">
                     <img class="product-img" src="${item.photo}">
                     <div class="product-d">
                         <div>
-                            <p class="product-t">"${item.title}"</p>
+                            <p class="product-t">${item.title}</p>
                             <p class="product-s">${colorName}/${item.size}</p>
                         </div>
                         <div class="amount-co">
