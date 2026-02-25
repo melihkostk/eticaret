@@ -331,12 +331,16 @@ if(document.body.className ==="sbp"){
     })
 
     const subT =  document.querySelector(".sub-total")
+    const totalCost = document.querySelector(".total")
+    const shippingCost = document.querySelector(".shipping")
     subT.textContent = ""
 
     let cost = 0;
     cart.forEach(item => {
        cost += parseInt(item.price.replace("$",""))
        subT.textContent = "$"+cost
+       totalCost.textContent = "$" + parseInt(cost + Number(shippingCost.textContent.replace("$","")))
+
        
     })
   
