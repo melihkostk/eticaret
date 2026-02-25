@@ -337,6 +337,20 @@ if(document.body.className ==="sbp"){
         cart[index].quantity += 1;
         amount[index].textContent = cart[index].quantity;
         localStorage.setItem("Cart" , JSON.stringify(cart));
+        const subTotal = document.querySelector(".sub-total");
+        const shippingCost = document.querySelector(".shipping")
+        const totalCost = document.querySelector(".total")
+
+        let cost = 0;
+
+        cart.forEach(item => {
+            let priceNumber = parseInt(item.price.replace(/[^0-9.]/g, ""));
+            cost += priceNumber * item.quantity
+        })
+
+        subTotal.textContent = "$"+cost;
+
+        totalCost.textContent = "$" + parseInt(cost + Number(shippingCost.textContent.replace("$","")))
 
     });
 });
@@ -349,6 +363,20 @@ if(document.body.className ==="sbp"){
                 amount[index].textContent = cart[index].quantity;
                 localStorage.setItem("Cart" , JSON.stringify(cart));
             }
+            const subTotal = document.querySelector(".sub-total");
+            const shippingCost = document.querySelector(".shipping")
+            const totalCost = document.querySelector(".total")
+
+            let cost = 0;
+
+            cart.forEach(item => {
+                let priceNumber = parseInt(item.price.replace(/[^0-9.]/g, ""));
+                cost += priceNumber * item.quantity
+            })
+
+            subTotal.textContent = "$"+cost;
+
+            totalCost.textContent = "$" + parseInt(cost + Number(shippingCost.textContent.replace("$","")))
         });
     });
 
@@ -358,6 +386,21 @@ if(document.body.className ==="sbp"){
             cart[index].quantity = 1;
             amount[index].textContent = 1;
             localStorage.setItem("Cart" , JSON.stringify(cart));
+            
+            const subTotal = document.querySelector(".sub-total");
+            const shippingCost = document.querySelector(".shipping")
+            const totalCost = document.querySelector(".total")
+
+            let cost = 0;
+
+            cart.forEach(item => {
+                let priceNumber = parseInt(item.price.replace(/[^0-9.]/g, ""));
+                cost += priceNumber * item.quantity
+            })
+
+            subTotal.textContent = "$"+cost;
+
+            totalCost.textContent = "$" + parseInt(cost + Number(shippingCost.textContent.replace("$","")))
         });
     });
   
@@ -406,25 +449,6 @@ if(document.body.className ==="sbp"){
         `;
         })
     })
-
-
-    //Sepet sayfasında sepetteki ürünlerin fiyatının toplamını doğru bir şekilde yazalım
-    const subTotal = document.querySelector(".sub-total");
-    const shippingCost = document.querySelector(".shipping")
-    const totalCost = document.querySelector(".total")
-
-    let cost = 0;
-
-    cart.forEach(item => {
-        let priceNumber = parseInt(item.price.replace(/[^0-9.]/g, ""));
-        cost += priceNumber * item.quantity
-    })
-
-    subTotal.textContent = "$"+cost;
-
-    totalCost.textContent = "$" + parseInt(cost + Number(shippingCost.textContent.replace("$","")))
-}
- 
 
 //CHECKOUT PAGE SCRIPTLERI
 if(document.body.className === "cp"){
@@ -616,4 +640,4 @@ if(document.body.className === "cp"){
     
 }
 
-
+}
