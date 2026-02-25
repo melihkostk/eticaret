@@ -341,7 +341,7 @@ if(document.body.className ==="sbp"){
        subT.textContent = "$"+cost
        totalCost.textContent = "$" + parseInt(cost + Number(shippingCost.textContent.replace("$","")))
 
-       
+        
     })
   
     const amount = document.querySelectorAll('.amount');
@@ -438,10 +438,17 @@ if(document.body.className ==="sbp"){
         }
     });
 
+     amount.forEach((item , index) => {
+            item.textContent = parseInt(cart[index].quantity);
+    })
+
     continueButton.addEventListener("click" , () => {
+        
         if(acceptCheckBox.checked){
+    
             window.location.replace("checkout.html");
         }
+
         else{
             window.alert("Please Agree Terms And Conditions To Continue")
         }
@@ -647,6 +654,7 @@ if(document.body.className === "cp"){
         if(validateForm()){
             form.submit()
             alert("Form sended")
+            localStorage.clear()
             window.location.replace("index.html")
         }
     }) 
