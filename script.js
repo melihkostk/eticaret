@@ -61,16 +61,14 @@ if(document.body.className === "hp"){
 
             localStorage.setItem("Cart", JSON.stringify(cart));
               
-            setTimeout(() => {
-                window.location.href = `products-page.html?id=${index+1}`;
-            }, 1000);
         })
     })
-
-    const seeAllButton = document.querySelector(".see-all")
-    seeAllButton.addEventListener("click" , () => {
-        window.location.replace("products.html")
-    })
+    
+    fetch("footer.html")
+        .then(response => response.text())
+        .then(data => {
+            document.querySelector("footer").innerHTML = data;
+        });
 }
 
 //PRODUCTS SCRIPTLERI
@@ -124,9 +122,6 @@ if(document.body.className === "p"){
 
             localStorage.setItem("Cart", JSON.stringify(cart));
 
-            setTimeout(() => {
-                window.location.replace("products-page.html");
-            }, 1000);
         })
     })
 
@@ -318,7 +313,7 @@ if(document.body.className ==="sbp"){
             </div>
         `;
     });
-   
+
     const sizes = document.querySelectorAll(".size")
     const colors = document.querySelectorAll(".color-box")
 
