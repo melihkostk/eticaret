@@ -1,3 +1,4 @@
+
 //HOME PAGE SCRIPTLERI
 if(document.body.className === "hp"){
 
@@ -450,9 +451,12 @@ if(document.body.className ==="sbp"){
         })
     })
 
+}
+
+
+
 //CHECKOUT PAGE SCRIPTLERI
 if(document.body.className === "cp"){
-
     const backButton = document.querySelector(".forward-arrow")
     const cost = document.querySelector(".t-cost")
     const totalCost = document.querySelector(".total-c")
@@ -460,7 +464,7 @@ if(document.body.className === "cp"){
     
 
     backButton.addEventListener("click" ,() => {
-        window.location.replace("shopping-bag-page.html")
+        window.location.replace("shopping-bag-page.html");
     })
     
     let cart = JSON.parse(localStorage.getItem("Cart")) || [];
@@ -511,8 +515,6 @@ if(document.body.className === "cp"){
     })
     cost.textContent = "$" + subtotal.toFixed(2);
     totalCost.textContent = "$" + subtotal.toFixed(2);
-
-    
 
     function validateForm(e) {
 
@@ -584,7 +586,7 @@ if(document.body.className === "cp"){
         }
         if (country === ""){
             setError(countryInput)
-            country.placeholder = "Please enter a valid country"
+            countryInput.placeholder = "Please enter a valid country"
         }
         else{
             setSuccess(countryInput)
@@ -633,11 +635,8 @@ if(document.body.className === "cp"){
         if(validateForm()){
             form.submit()
             alert("Form sended")
-            setTimeout(window.location.replace("index.html"),3000)
+            window.location.replace("index.html")
         }
-    })
-
-    
+    }) 
 }
 
-}
