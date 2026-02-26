@@ -421,9 +421,8 @@ body{
     display: flex;
     justify-content:flex-start;
     gap: 2rem;
-    align-items: center;
+    align-items: flex-start;
 }
-
 
 .new-this-week  h1{
     font-family: "Beatrice Deck Trial";
@@ -462,9 +461,7 @@ body{
     height: auto;
     border: 1px solid rgba(215, 215, 215, 1);
     object-fit: cover;
-    cursor: pointer;
-    
-      
+    cursor: pointer;   
 }
 
 .new-this-week .container .product-container{

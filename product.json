@@ -12,7 +12,8 @@
     "white",
     "cream"
   ],
-  "category": "t-shirt"
+  "category": "t-shirt",
+  "photo":"images/seer-shirt.jpg"
   
 },
 
@@ -31,7 +32,8 @@
         "cream"
     ],
 
-    "category": "shorts"
+    "category": "shorts",
+    "photo":"images/basic-shirt.jpg"
 },
 
 {
@@ -49,7 +51,8 @@
         "cream"
     ],
 
-    "category": "jackets"
+    "category": "jackets",
+    "photo":"images/henley-shirt.jpg"
 },
 
 {
@@ -65,7 +68,8 @@
         "cream"
     ],
 
-    "category": "jeans"
+    "category": "jeans",
+    "photo":"images/zipper.jpg"
 },
 
 {
@@ -83,7 +87,8 @@
         "cream"
     ],
 
-    "category": "coats"
+    "category": "coats",
+    "photo":"images/cotton-shirt.jpg"
 },
 
 {
@@ -97,7 +102,8 @@
         "white"
     ],
 
-    "category": "suits"
+    "category": "suits",
+    "photo":"images/white-clothes.jpg"
 },
 
 {
@@ -112,7 +118,8 @@
         "grey",
         "white"
     ],
-    "category": "best sellers"
+    "category": "best sellers",
+    "photo":"images/yellow-shirt.jpg"
 },
 
 {
@@ -127,7 +134,8 @@
         "grey",
         "white"
     ],
-    "category": "best sellers"
+    "category": "shirts",
+    "photo": "images/yellow-shirt.jpg"
 },
 
 {
@@ -142,7 +150,8 @@
         "grey",
         "white"
     ],
-    "category": "shirt"
+    "category": "shirt",
+    "photo": "images/buyyed-product.jpg"
 },
 
 {
@@ -157,7 +166,8 @@
         "grey",
         "white"
     ],
-    "category": "t-shirt"
+    "category": "t-shirt",
+    "photo":"images/sleeve-zipper.jpg"
 },
 
 {
@@ -172,7 +182,8 @@
         "grey",
         "white"
     ],
-    "category": "polo shirts"
+    "category": "polo shirts",
+    "photo":"images/cotton-shirt.jpg"
 },
 
 {
@@ -187,7 +198,8 @@
         "grey",
         "white"
     ],
-    "category": "new"
+    "category": "new",
+    "photo":"images/black-clothes.jpg"
 },
 
 {
@@ -202,7 +214,8 @@
         "grey",
         "white"
     ],
-    "category": "new"
+    "category": "new",
+    "photo":"images/blue-shirt.jpg"
 }
 ]
 }

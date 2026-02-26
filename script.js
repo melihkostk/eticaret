@@ -134,6 +134,31 @@ if(document.body.className === "p"){
         document.querySelector(".drawer").style.left = "-300px";
     })
 
+    const cateButtons = document.querySelectorAll(".cate-button")
+
+    cateButtons.forEach(function(button) {
+    button.addEventListener("click", function() {
+        const category = this.textContent.toLowerCase();
+        console.log(category) 
+
+        fetch("product.json")
+            .then(response => response.json())
+            .then(data => {
+                const filteredProducts = data.products.filter(product => product.category === category); 
+                 const productContainer = filteredProducts.map(product => ` 
+                    <div class="product-container">
+                        <img class="product-img" src="${product.photo}">
+                        <p class="product-t">${product.type}</p>
+                        <div class="color-box" style="background-color:${product.color || '#fff'}"></div>
+                        <p class="product-d">${product.name}<span class="cost">${product.price}</span></p>
+                    </div>
+                `).join(''); 
+
+                document.querySelector(".bottom").innerHTML = productContainer;
+            })
+    });
+});
+    
     const searchInput = document.querySelector(".search")
 
     const productTitles = document.querySelectorAll(".product-container");
