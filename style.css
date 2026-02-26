@@ -1,0 +1,4663 @@
+/*index.css*/
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body button,a{
+    cursor: pointer;
+}
+
+body{
+    background: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)),
+    url("images/noisy-background.jpg");
+    background-size: cover;
+}
+
+.head .hp-container{
+    display: flex;
+    justify-content:space-between;
+    margin-left: 20px;
+    align-items: center;
+    margin-top: 0.5rem;
+    padding: 1rem;   
+}
+
+.drawer{
+    position: fixed;
+    left: -300px;
+    top: 0;
+    width: 300px;
+    height: 100%;
+    background-color: rgba(228, 224, 224, 0.90);
+    padding-top: 30px;
+    z-index: 1000;
+    transition: 0.3s;
+   
+}
+
+.drawer a{
+    text-decoration: none;
+    color: rgb(0,0,0,1);
+    font-size: 18px;
+    font-family: "Beatrice Deck Trial";
+    font-weight: 500;
+    line-height: 100%;
+    cursor: pointer;
+    margin-left: 0.5rem;
+    display: block;
+    padding-top: 15px;
+}
+
+.drawer .close-menu{
+    margin-left: 0.5rem;
+    cursor: pointer;
+}
+
+.head .hp-container .p-menu-icon{
+    width: 26px;
+    height: 16px;
+    
+}
+
+.hp-left-section a{
+    text-decoration: none;
+    margin: 10px;
+    color: rgb(0,0,0,1);
+    font-size: 18px;
+    font-family: "Beatrice Deck Trial";
+    font-weight: 500;
+    line-height: 100%;
+    cursor: pointer;
+}
+
+.hp-middle-section{
+    display: flex;
+    justify-content: center;   
+}
+
+.hp-middle-section .amblem{
+    width: 40px;
+    height: 40px;
+    transform: rotate(45deg);
+    background: linear-gradient(
+        45deg,
+        rgba(217,217,217,1) 50%,
+        black 50%
+    );
+}
+
+ 
+.hp-left-section .p-menu-icon{
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.hp-container .hp-right-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hp-right-section .like-button{
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+    margin-right: 20px;
+    background-color: #262222;
+    cursor: pointer;
+}
+
+.hp-right-section .like-button img{
+    transform: rotate(-45deg);
+    padding-top: 7px;
+    padding-right: 2px;
+}
+
+.hp-right-section .cart-button{
+    height: 50px;
+    width: 76px;
+    border:1px solid #262222;
+    border-radius: 22px;
+    background-color: #262222;
+    color: #F5F5F5;
+
+    font-size: 12px;
+    font-family: "Beatrice Deck Trial";
+    cursor: pointer;
+}
+
+.hp-right-section .shop-button{
+    height: 50px;
+    width: 50px;
+    background-color: #fff;
+    margin-left: -5px;
+    
+    border: 7px solid rgba(0, 0, 0, 1);
+    border-radius: 100%;
+    cursor: pointer;
+    position: relative;
+}
+
+.hp-right-section .shop-button .total-amount{
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: red;
+    position: absolute;
+    border-radius: 100%;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    text-align: center;
+    font-family: "Beatrice Deck Trial";
+    color: white;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.hp-right-section .shop-button img{
+    width: 20px;
+    height: 19px;
+    padding-left: 1px;
+    padding-top: 2px;
+}
+
+.hp-right-section .profile-button{
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+    margin-left: 20px;
+    background-color: #262222;
+    color: #F5F5F5;
+    cursor: pointer;
+}
+
+.hp-right-section .profile-button img{
+    padding-top: 4px;
+    opacity: 1;
+}   
+
+.hp-gender .hp-container{
+    margin-top: 30px;
+    margin-left: 50px;
+    
+}
+
+.hp-gender .hp-container a{
+
+    padding: 4px;
+
+    font-family: "Beatrice Deck Trial";
+    font-weight:400;
+    letter-spacing: 2px;
+    line-height: 100%;
+
+    display: block;
+
+    color: rgb(0,0,0,1);
+    text-decoration: none;
+}
+.hp-gender .hp-container .hp-search-box input{
+    width: 367px;
+    height: 40px;
+
+    display: block;
+    background: rgba(55, 44, 44, 0.15);
+
+    padding-left:40px;
+    margin-top: 15px;
+    margin-left: 3px;
+
+    border-style: none;
+    border-radius: 2px;
+
+    position: relative;
+
+    background-image: url("icons/search-icon.svg");   
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-position: 10px center;
+    background-clip: padding-box;
+    
+}
+
+.hp-gender .hp-container .hp-search-box input::placeholder{
+    font-family: "Beatrice Deck Trial";
+    font-weight:400;
+    line-height: 100%;
+    letter-spacing: 2px;
+    color: rgba(0, 0, 0, 0.66);
+
+    position: absolute;
+    right: 20px; 
+}
+
+.hp-new-colection {
+    margin-top: 70px;
+    margin-left: 2rem;
+}
+
+.hp-new-colection .hp-container{
+    display: flex;
+    justify-content:flex-start;
+    align-items: flex-start;
+    gap: 1rem;
+       
+}
+
+.hp-new-colection .hp-container .hp-left-part{
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   justify-content: space-between;
+   gap: 13rem;
+   
+}
+
+
+.hp-new-colection .hp-container .hp-left-part .hp-buttons{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    justify-self: flex-end;
+    gap: 30px;
+}
+
+.hp-new-colection .hp-container .hp-left-part .hp-buttons .hp-direction{
+    display: flex;
+}
+
+.hp-new-colection .hp-container .hp-left-part h1{
+    font-family: "Beatrice Deck Trial";
+    font-weight: 800px;
+    font-size: 48px;
+    color: rgba(0, 0, 0, 1);
+    letter-spacing: 2px;
+    width: max-content;
+
+}
+
+.hp-new-colection .hp-container .hp-left-part h1 span{
+    display: block;   
+    margin-top: -30px;
+    cursor: pointer;
+}
+
+.hp-new-colection .hp-container .hp-left-part p{
+    font-family: "Beatrice Deck Trial";
+    font-weight: 400;
+    line-height: 100%;
+    padding: 4px;
+    width: max-content;
+    
+}
+
+.hp-new-colection .hp-container .hp-left-part .hp-gts-button{
+    width: 265px;
+    height: 40px;
+
+    background: rgba(55, 44, 44, 0.15);
+    border-style: none;
+    
+    font-family: "Beatrice Deck Trial";
+    font-weight: 400;
+    letter-spacing: 2px; 
+
+    text-align: start;
+
+    padding-left: 30px;
+    background-image: url(icons/right-arrow.png);
+    background-position: 90%;
+    background-size: 55px 16px;
+    background-repeat: no-repeat;
+   
+}
+
+.hp-new-colection .hp-container .hp-left-part .hp-gts-button a{
+    text-decoration: none;
+    font-family: "Beatrice Deck Trial";
+    font-weight: 500;
+    letter-spacing: 2px; 
+    text-align: start;
+    padding-left: 8px;
+    color:rgba(0, 0, 0, 1);
+
+}
+
+.hp-new-colection .hp-container .hp-left-part .hp-back-button{
+    width: 40px;
+    height: 40px;
+    border:1px solid rgba(163, 163, 163, 0.66);
+    background-color: transparent;
+
+}
+.hp-new-colection .hp-container .hp-left-part .hp-back-button img{
+    width: 13px;
+    height: 13px;
+    text-align: center;
+    padding: 0px;
+    opacity: 0.66;
+
+}
+
+.hp-new-colection .hp-container .hp-left-part .hp-forward-button img{
+    width: 13px;
+    height: 13px;
+    text-align: center;
+    padding: 0px;
+}
+
+.hp-new-colection .hp-container .hp-left-part .hp-forward-button{
+    width: 40px;
+    height: 40px;
+
+    margin-left: 10px;
+    border:1px solid rgba(163, 163, 163, 1);
+    background-color: transparent;
+}
+
+.hp-new-colection .hp-container .hp-right-part{
+    display: flex;
+    align-items:center;
+    justify-content: flex-start;
+    gap: 1rem;
+     
+}
+
+.hp-new-colection .hp-container .hp-right-part img{
+    width: 25.3%;
+    height: 100%;
+    filter: none;
+    border: 1px solid rgba(215, 215, 215, 1);
+    
+}
+
+.hp-new-this-week{
+    margin-left: 2rem;
+    margin-top: 100px;
+    position: relative;
+}
+
+.hp-new-this-week .hp-see-all{
+
+    font-family: "Beatrice Trial";
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 40px;
+    letter-spacing: 0px;
+    text-align: right;
+    color: rgba(94, 94, 94, 1);
+
+    position: absolute;
+
+    top: 70px;
+    right: 220px;
+    cursor: pointer;
+
+}
+
+.hp-new-this-week .hp-container{
+    display: flex;
+    justify-content:flex-start;
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+.hp-new-this-week  h1{
+    font-family: "Beatrice Deck Trial";
+    font-weight: 800px;
+    font-size: 48px;
+    color: rgba(0, 0, 0, 1);
+    letter-spacing: 2px;
+
+    position: relative;
+    
+}
+
+.hp-new-this-week  h1 .hp-this-week{
+    display: block;
+    width: max-content;
+    margin-top: -30px;
+    
+}
+
+.hp-new-this-week h1 .hp-amount{
+    position: absolute;
+    bottom: 50px;
+    left: 275px;
+
+    font-family: "Beatrice Deck Trial";
+    font-size: 20px;
+    letter-spacing: 2px;
+
+    color: rgba(0, 14, 138, 1);
+    
+}
+
+
+.hp-new-this-week .hp-container .hp-product-container > img{
+    width: 100%;
+    height: auto;
+    border: 1px solid rgba(215, 215, 215, 1);
+    object-fit: cover;
+    cursor: pointer;   
+}
+
+.hp-new-this-week .hp-container .hp-product-container{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.hp-new-this-week .hp-container .hp-product-container .hp-product-type{
+    font-size: 12px;
+    font-family: "Beatrice Deck Trial";
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.66);
+    line-height: 100%;
+    
+}
+
+.hp-new-this-week .hp-container .hp-product-container .hp-product-description{
+    font-family: Beatrice Deck Trial;
+    font-weight: 500;
+    font-style: medium;
+    font-size: 14px;
+    
+    line-height: 100%;
+    letter-spacing: 0px;
+    cursor: pointer;
+
+    display: flex;
+    justify-content: space-between;
+
+
+}
+
+.hp-new-this-week .hp-container .hp-product-container .hp-add-button{
+    height: 34px;
+    width: 34px; 
+    background-color: rgba(220, 220, 220, 0.44);
+    border: 1px rgba(12, 12, 12, 1);
+    position: absolute;
+    bottom: 2.7rem;
+    left: 9rem;
+    margin-left: auto;
+    
+
+    font-size: 10px;
+    text-align: center;
+    color: rgba(12, 12, 12, 1); 
+}
+
+.hp-new-this-week .hp-buttons{
+    display: flex;
+    justify-content: center;
+    column-gap: 8px;
+}
+
+.hp-new-this-week .hp-buttons button{
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(163, 163, 163, 1);
+    text-align: center;
+    margin-top: 50px;
+    background-color: transparent;
+    
+
+}
+
+.hp-new-this-week .hp-buttons button img{
+    width: 13px;
+    height: 13px;
+    opacity: 1;
+}
+
+.hp-new-this-week .hp-buttons button:nth-child(1){
+    opacity: 0.66;
+}
+.hp-new-this-week .hp-buttons button:nth-child(1) img{
+    opacity: 0.66;
+}
+
+.hp-collections{
+    margin-top: 60px;
+    margin-left: 2rem;  
+}
+
+.hp-collections .hp-container{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 10px;
+    
+}
+
+.hp-collections .hp-container .hp-bottom{
+    display: flex;
+}
+
+.hp-collections h1{
+    font-family: "Beatrice Deck Trial";
+    font-weight: 800px;
+    font-size: 48px;
+    color: rgba(0, 0, 0, 1);
+    letter-spacing: 2px;
+    width: max-content;
+}
+
+.hp-collections h1 .hp-col-span{
+    display: block;
+    margin-top: -30px;   
+}
+
+.hp-collections h1 .hp-year-span{
+    display: block;
+    margin-top:-30px;
+    
+}
+
+.hp-collections .hp-container .hp-all-link{
+    font-family:"Beatrice Headline Trial";
+    font-weight: 500;
+    color: rgba(0, 0, 0, 1);
+    line-height: 40px;
+    text-decoration: none;
+}
+
+.hp-collections .hp-container a{
+    font-family:"Beatrice  Trial";
+    font-weight: 400;
+    color: rgba(138, 138, 138, 1);
+    line-height: 16px;
+    text-decoration: none;
+    
+}
+
+.hp-collections .hp-container .hp-filter{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(223, 223, 223, 1);
+
+}
+
+.hp-collections .hp-container .hp-filter .hp-left-filter{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2rem;
+}
+
+.hp-collections .hp-container .hp-filter .hp-right-filter{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    column-gap: 100px;
+    align-items: flex-start;
+    margin-right: 50px;
+}
+
+.hp-collections .hp-container .hp-filter .hp-right-filter .hp-sorts{
+    color:rgba(94, 94, 94, 1);
+}
+
+.hp-collections .hp-container .hp-filter .hp-right-filter p{
+    font-family: Beatrice Trial;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 14px;
+    line-height: 40px;
+    letter-spacing: 0px;
+    color: rgba(0, 0, 0, 1);
+}
+
+.hp-collections .hp-container .hp-filter .hp-right-filter .hp-sorts p:nth-child(n+2){
+    color:rgba(94, 94, 94, 1);
+    margin-top: -15px;
+}
+
+.hp-collections .hp-container .hp-filter .hp-left-filter{
+    font-family: Beatrice Trial;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 16px;
+    line-height: 40px;
+    letter-spacing: 0px;
+
+}
+
+.hp-collections .hp-container .hp-product-container{
+   margin-left: 22px;
+   position: relative;    
+}
+
+.hp-collections .hp-container .hp-product-container>img{
+    width: 366px;
+    height: 376px;
+    border: 1px solid rgba(215, 215, 215, 1); 
+    object-fit: cover;
+    cursor: pointer;
+    
+}
+
+.hp-collections .hp-container .hp-product-container .hp-product-type{
+    font-size: 12px;
+    font-family: "Beatrice Deck Trial";
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.66);
+    line-height: 100%;
+
+    margin-top: -25px;
+    
+}
+
+.hp-collections .hp-container .hp-product-container .hp-product-description{
+    font-family: Beatrice Deck Trial;
+    font-weight: 500;
+    font-style: medium;
+    font-size: 14px;
+    
+    line-height: 100%;
+    letter-spacing: 0px;
+    margin-top: 7px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.hp-collections .hp-container .hp-product-container .hp-add-button img{
+    position: absolute;
+    bottom: 38px;
+    left: 171px;
+    bottom: 3px;
+    left: 6px;
+}
+
+.hp-collections .hp-container .hp-product-container .hp-add-button{
+    height: 34px;
+    width: 34px; 
+    background-color: rgba(220, 220, 220, 0.44);
+    border: 1px rgba(12, 12, 12, 1);
+    position: relative;
+    bottom: 37px;
+    left: 160px;
+
+    font-size: 10px;
+    text-align: center;
+    color: rgba(12, 12, 12, 1);
+  
+}
+
+.hp-collections .hp-more-button{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap:-30px;
+}
+
+.hp-collections .hp-more-button p{
+    font-family: Beatrice Trial;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 16px;
+    line-height: 40px;
+    letter-spacing: 0px;
+    color:rgba(138, 138, 138, 1);
+
+}
+
+.hp-collections .hp-more-button img{
+    margin-top: -14px;
+    height: 20px;
+    transform: rotate(90deg);
+
+}
+
+.hp-design {
+    margin-top: 230px;
+}
+
+
+.hp-design .hp-text-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+.hp-design .hp-image-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+   
+    
+    
+}
+
+.hp-design .hp-text-container h1{
+    font-family: "Beatrice Deck Trial";
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 48px;
+    line-height: 40px;
+    letter-spacing: 2px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.hp-design .hp-text-container p{
+    font-family: "Beatrice Trial";
+    font-weight: 300;
+    font-style: Light;
+    font-size: 16px;
+    
+    letter-spacing: 2px;
+    text-align: center;
+    width: 685px;
+    height: 96px;
+
+    margin-top: 15px;
+
+}
+
+.hp-design .hp-container .hp-image-container img{
+    width: 20%;
+    height: auto;
+    opacity: 1;
+    border: 1px solid rgba(215, 215, 215, 1);
+    object-fit:cover;
+    padding: 0;
+
+}
+.hp-design .hp-container .hp-image-container .hp-style1{
+    flex: 1;
+}
+.hp-design .hp-container .hp-image-container .hp-style2{
+    flex: 1;
+    margin: 0;
+}
+.hp-design .hp-container .hp-image-container .hp-style3{
+    flex:1;
+}
+.hp-design .hp-container .hp-image-container .hp-style4{
+    flex: 1;
+    margin: 0;
+    object-fit: cover;
+    align-self: stretch;
+
+    
+}
+
+
+
+.footer{
+    background-color: rgba(228, 224, 224, 0.66);
+    height: 80%;
+    width: 100%;
+    
+}
+
+.footer .hp-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    padding-top: 180px;
+}
+
+.footer .hp-container .hp-left-section p {
+    font-family: Inter;
+    font-weight: 500;
+    font-style: medium;
+    font-size: 14px;
+    line-height: 130%;
+    letter-spacing: 0%;
+    text-transform: uppercase;
+
+    color: rgb(97, 97, 97);
+
+}
+
+.footer .hp-container h3{
+    font-family: Inter;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 12px;
+    
+    line-height: 130%;
+    letter-spacing: 4%;
+    text-transform: uppercase;
+    color:rgba(118, 118, 118, 0.749);
+
+}
+
+
+
+.footer .hp-container .hp-left-section{
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+
+    row-gap: 90px;
+    
+}
+
+.footer .hp-container .hp-left-section .hp-info-title{
+    margin-bottom: 25px;
+}
+
+footer .hp-container .hp-left-section .hp-language-title{
+
+    margin-bottom: 25px;
+}
+
+.footer .hp-container .hp-right-section{
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;   
+    position: relative;
+    
+}
+
+.footer .hp-container .hp-right-section .hp-technologies-title{
+    align-self:flex-start;  
+    row-gap: 30px;
+
+}
+
+
+.footer .hp-container .hp-right-section p {
+    font-family:Inter;
+    font-weight:1000;
+    font-style:black;
+    font-size: 80px;
+    line-height: 110.00000000000001%;
+    letter-spacing: -2%;
+
+}
+
+.footer .hp-container .hp-right-section .vr{
+    color: rgba(216, 216, 216, 0.749);
+    position: relative;
+}
+
+
+.footer .hp-container .hp-right-section .hp-logo{
+
+    width: 33px;
+    height: 33px;
+    transform: rotate(45deg);
+    background: linear-gradient(
+        45deg,
+        rgba(180, 180, 180, 0.473) 50%,
+        black 50%
+    );
+    position: absolute;
+    top: 45px;  
+    left: 6px;
+}
+
+.footer .hp-container .hp-right-section span{
+    margin-left: 10px;
+    font-family: "Inter";
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 12px;
+   
+    line-height: 130%;
+    letter-spacing: 0%;
+   
+}
+
+.footer .hp-container .hp-right-section .hp-near{
+    font-family: Inter;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 12px;
+    line-height: 130%;
+    letter-spacing: 0%;
+
+    color:rgba(118, 118, 118, 0.749);   
+    position: absolute;
+
+    bottom: 145px;
+    left: 160px;
+
+    width: max-content;
+}
+
+@media(min-width:2560px){
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    
+    .hp-main-container .head .hp-container{
+        display: flex;
+        align-items: center;
+    }
+    .hp-main-container .head .hp-container .hp-left-section a{
+        font-size: 2.5rem;
+    }
+    .hp-main-container .head .hp-container .hp-left-section img{
+        width: 2rem;
+        height: 2rem;
+    }
+    .hp-main-container .head .hp-container .hp-middle-section{
+        width: 3rem;
+        height: 3rem;
+    }
+    .hp-main-container .head .hp-container .hp-right-section button{
+        width: 5rem;
+        height: 5rem;
+        font-size: 1.5rem;
+    }
+
+    .hp-main-container .head .hp-container .hp-right-section .cart-button{
+        width: 7rem;
+    }
+    .hp-main-container .head .hp-container .hp-right-section button img{
+        width: 50%;
+        height: auto;
+        font-size: 1.5rem;
+    }
+
+    .hp-main-container .hp-gender .hp-container a{
+        font-size: 2rem;
+    }
+    .hp-main-container .hp-gender .hp-container input{
+        width: 30%;
+        height: 5rem;
+        text-align: center;
+        margin: 0;
+    }
+    .hp-main-container .hp-gender .hp-container input::placeholder{
+        font-size: 1.5rem;
+        
+    }
+    .hp-main-container .hp-new-colection .hp-left-part{
+        display: flex;
+        flex-direction: column;
+        gap: 15rem;
+    }
+    
+    .hp-main-container .hp-new-colection .hp-left-part .hp-buttons .hp-gts-button{
+        width: 100%;
+        height: 4rem;
+        font-size: 1.5rem;
+        align-self: flex-end;
+    }
+    .hp-main-container .hp-new-colection .hp-left-part .hp-buttons .hp-gts-button img{
+        width: 4rem;
+       
+    }
+    .hp-main-container .hp-new-colection .hp-container .hp-left-part .p-top h1{
+        font-size: 6rem;
+    }
+     .hp-main-container .hp-new-colection .hp-container .hp-left-part .p-top p{
+        font-size: 2rem;
+    }
+    .hp-main-container .hp-new-colection .hp-container .hp-left-part .hp-buttons .direction button{
+       width: 4rem;
+       height: 4rem;
+       
+    }
+    .hp-main-container .hp-new-colection .hp-container .hp-left-part .hp-buttons .direction button img{
+        width: 60%;
+        height: 60%;
+    }
+    .hp-main-container .hp-new-colection .hp-container .hp-right-part img{
+        width: 100%;
+        height: 40rem;
+        object-fit: cover;
+    }
+    .hp-main-container .hp-new-this-week h1{
+        font-size: 6rem;
+    }
+    .hp-main-container .hp-new-this-week h1 .hp-amount{
+        font-size: 2rem;
+        position: absolute;
+        bottom: 7rem;
+        left: 33rem;
+    }
+    .hp-main-container .hp-new-this-week p{
+        font-size: 2rem;
+        bottom: 10rem;
+        left: 50rem;
+    }
+    .hp-main-container .hp-new-this-week .hp-container .hp-product-container .hp-product-type{
+        font-size: 2rem;
+    }
+    .hp-main-container .hp-new-this-week .hp-container .hp-product-container .hp-product-description{
+        font-size: 2rem;
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        
+    }
+    
+    .hp-main-container .hp-new-this-week .hp-container .hp-product-container{
+        width: 100%;
+        
+    }
+    .hp-main-container .hp-new-this-week .hp-container .hp-product-container img{
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        height: 80%;
+        object-fit: cover;
+    }
+    .hp-main-container .hp-new-this-week .hp-container .hp-product-container .hp-add-button{
+        bottom: 4.7rem;
+        width: 4rem;
+        height: 4rem;
+        left: 16rem;
+       
+    }
+    .hp-main-container .hp-new-this-week .hp-buttons button{
+        width: 5rem;
+        height: 5rem;
+    }
+    .hp-main-container .hp-new-this-week .hp-buttons button img{
+        width: 60%;
+        height: 60%;
+    }
+    .hp-main-container .hp-collections h1{
+        font-size: 6rem;
+    }
+    .hp-main-container .hp-collections .hp-container .hp-filter .hp-left-filter a{
+        font-size: 2.5rem;
+    }
+    .hp-main-container .hp-collections .hp-container .hp-filter .hp-right-filter{
+        column-gap: 10rem;
+    }
+    .hp-main-container .hp-collections .hp-container .hp-filter .hp-right-filter p{
+        font-size: 2rem;
+    }
+    .hp-main-container .hp-collections .hp-container .hp-filter .hp-right-filter .hp-sorts{
+        gap: 3rem;
+    }
+    .hp-main-container .hp-collections .p-bottom{
+        gap: 2rem;
+        margin: 0;
+    }
+   
+    .hp-main-container .hp-collections .p-bottom .hp-product-container .hp-product-description{
+        font-size: 2rem;
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+    }
+    
+    .hp-main-container .hp-collections .p-bottom .hp-product-container .hp-product-type{
+         font-size: 2rem;
+    }
+    
+    .hp-main-container .hp-collections .p-bottom .hp-product-container{
+        width: 100%;
+        
+    }
+    .hp-main-container .hp-collections .p-bottom .hp-product-container img{
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        height: 60%;
+        object-fit: cover;
+    }
+    .hp-main-container .hp-collections .p-bottom .hp-product-container .hp-add-button{
+        bottom: 4.7rem;
+        width: 4rem;
+        height: 4rem;
+        left: 16rem;
+       
+    }
+    .hp-main-container .hp-more-button{
+        margin-top: -5rem;
+        margin-bottom: 12rem;
+    }
+
+    .hp-main-container .hp-more-button p{
+        font-size: 2rem;
+    }
+
+    .hp-main-container .hp-more-button img{
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .hp-main-container .hp-design{
+        margin:0;
+    }
+
+    .hp-main-container .hp-design .hp-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10rem;
+        
+    }
+
+    .hp-main-container .hp-design .hp-container .hp-text-container{
+        gap: 1rem;
+        align-items: center;
+    }
+
+
+    .hp-main-container .hp-design .hp-container .hp-text-container h1{
+        font-size: 6rem;
+    }
+
+    .hp-main-container .hp-design .hp-container .hp-text-container p{
+        font-size: 2rem;
+        line-height: 100%;
+        width: 50%;
+          
+    }
+    .hp-main-container .hp-design .hp-container .hp-image-container {
+        justify-content: center;
+        align-items: stretch;
+        height: 100%;
+    }
+
+    .hp-main-container .hp-design .hp-container .hp-image-container img{
+        width: 20%;
+        height: auto;
+        margin: 0; 
+        object-fit: cover;
+    }
+    .hp-main-container .footer .hp-container{
+        align-items: flex-start;
+    }
+    .hp-main-container .footer .hp-container .hp-left-section .info h3{
+        font-size: 2rem;
+    }
+     .hp-main-container .footer .hp-container .hp-left-section .info p{
+        font-size: 1.5rem;
+    }
+    .hp-main-container .footer .hp-container .hp-left-section .languages h3{
+        font-size: 2rem;
+    }
+     .hp-main-container .footer .hp-container .hp-left-section .languages p{
+        font-size: 1.5rem;
+    }
+     .hp-main-container .footer .hp-container .hp-right-section{
+        align-items: flex-start;
+
+    }
+    .hp-main-container .footer .hp-container .hp-right-section h3{
+        font-size: 2rem;
+    }
+    .hp-main-container .footer .hp-container .hp-right-section p{
+        font-size: 10rem;
+    }
+     .hp-main-container .footer .hp-container .hp-right-section .hp-near{
+        font-size: 2rem;
+        position: absolute;
+        bottom: 18rem;
+        left: 20rem;
+    }
+}
+
+@media(max-width:1180px){
+
+    .hp-main-container .hp-collections .hp-container .p-bottom .hp-product-container > img{
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .hp-main-container .hp-design .hp-container .hp-image-container{
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+        
+    }
+    .hp-main-container .hp-design .hp-container .hp-image-container img{
+        width: 20%;
+        object-fit: cover;
+    }
+   
+
+}
+
+@media(max-width:768px){   
+
+   * {
+    box-sizing: border-box;
+  }
+
+  .hp-main-container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3rem;
+    
+  }
+
+  .hp-main-container .head{
+    width: 100%;
+   
+  }
+
+  .hp-main-container .head .hp-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+
+  }
+
+   .hp-main-container .head .hp-left-section a {
+    display: none;
+  }
+
+  .p-menu-icon {
+    display: block;
+    width: 22px;
+  }
+
+  .hp-middle-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+
+  .hp-middle-section .amblem{
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .hp-right-section {
+    display: flex;
+    gap: 6px;
+  }
+
+  .hp-right-section button {
+    padding: 4px;
+  }
+
+  .hp-right-section img {
+    width: 18px;
+  }
+
+  .cart-button {
+    display: none;
+  }
+  .like-button{
+    display: none;
+  }
+  .hp-main-container .hp-gender .hp-container{
+    margin: 0;
+  }
+
+  .hp-main-container .hp-gender .hp-container a{
+    font-size: 1.5rem;
+  }
+
+  .hp-main-container .hp-gender{
+    display: block;
+  }
+
+  .hp-main-container .hp-gender .hp-container .hp-search-box input{
+    width: 100%;
+  }
+
+  .hp-main-container .hp-new-colection{
+    margin: 0;
+  }
+  
+  
+  .hp-main-container .hp-new-colection .hp-container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    margin: 0;
+    
+  }
+
+  .hp-main-container .hp-new-colection .hp-container .hp-left-part{
+        gap: 1rem;
+  }
+  .hp-main-container .hp-new-colection .hp-container .hp-right-part{
+        gap: 0rem;
+        justify-content: space-between;
+  }
+
+  .hp-main-container .hp-new-colection .hp-container .hp-right-part img{
+    width: 40%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .hp-new-colection .hp-container .hp-left-part .hp-buttons button{
+    display: none;
+  }
+
+  .hp-new-colection .hp-container .hp-left-part .p-top{
+    margin: 0;
+  }
+
+  .hp-main-container .hp-new-this-week{
+    margin: 0;
+  }
+
+  .hp-main-container .hp-new-this-week .hp-container{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .hp-main-container .hp-new-this-week .hp-container .hp-product-container .hp-add-button{
+    display: none;
+  }
+  .hp-main-container .hp-new-this-week .hp-container .hp-product-container .hp-product-description{
+    gap:0.1rem;
+  }
+  
+  .hp-new-this-week .hp-container .hp-product-container > img{
+        width: 100%;
+        aspect-ratio: 3 / 4;
+        object-fit: cover;
+    }
+   
+    
+    .hp-new-this-week .hp-container .hp-product-container .hp-product-description{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        
+    }
+
+  .hp-main-container .hp-collections{
+    margin: 0;
+  }
+
+  .hp-main-container .hp-collections h1{
+    margin: 0;
+  }
+  .hp-main-container .hp-collections .hp-container .hp-filter{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 3rem;
+    
+  }
+
+  .hp-main-container .hp-collections .hp-container .hp-filter .hp-left-filter{
+    margin: 0;
+  }
+  .hp-collections .hp-container .hp-filter .hp-left-filter{
+    gap: 1rem;
+  }
+  .hp-main-container .hp-collections .hp-container .p-bottom .hp-product-container{
+        gap: 0.1rem;
+    }
+    .hp-main-container .hp-collections .hp-container .p-bottom .hp-product-container .hp-product-type{
+        margin-top:0.2rem;
+    }
+    
+  .hp-main-container .hp-collections .hp-container .hp-filter .hp-right-filter{
+    margin: 0;
+    gap: 1rem;
+    line-height: 100%;
+  }
+
+  .hp-collections .hp-container .hp-product-container{
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    gap: 1.5rem;
+  }
+  .hp-collections .hp-container .hp-bottom {
+    gap: 1rem;
+  }
+  
+  .hp-collections .hp-container .hp-bottom .hp-product-container .cotton-shirt{
+        flex: 1;
+    }
+  .hp-collections .hp-container .hp-bottom .hp-product-container .white-shirt{
+        flex: 1;
+    }
+    .hp-collections .hp-container .hp-bottom .hp-product-container .yellow-shirt{
+        flex: 1;
+    }
+  .hp-collections .hp-container .hp-bottom .hp-product-container .hp-product-description{
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+  }
+
+  .hp-design{
+    margin: 0;
+  }
+
+  .hp-design .hp-container .hp-image-container img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .hp-design .hp-container .hp-image-container{
+    justify-content: space-around;
+  }
+
+    .hp-design .hp-container .hp-image-container .hp-style{
+        margin-top: 2rem;
+    }
+    .hp-design .hp-container .hp-image-container .style4{
+        margin-top: 2rem;
+        
+    }
+
+  .hp-design .hp-container{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .hp-add-button{
+    display: none;
+  }
+
+
+  .hp-design .hp-container .hp-text-container p{
+        width: 100%;
+        font-size: 1rem;
+        line-height: 100%;
+  }
+
+  .hp-design .hp-container .hp-text-container h1{
+    font-size: 3rem;
+    margin: 0;
+  }
+
+  .footer .hp-container{
+    width: 100%;
+    padding:6.5rem;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 3rem;
+    box-sizing: border-box;
+  }
+
+  .footer .hp-container .hp-right-section p{
+    font-size: 3rem;
+  }
+  .footer .hp-container .hp-right-section .hp-near{
+        left: 5rem;
+        width: 100%;
+        top: 2rem;
+  }
+}
+
+@media(max-width:550px){
+    .hp-main-container .hp-new-this-week .hp-see-all{
+        position: absolute;
+        right: 3rem;
+    }
+}
+@media(max-width:428px){
+     .hp-main-container .hp-new-this-week .hp-container{
+        display: flex;
+        flex-direction: column;
+    }
+    .hp-main-container .hp-collections .hp-container .p-bottom{
+        display: flex;
+        flex-direction: column;
+    }
+    
+}
+
+@media(max-width:376px){
+    .hp-main-container .hp-collections .hp-container .hp-filter{
+        gap: 1rem;
+    }
+    .hp-main-container .footer .hp-container .hp-right-section .hp-near{
+        font-size: 0.5rem;    
+    }
+    .hp-main-container .footer .hp-container .hp-left-section .info h3{
+        font-size: 0.6rem;
+    }
+    .hp-main-container .footer .hp-container .hp-left-section .info p{
+        font-size: 0.5rem;
+    }
+     .hp-main-container .footer .hp-container .hp-left-section .languages h3{
+        font-size: 0.5rem;
+    }
+    .hp-main-container .footer .hp-container .hp-left-section .languages p{
+        font-size: 0.5rem;
+    }
+    .hp-main-container .footer .hp-container .hp-right-section h3{
+        font-size: 0.6rem;
+    }
+    .hp-main-container .footer .hp-container{
+        gap: 0.5rem;
+    }
+    
+    .hp-main-container .hp-design .hp-text-container p{
+        margin: 0;
+        line-height: 100%;
+        width: 100%;
+    }
+    .hp-main-container .hp-collections .hp-container .hp-filter .hp-right-filter{
+        margin: 0;
+        gap: 1rem;
+        line-height: 100%;
+    }
+    .hp-main-container .hp-new-this-week .hp-container{
+        display: flex;
+        flex-direction: column;
+    }
+    .hp-main-container .hp-collections .hp-container .p-bottom{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media(max-width:320px){
+
+    .hp-main-container .hp-gender .hp-container a{
+        font-size: 1rem;
+    }
+    .hp-main-container{
+        gap: 1rem;
+    }
+    .hp-main-container .hp-new-colection .hp-container .hp-left-part .p-top h1{
+        font-size: 2.5rem;
+    }
+    .hp-main-container .hp-new-colection .hp-container .hp-right-part{
+        display: flex;
+        justify-content: flex-start;
+        gap: 1rem;
+        
+    }
+    .hp-main-container .hp-new-this-week h1{
+        font-size: 2.5rem;
+    }
+    .hp-main-container .hp-new-this-week .hp-see-all{
+        display: none;
+    }
+    .hp-main-container .hp-new-this-week .hp-amount{
+        left: 6.5rem;
+        bottom:4rem;
+    }
+    .hp-main-container .hp-new-this-week .hp-container .hp-product-container:last-child{
+        display: none;
+    }
+    .hp-main-container .hp-collections h1{
+        font-size: 2.5rem;
+    }
+    .hp-main-container .hp-collections .hp-container .hp-filter{
+        display: flex;
+        flex-direction: column;
+    }
+    .hp-main-container .hp-collections .hp-container .hp-filter .hp-right-filter{
+        gap: 0;
+    }
+    .hp-main-container .hp-design .hp-container{
+        gap:4rem;
+    }
+    .hp-main-container .hp-design .hp-container .hp-text-container h1{
+        font-size: 2.5rem;
+    }
+    .hp-main-container .hp-design .hp-container .hp-text-container p{
+        font-size: 1rem;
+    }
+    .hp-main-container .footer .hp-container{
+        gap: 1rem;
+    }
+
+    .hp-main-container .hp-new-this-week .hp-container{
+        display: flex;
+        flex-direction: column;
+    }
+    .hp-main-container .hp-collections .hp-container .p-bottom{
+        display: flex;
+        flex-direction: column;
+    }
+    
+}
+
+
+/*checkout-style.css*/
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+    linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)),
+    url("images/noisy-background.jpg");
+    background-size: cover;
+    z-index: -1;
+}
+
+.cp-main-container{
+    display: flex;
+    flex-direction: column; 
+}
+
+header img{
+    width: 59.5px;
+    height: 17px;
+    opacity: 1;
+    border-width: 1.5px;
+    transform: rotate(180deg);
+    margin-left: 40px;
+    cursor: pointer;
+}
+
+
+.cp-titles .cp-container {
+    display: flex;
+    
+    gap: 1rem;
+    align-items: flex-start;
+    flex: 1 1 100%;
+    min-width: 0;
+   
+}
+
+.cp-titles h1{
+    font-family: Beatrice Deck Trial;
+    font-weight: 800;
+    font-style: Extrabold;
+    font-size: 32px;
+    line-height: 40px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: -8px;
+
+}
+
+.cp-titles .cp-container p{
+    font-family: Beatrice Trial;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 16px;
+    line-height: 40px;
+    letter-spacing: 0px;
+    text-transform: uppercase;
+    color: rgba(138, 138, 138, 1);
+
+}
+
+.cp-titles .cp-container p:first-child{
+    color: rgba(0, 0, 0, 1);
+    font-weight: 500;
+}
+
+.cp-products .cp-container {
+    display: flex;
+    gap: 3rem;
+    justify-content: space-around;
+ 
+}
+
+.cp-products .cp-container .cp-left-part{
+    display: flex;
+    flex-direction: column;
+    gap:1px;
+    flex: 0.5 1 0%;    
+    min-width: 0;
+    
+}
+
+.cp-products .cp-container .cp-left-part form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    
+ 
+}
+
+.cp-products .cp-container .cp-left-part button{
+    box-sizing: border-box;
+    width: 50%;
+    height: 44px;
+    opacity: 1;
+    background-color: rgba(217, 217, 217, 1);
+    border: none;
+
+    font-family: Beatrice Deck Trial;
+    font-weight: 500;
+    font-style: medium;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 0px;
+
+    text-align:left;
+    padding-left: 2rem;
+    padding-right: 2rem;
+
+    margin-top: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-self: flex-end;
+
+    cursor: pointer;
+
+}
+
+.cp-products .cp-container .cp-left-part button img{
+    width: 30px;
+    height: 30px;
+    
+}
+
+
+.cp-products .cp-container .cp-left-part form h3{
+    font-family: Beatrice Trial;
+    font-weight: 500;
+    font-style: medium;
+    font-size: 14px;
+    line-height: 40px;
+    letter-spacing: 0px;
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 1);
+    
+
+}
+.cp-products .cp-container .cp-left-part form .cp-sa-title{
+    margin-top: 14px;
+}
+
+
+.cp-products .cp-container .cp-left-part form input{
+    
+    border: 1px solid rgba(217, 217, 217, 1);
+    
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    
+    opacity: 1;
+    border:1px solid rgba(217, 217, 217, 1);
+    padding: 1rem;  
+    background-color: transparent;
+}
+
+.cp-products .cp-container .cp-left-part form input.error {
+    border:2px solid #e74c3c;
+
+}
+.cp-products .cp-container .cp-left-part form input.error::placeholder {
+    color: #e74c3c;
+
+}
+
+.cp-products .cp-container .cp-left-part form input.success {
+    border:2px solid #2ecc71;
+}
+
+.cp-products .cp-container .cp-left-part form .cp-name{
+    display: flex;
+    gap: 0.5rem;
+    
+}
+
+.cp-products .cp-container .cp-left-part form .cp-name input{
+    width: 100%;
+}
+
+.cp-products .cp-container .cp-left-part form .cp-city-p{
+    display: flex;
+    gap: 0.5rem;
+}
+
+.cp-products .cp-container .cp-left-part form .cp-city-p input{
+    width: 100%;
+}
+
+.cp-container form input::placeholder{
+    font-family: Beatrice Trial;
+    font-weight: 400;
+    font-style: regular;
+    font-size: 12px;
+    line-height: 40px;
+    letter-spacing: 0px;
+    color:rgba(94, 94, 94, 1);
+
+}
+
+.cp-container .cp-right-part{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border: 1px solid rgba(217, 217, 217, 1);
+    gap: 2rem;
+    padding: 1.5rem;
+    position: relative;
+    flex: 0.3 1 0;
+    min-width: 0;
+}
+
+.cp-container .cp-right-part .cp-products-area{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.cp-container .cp-right-part .cp-t-amount{
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    font-family: Beatrice Deck Trial;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 1px;
+    color:rgba(0, 14, 138, 1);
+    background-color: white;
+    width: 34px;
+    height: 34px;
+    text-align: center;
+}
+
+.cp-container .cp-right-part .cp-t-amount{
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    font-family: Beatrice Deck Trial;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 1px;
+    color:rgba(0, 14, 138, 1);
+    background-color: white;
+    width: 34px;
+    height: 34px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+
+.cp-container .cp-right-part h3{
+    font-family: Beatrice Deck Trial;
+    font-weight: 500;
+    font-style: medium;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 1px;
+
+}
+
+.cp-container .cp-right-part .cp-product-container img{
+    width: 30%;
+    height: auto;
+    opacity: 1;
+    border:1px solid rgba(217, 217, 217, 1);
+    object-fit: cover;
+}
+
+.cp-container .cp-right-part .cp-product-t{
+    font-family: Beatrice Deck Trial;
+    font-weight: 500;
+    font-style: medium;
+    font-size: 11px;
+    line-height: 100%;
+    letter-spacing: 0px;
+    text-transform: capitalize;
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    width: 100%;
+
+    
+
+}
+
+.cp-container .cp-right-part .cp-product-t span{
+    font-family: Beatrice Deck Trial;
+    font-weight: 500;
+    font-style: medium;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: 0px;
+    text-decoration: underline;
+    text-decoration-style: solid;
+    text-decoration-thickness: 0%;
+
+}
+
+.cp-container .cp-right-part .cp-product-s{
+    font-family: Beatrice Deck Trial;
+    font-weight: 500;
+    font-style: medium;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: 0px;
+    color: rgba(0, 0, 0, 0.66);
+    display: flex;
+
+}
+
+.cp-container .cp-right-part .cp-amount-co{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+.cp-container .cp-right-part .cp-amount{
+    font-family: Beatrice Deck Trial;
+    font-weight: 500;
+    font-style: medium;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 1px;
+    color: rgba(0, 14, 138, 1);
+    margin-top: auto;
+    
+    
+}
+
+.cp-container .cp-right-part .cp-cost{
+    font-family: Beatrice Deck Trial;
+    font-weight: 500;
+    font-style: medium;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 1px;
+    color: rgba(0, 14, 138, 1);
+}
+
+.cp-container .cp-right-part .cp-product-d{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    
+    
+}
+
+.cp-container .cp-right-part .cp-product-container{
+   display: flex;
+   justify-content: flex-start;
+   align-items: flex-start;
+   gap: 1rem;
+
+}
+
+.cp-container .cp-right-part .cp-sub-t , .cp-shipping{
+    font-family: Beatrice Deck Trial;
+    font-weight: 500;
+    font-style: medium;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-wrap: nowrap;
+}
+
+.cp-container .cp-right-part .cp-sub-t{
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid rgba(223, 223, 223, 1);
+    padding-top: 10px;
+    width: 100%;
+    
+}
+
+.cp-container .cp-right-part .cp-shipping{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(223, 223, 223, 1);
+    padding-bottom: 10px;
+    margin-top: -20px;
+    width: 100%;
+}
+.cp-container .cp-right-part .cp-shipping span{
+    font-family: Beatrice Deck Trial;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 10px;
+
+    line-height: 100%;
+    letter-spacing: 0px;
+}
+
+.cp-container .cp-right-part .cp-total{
+    font-family: Beatrice Deck Trial;
+    font-weight: 500;
+    font-style: medium;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 0px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+}
+
+
+@media (min-width: 2561px) {
+
+    .cp-main-container{
+        display: grid;
+        grid-template-rows: repeat(3, 1fr,1fr,2fr);
+        grid-template-columns: repeat(2,1fr,1fr);
+        gap: 24px;
+        row-gap: 3rem;
+        column-gap: 1rem;
+    
+    }
+
+    .cp-main-container .cp-titles h1{
+        font-size: 4rem;
+    }
+
+    .cp-main-container .cp-titles .cp-container p{
+        font-size: 1.5rem;
+    }
+    
+    .cp-main-container .cp-products .cp-container form input{
+        width: 40vw;
+        padding: 1rem;
+    }
+    .cp-main-container .cp-products .cp-container .cp-left-part form input::placeholder{
+        font-size: 1.2rem;
+        opacity: 0.66;
+        
+    }
+
+    .cp-main-container .cp-products .cp-container{
+        align-items: center;
+    }
+
+    .cp-main-container .cp-products .cp-container form h3{
+        font-size: 1.5rem;
+    }
+
+    .cp-main-container .cp-products .cp-container .cp-left-part form .cp-name input{
+        width: 50%;  
+    }
+
+    .cp-main-container .cp-products .cp-container .cp-left-part button{
+        margin: 0;
+        width: 50%;
+        padding: 2rem;
+        margin-top: 1rem;
+        font-size: 1.5rem;
+        justify-content: space-between;
+    }
+    .cp-main-container .cp-products .cp-container .cp-left-part form .cp-city-p input{
+        width: 50%;  
+    }
+
+    .cp-main-container .cp-products .cp-container .cp-right-part h3{
+        font-size: 1.5rem;
+        
+    }
+
+    .cp-main-container .cp-products .cp-container .cp-right-part .cp-product-container img{
+        width: 100%;
+        height: 15rem;
+        object-fit: cover;
+    }
+    .cp-main-container .cp-products .cp-container .cp-right-part .cp-product-container .cp-product-t{
+        gap: 5rem;
+        align-items: center;
+    }
+     .cp-main-container .cp-products .cp-container .cp-right-part .cp-product-container .cp-product-t span{
+        font-size: 1.5rem;
+    }
+    
+
+    .cp-main-container .cp-products .cp-container .cp-right-part .cp-product-container .cp-product-d p{
+        font-size: 1.5rem;
+        text-wrap: nowrap;
+    }
+    .cp-main-container .cp-products .cp-container .cp-right-part .cp-product-container .cp-product-d .cp-amount{
+        display: flex;
+        justify-content: space-between;
+        gap: 22rem;
+        
+    }
+    
+    .cp-main-container .cp-products .cp-container .cp-right-part .cp-sub-t{
+
+        font-size: 1.5rem;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10rem;
+    }
+    .cp-main-container .cp-products .cp-container .cp-right-part .cp-shipping{
+        
+        font-size: 1.5rem;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .cp-main-container .cp-products .cp-container .cp-right-part .cp-total{
+        width: 100%;
+        font-size: 1.5rem;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .cp-main-container .cp-products .cp-container .cp-right-part .cp-shipping span{
+        font-size: 1.2rem;
+        text-wrap: nowrap;
+        color: rgba(0, 0, 0, 0.66);
+    }
+    .cp-main-container .cp-products .cp-container .cp-right-part .cp-t-amount p{
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 870px) {
+
+    .cp-main-container header{
+        margin: 0;
+        padding: 0;
+        
+    }
+
+    .cp-main-container{
+        min-width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 2rem;
+    }
+
+    .cp-main-container .cp-titles{
+
+        padding:1rem;    
+    }
+
+    .cp-main-container .cp-titles h1{
+        font-size: 2rem;
+    }
+    
+    .cp-main-container .cp-titles .cp-container{
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .cp-main-container .cp-titles .cp-container p{
+        font-size: 0.8rem;
+    }
+
+    .cp-products .cp-container{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: start;
+        gap: 1rem;
+        
+    }
+
+    .cp-products .cp-container .cp-left-part{
+        align-self: flex-start;
+        margin: 0;
+        padding: 0;
+        flex: 1 1 100%;
+        min-width: 0;
+
+    }
+
+    .cp-products .cp-container .cp-left-part form{
+        flex: 1 1 100%;
+        min-width: 0;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        box-sizing: border-box;
+   
+    }
+    
+    .cp-products .cp-container .cp-left-part form h3{
+        font-size: 12px;
+    }
+
+    .cp-products .cp-container .cp-left-part form input{
+        width: 100%;
+    }
+
+    .cp-products .cp-container .cp-left-part .cp-name input{
+       width: 100%;
+    
+    }
+
+    .cp-products .cp-container .cp-left-part .cp-city-p input{
+        width: 100%;
+       
+    }
+
+    .cp-products .cp-container .cp-left-part button{
+        width: 100%;
+        justify-content: space-between;
+        padding-right: 1rem;
+        padding-left: 1rem;
+        align-self: flex-end;
+        box-sizing: border-box;
+        
+    }
+
+    .cp-products .cp-container .cp-right-part{
+        align-self: flex-start;
+        padding: 1.5rem;
+        flex: 1 1 100%;
+        min-width: 0;
+        flex-wrap: wrap;
+          
+    }
+
+    .cp-products .cp-container .cp-right-part .cp-t-amount{
+        right: 3rem;
+        top: 1rem;
+    }
+
+    .cp-products .cp-container .cp-right-part .cp-product-container{
+        padding: 0px;
+        border: none;
+    }
+}
+
+/*products-page-style.css*/
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+
+body{
+    background: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)),
+    url("images/noisy-background.jpg");
+    background-size: cover;
+    box-sizing: border-box;
+}
+
+.head{
+    padding: 10px; 
+    width: 100%;
+}
+
+.head .p-container{
+    display: flex;
+    justify-content:space-between;
+    align-self: flex-start;
+    
+       
+}
+
+.head .p-container .p-menu-icon{
+    width: 26px;
+    height: 16px;
+    
+}
+
+.left-section{
+    display: flex;
+    align-items: center;
+}
+
+.left-section a{
+    text-decoration: none;
+    margin: 10px;
+    color: rgb(0,0,0,1);
+    font-size: 18px;
+    font-family: "Beatrice Deck Trial";
+    font-weight: 500;
+    line-height: 100%;
+    cursor: pointer;
+}
+
+.middle-section{
+    display: flex;
+    justify-content: center;
+}
+
+.middle-section .amblem{
+    width: 2.5rem;
+    height: 2.5rem;
+    transform: rotate(45deg);
+    background: linear-gradient(
+        45deg,
+        rgba(217,217,217,1) 50%,
+        black 50%
+    );
+}
+
+ 
+.left-section .p-menu-icon{
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.pp-container .right-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right-section .like-button{
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+    margin-right: 20px;
+    background-color: #262222;
+    cursor: pointer;
+    
+}
+
+.right-section .like-button img{
+    transform: rotate(-45deg);
+    padding-top: 7px;
+    padding-right: 2px;
+}
+
+.right-section .cart-button{
+    height: 50px;
+    width: 76px;
+    border:1px solid #262222;
+    border-radius: 22px;
+    background-color: #262222;
+    color: #F5F5F5;
+
+    font-size: 12px;
+    font-family: "Beatrice Deck Trial";
+    cursor: pointer;
+}
+
+.right-section .shop-button{
+    height: 50px;
+    width: 50px;
+    background-color: #fff;
+    margin-left: -5px;
+    
+    border: 7px solid rgba(0, 0, 0, 1);
+    border-radius: 100%;
+    cursor: pointer;
+    position: relative;
+}
+.right-section .shop-button .total-amount{
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: red;
+    position: absolute;
+    border-radius: 100%;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    text-align: center;
+    font-family: "Beatrice Deck Trial";
+    color: white;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.right-section .shop-button img{
+    width: 20px;
+    height: 19px;
+    padding-left: 1px;
+    padding-top: 2px;
+}
+
+.right-section .profile-button{
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+    margin-left: 20px;
+    background-color: #262222;
+    color: #F5F5F5;
+    cursor: pointer;
+}
+
+.right-section .profile-button img{
+    padding-top: 4px;
+    opacity: 1;
+}   
+
+.pp-main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6rem;
+}
+
+.pp-product .pp-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    
+}
+
+.pp-product .pp-container .pp-fav-icon{
+    position: absolute;
+    width: 34px;
+    height: 34px;
+    color: black;
+    transform: rotate(-45deg);
+}
+
+.pp-product .pp-container .pp-left-part{
+   
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+    flex: 2 1 0;
+    min-width: 0;
+    
+}
+
+.pp-product .pp-container .pp-left-part >img{
+    width: 50%;
+    height: 100%;
+    border: 1px solid rgba(217, 217, 217, 1);
+    object-fit: cover;
+
+}
+
+.pp-product .pp-container .pp-left-part .pp-small-images{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+}
+
+.pp-product .pp-container .pp-left-part .pp-small-images img{
+    width: 3rem;
+    height: auto;
+    opacity: 0.44;
+    border: 1px solid rgba(217, 217, 217, 1);
+}
+
+.pp-product .pp-container .pp-left-part .pp-small-images img:first-child{
+    opacity: 1;
+}
+
+.pp-product .pp-container .pp-right-part {
+    border: 1px solid rgba(217, 217, 217, 1);
+    
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    align-self: center;
+    
+    gap: 25px;
+    padding: 3rem;
+
+    position: relative;
+    flex: 1 1 0;
+    min-width: 0;
+    
+}
+
+.pp-product .pp-container .pp-black-fav-icon{
+    width: 14px;
+    height: 14px;
+
+    transform: rotate(-45deg);
+
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    cursor: pointer;
+}
+
+.pp-product .pp-container .pp-black-fav-icon:active{
+    background-color: red;
+}
+
+.pp-product .pp-container .pp-right-part h3{
+    font-family: Beatrice Deck Trial;
+    font-weight: 500;
+    font-style: medium;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 1px;
+
+}
+
+.pp-product .pp-container .pp-right-part p{
+    font-family: Beatrice Deck Trial;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: 1px;
+
+}
+
+.pp-product .pp-container .pp-right-part .pp-tax{
+    font-family: Beatrice Trial;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: 1px;
+    color:rgba(0, 0, 0, 0.55);
+    margin-top: -10px;
+
+}
+
+.pp-product .pp-container .pp-right-part .pp-measure{
+    font-family: Beatrice Trial;
+    font-weight: 400;
+    font-style: regular;
+    font-size: 10px;
+    line-height: 100%;
+    letter-spacing: 1px;
+    color: rgba(0, 0, 0, 0.55);
+
+    margin-top: -10px;
+
+}
+
+.pp-product .pp-container .pp-right-part .pp-cost{
+    margin-top: -10px;
+
+}
+
+.pp-product .pp-container .pp-right-part .pp-description{
+   
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+    margin-top: 10px;   
+}
+
+.pp-product .pp-container .pp-right-part .pp-color-title{
+    margin-bottom: -20px;
+    font-family: Beatrice Deck Trial;
+    font-weight: 250;
+    font-style: Thin;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: 2px;
+
+}
+
+.pp-product .pp-container .pp-right-part .pp-colors{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 7px;
+    cursor:pointer;
+
+}
+
+
+.pp-product .pp-container .pp-right-part .pp-colors span{
+    display: block;
+    min-width: 0;
+    border: 2px solid transparent;
+}
+
+.active{
+    border: 3px solid rgba(0, 0, 0, 1);
+    color: red;
+}
+
+.pp-color-box input:checked + span {
+  border: 3px solid #000; 
+}
+
+
+.pp-product .pp-container .pp-right-part .colors .pp-cream-box{
+    background-color: rgba(217, 217, 217, 1);
+}
+
+.pp-product .pp-container .pp-right-part .pp-grey-box{
+    background-color: rgba(169, 169, 169, 1);
+}
+
+.pp-product .pp-container .pp-right-part .pp-black-box{
+    background-color: rgba(0, 0, 0, 1);
+}
+
+.pp-product .pp-container .pp-right-part .pp-green-box{
+
+    background-color: rgba(166, 214, 202, 1);
+}
+
+.pp-product .pp-container .pp-right-part .pp-white-box{
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.pp-product .pp-container .pp-right-part .pp-blue-box{
+    background-color: rgba(185, 193, 232, 1);
+}
+
+.pp-product .pp-container .pp-right-part .pp-size-title{
+    font-weight: 250;
+    font-style: Thin;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: 2px;
+
+    margin-bottom: -20px;
+
+}
+
+.pp-product .pp-container .pp-right-part .pp-size{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+}
+
+.pp-product .pp-container .pp-right-part input{
+    display: none;
+    
+}
+
+.pp-product .pp-container .pp-right-part .pp-size label{
+    position: relative;
+    flex: 1 1 0;
+    min-width: 0;
+}
+
+.pp-product .pp-container .pp-right-part .pp-size span .active{
+    border: 3px solid rgba(0, 0, 0, 1);
+    background-color: rgb(128, 128, 128);
+
+}
+
+.pp-product .pp-container .pp-right-part span{
+    width: 35.24px;
+    height: 36.17px;
+    display: inline-block;
+    border: 2px solid #ccc;
+   
+    font-weight: bold;
+    transition: all 0.2s;
+
+    border: 1px solid rgba(163, 163, 163, 1);
+
+    font-family: Beatrice Deck Trial;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 10px;
+    line-height: 36.17px;
+    letter-spacing: 0px;
+    text-align: center;
+    cursor: pointer;
+}
+
+
+.pp-product .pp-container .pp-right-part button{
+    background-color: rgba(217, 217, 217, 1);
+    width: 100%;
+    height: 40px;
+    border: none;
+
+    font-family: "Beatrice Deck Trial";
+    font-weight: 500;
+    font-style: medium;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: 1px;
+    text-align: center;
+
+    margin-top: -10px;
+    cursor: pointer;
+}
+
+@media(min-width:2560px){
+
+    .pp-main-container{
+        display: flex;
+        flex-direction: column;
+        row-gap: 10rem;
+    }
+
+    .pp-main-container .head .left-section{
+        display: flex;
+        justify-content: center;
+    }
+
+    .pp-main-container .head .left-section img{
+        width: 3rem;
+        height: 3rem;
+    }
+
+    .pp-main-container .head .left-section a{
+        font-size: 2rem;
+    }
+
+    .pp-main-container .head .middle-section div{
+        width: 4rem;
+        height: 4rem;
+    }
+
+    .pp-main-container .head .right-section button{
+        width: 5.2rem;
+        height: 5rem;
+        font-size: 1.3rem;
+    }
+
+     .pp-main-container .head .right-section .cart-button{
+        width: 7rem;
+        
+    }
+
+    .pp-main-container .head .right-section button img{
+        width: 50%;
+        height: auto;
+        opacity: 1;
+    }
+
+    .pp-main-container .pp-product .pp-container{
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 30rem;
+    }
+
+    .pp-main-container .pp-product .pp-container .pp-left-part{
+       align-items: center;
+    
+    }
+
+    .pp-main-container .pp-product .pp-container .pp-left-part > img{
+        width: 100%;
+        height: auto;
+    }
+
+    .pp-main-container .pp-product .pp-container .pp-left-part .pp-small-images img{
+        width: 41%;
+        height: auto;
+    }
+
+     .pp-main-container .pp-product .pp-container .pp-right-part{
+        width: auto;
+     }
+
+    .pp-main-container .pp-product .pp-container .pp-right-part h3{
+        font-size: 1.5rem;
+    }
+
+    .pp-main-container .pp-product .pp-container .pp-right-part p{
+        font-size: 1.5rem;
+    }
+
+    .pp-main-container .pp-product .pp-container .pp-right-part .colors label{
+        width: 4rem;
+        height: 4rem;
+    } 
+    
+}
+
+
+@media (max-width: 769px) {
+   
+    .head .pp-container .left-section a{
+        display: none;
+    }
+
+    .head .pp-container .middle-section{
+        display: none;
+    }
+
+    
+    .head .pp-container .right-section .like-button{
+        display: none;
+    }
+
+    .head .pp-container .right-section .cart-button{
+        display: none;
+    }
+
+    .pp-main-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 0.1rem;
+        
+    }
+    .pp-main-container .head{
+        width: 100%;
+    }
+
+   
+    .pp-product .pp-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 1rem;
+        
+    }
+
+    .pp-product .pp-container .pp-left-part{
+        display: flex;
+        flex-direction: column;
+        margin:0px;
+        align-items: center;
+        
+    }
+    .pp-product .pp-container .pp-left-part img{
+        width: 100%;
+        height: auto;
+        border: none;
+        z-index: -1;
+    
+    }
+    .pp-product .pp-container .pp-left-part .pp-small-images{
+        flex-direction: row;
+    }
+    .pp-product .pp-container .pp-right-part{
+        padding: 20px;
+        gap: 20px;
+    }
+    .pp-product .pp-container .pp-right-part button{
+    
+        position:fixed;
+        width: 100%;
+        bottom: 0;
+        text-align: center;
+        padding: 0;
+        margin: 0;
+        left: 0;
+    
+    }
+    
+}
+
+@media (max-width: 320px){
+    .pp-main-container{
+        display: flex;
+        flex-direction: column;
+        align-items: stretch; 
+    }
+    .pp-product .pp-container .pp-left-part,
+    .pp-product .pp-container .pp-right-part {
+        flex: 1 1 100%;
+        width: 100%;
+    }      
+    .pp-product .pp-container .pp-small-images{
+        display: flex;
+        flex-direction: row; 
+        justify-content: space-between; 
+        gap: 4px; 
+        width: 100%;     
+    }
+    .pp-product .pp-container .pp-small-images img{
+        flex: 1 1 0;    
+        min-width: 0;     
+        max-width: 100%;  
+        aspect-ratio: 1 / 1; 
+        height: auto;
+        object-fit: cover;
+    }
+    .pp-product .pp-container .pp-right-part .pp-description{
+        width: 100%;
+        max-width: 100%;
+    }
+    .pp-product .pp-container .pp-right-part{
+        padding: 1rem;
+    }
+    .head{
+        box-sizing: border-box;
+        flex: 1 1 100%;
+        width: 100%;
+        margin: 0;
+        position: relative;
+    }
+    .head .pp-container .right-section button{
+        border-width: 0.1rem;
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .pp-black-fav-icon{
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 14rem;
+    }
+
+    .head .pp-container .right-section button img{
+        width: 70%;
+        height: 75%;
+    }
+    .pp-product .pp-container .pp-right-part .colors {
+        flex-wrap: wrap;
+        gap: 8px;
+        justify-content: flex-start;
+    }
+    .pp-product .pp-container .pp-right-part .pp-size {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+    }
+    .pp-product .pp-container .pp-right-part .pp-size span {
+        height: 40px;
+        line-height: 40px;
+        font-size: 12px;
+    }
+    .total-amount{
+        position: absolute;
+        top: 0;
+    }
+
+}
+@media (max-width: 130px){
+    .head .pp-container .right-section{
+        display: none;
+    }
+}
+
+
+/*products.css*/
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+a,button,input{
+    cursor: pointer;
+}
+
+body{
+    background: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)),
+    url("images/noisy-background.jpg");
+    background-size: cover;
+   
+}
+
+.head {
+    width: 100%;
+}
+
+.head .p-container{
+    display: flex;
+    justify-content:space-between;
+    margin-left: 20px;
+    align-items: center;
+    
+
+    margin-top: 30px;
+    padding: 20px;   
+}
+
+.head .p-container .p-menu-icon{
+    width: 26px;
+    height: 16px;
+    
+}
+
+.left-section a{
+    text-decoration: none;
+    margin: 10px;
+    color: rgb(0,0,0,1);
+    font-size: 18px;
+    font-family: "Beatrice Deck Trial";
+    font-weight: 500;
+    line-height: 100%;
+}
+
+.middle-section{
+    display: flex;
+    justify-content: center;   
+}
+
+.middle-section .amblem{
+    width: 40px;
+    height: 40px;
+    transform: rotate(45deg);
+    background: linear-gradient(
+        45deg,
+        rgba(217,217,217,1) 50%,
+        black 50%
+    );
+}
+
+.left-section .p-menu-icon{
+    width: 30px;
+    height: 30px;
+}
+
+.p-container .right-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right-section .like-button{
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+    margin-right: 20px;
+    background-color: #262222;
+}
+
+.right-section .like-button img{
+    transform: rotate(-45deg);
+    padding-top: 7px;
+    padding-right: 2px;
+}
+
+.right-section .cart-button{
+    height: 50px;
+    width: 76px;
+    border:1px solid #262222;
+    border-radius: 22px;
+    background-color: #262222;
+    color: #F5F5F5;
+
+    font-size: 12px;
+    font-family: "Beatrice Deck Trial";
+}
+
+.right-section .shop-button{
+    height: 50px;
+    width: 50px;
+    background-color: #fff;
+    margin-left: -5px;
+    
+    border: 7px solid rgba(0, 0, 0, 1);
+    border-radius: 100%; 
+}
+
+.right-section .shop-button img{
+    width: 20px;
+    height: 19px;
+    padding-left: 1px;
+    padding-top: 2px;
+}
+
+.right-section .profile-button{
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+    margin-left: 20px;
+    background-color: #262222;
+    color: #F5F5F5;
+}
+
+.right-section .profile-button img{
+    padding-top: 4px;
+    opacity: 1;
+}
+
+.p-products{
+    display: flex;
+    justify-content: flex-start;
+    gap: 1rem;
+    
+}
+
+.p-products .p-menu-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-top: 160px;
+    /*display: none;*/
+}
+.p-products .p-menu-container.active{
+    display: block;
+}
+
+.p-products .p-menu-container .p-menu{
+    
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.1rem;
+    justify-content: flex-start;
+    align-items: flex-start;
+    display: block;
+    z-index: 10;
+    
+}
+
+.p-products .p-menu-container:active{
+    display: block;
+}
+
+.p-products .p-menu-container .p-menu ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-family: Beatrice Deck Trial;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 2px;
+    background-color: transparent;
+
+}
+
+.p-products .p-menu-container .p-menu .p-menu-title{
+    cursor: pointer;
+    font-weight: bold;
+    padding: 20px;
+    background: #f3f3f3;
+    border-bottom: 1px dashed rgba(201, 201, 201, 1);
+    display: flex;
+    justify-content: space-between;
+    gap:90px;
+    background-color: transparent;
+
+}
+
+.p-products .p-menu-container .p-menu .p-menu-title span img{
+    width: 80%;
+    height: 80%;
+
+}
+
+.p-products .p-menu-container .p-menu .p-sub-menu{
+    display: none;
+    padding: 10px;
+    margin-left: 10px;
+    
+}
+.p-products .p-menu-container .p-size-title{
+    margin-bottom: 1rem;
+}
+
+.p-filter-title{
+    cursor: pointer;
+    font-family: Beatrice Deck Trial;
+    height: max-content;
+    margin-bottom: 1rem;
+}
+
+.p-products .p-menu-container .p-menu .p-sub-menu input{
+    display: inline;
+    height: 60%;
+    width: 10%;
+}
+
+.p-products .p-menu-container .p-menu .p-sub-menu p{
+    display: inline;
+    text-align: center;
+}
+.p-products .p-menu-container .p-menu .p-sub-menu li {
+    padding: 5px 0;
+    font-family: Beatrice Deck Trial;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: 2px;
+    color: rgba(1, 1, 1, 0.66);
+
+}
+.p-products .p-menu-container .p-menu ul li:active{
+    border: none;
+}
+
+.p-products .p-menu-container .p-menu ul li:active + .p-sub-menu{
+    display: block;
+}
+
+.p-products .p-menu-container h3{
+    font-family: Beatrice Deck Trial;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 2px;
+}
+
+.p-products .p-menu-container h4{
+    font-family: Beatrice Deck Trial;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 2px;
+    margin-bottom: -20px;
+}
+
+.p-products .p-menu-container p{
+    font-family: Beatrice Deck Trial;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 2px;
+}
+
+.p-products .p-menu-container .avai{
+    font-family: Beatrice Deck Trial;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: 2px;  
+}
+
+.p-products .p-menu-container .oos{
+    font-family: Beatrice Deck Trial;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: 2px;
+}
+
+.p-products .p-menu-container p span{
+    font-family: Beatrice Deck Trial;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: 2px;
+    color: rgba(0, 14, 138, 1);
+    margin-left: 15px;
+}
+
+.p-products .p-menu-container .p-sizes{
+    display: flex;
+    gap: 5px;
+    border-bottom: 1px dashed rgba(201, 201, 201, 1);
+    padding-bottom: 12px;
+}
+
+.p-products .p-menu-container .p-sizes div{
+    width: 38px;
+    height: 39px;
+    opacity: 1;
+    border:1px solid rgba(163,163,163,1);
+    
+    font-family: Beatrice Deck Trial;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 14px;
+    line-height: 39px;
+    letter-spacing: 0px;
+
+    text-align: center;
+}
+
+.p-products .p-menu-container .p-sizes input{
+    width: 22px;
+    height: 22.58px;
+    opacity: 1;
+    border:1px solid rgba(163, 163, 163, 1);
+}
+
+.p-products .p-container{
+    display: flex;
+    flex-direction: column;
+    row-gap: 50px;
+    margin-top: 80px;
+    max-width: none;
+    align-items: flex-start;
+    border-top: none;
+}
+
+.p-products .p-container .p-top{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.3rem;
+    
+}
+
+.p-products .p-container .p-top .p-left-part{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    row-gap: 12px;
+    border: none;
+}
+
+.p-products .p-container .p-top .p-left-part p{
+    font-family: Beatrice Deck Trial;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: 1px;
+    color:rgba(0, 0, 0, 0.66);
+}
+
+.p-products .p-container .p-top .p-left-part p span{
+    font-family: Beatrice Deck Trial;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: 1px;
+    color:rgba(0, 0, 0, 1);
+}
+
+
+.p-products .p-container .p-top .p-left-part h1{
+    font-family: Beatrice Deck Trial;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.p-products .p-container .p-top .p-left-part input{
+    width: 367px;
+    height: 50px;
+    background-color: rgba(217, 217, 217, 1);
+    opacity: 1;
+    border: none;
+    padding-right: 20px;
+    padding-left: 40px;
+    background-image: url(icons/search-icon.svg);
+    background-repeat: no-repeat;
+    background-size: 5%;
+    background-position-y: center;
+    background-position-x: 10px;
+}
+
+.p-products .p-container .p-top .p-left-part input::placeholder{
+    color: rgba(0, 0, 0, 0.66);
+    text-align: right;
+    font-family: Beatrice Deck Trial;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: 2px;
+
+}
+
+.p-products .p-container .p-top .p-right-part{
+    display: grid;
+    grid-template-columns: repeat(5, max-content);
+    row-gap: 3px;
+    column-gap: 12px;
+    border: none;
+}
+
+.p-products .p-container .p-top .p-right-part button{
+    width: 101px;
+    height: 24px;
+    opacity: 1;
+    background-color: transparent;
+    border: 0.5px solid rgba(163, 163, 163, 1);
+    
+    font-family: Beatrice Trial;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 10px;
+    line-height: 100%;
+    letter-spacing: 0px;
+    text-align: center;
+    text-transform: uppercase;
+
+    color:rgba(94, 94, 94, 1);
+
+}
+
+.p-products .p-container .p-top .p-right-part button:first-child{
+    color: rgba(0, 0, 0, 1);
+}
+
+.p-products .p-container .p-bottom{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: flex-start;
+    row-gap: 20px;
+    column-gap: 0.5rem;
+}
+
+
+
+.p-products .p-container .p-product-container img{
+    width: 100%;
+    height: auto;
+    opacity: 1;
+    border:1px solid rgba(217, 217, 217, 1);
+    object-fit: cover;
+
+}
+
+.p-products .p-container .p-product-container .p-product-t{
+    font-family: Beatrice Deck Trial;
+    font-weight: 500;
+    font-style: medium;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: 0px;
+    color:rgba(0, 0, 0, 0.66);
+    margin-top: 3px;
+    position: relative;
+   
+}
+
+.p-products .p-container .p-product-container .p-product-d{
+    font-family: Beatrice Deck Trial;
+    font-weight: 500;
+    font-style: medium;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 0px;
+    text-transform: capitalize;
+    color:rgba(0, 0, 0, 1);
+    margin-top: 7px;
+    display: flex;
+    justify-content: space-between;   
+}
+
+.p-products .p-container .p-product-container .p-color-box{
+    width: 10px;
+    height: 10px;
+    background-color: rgba(235, 231, 219, 1);
+    border: 0.5px solid rgba(163, 163, 163, 1);
+    position: absolute;
+    bottom: 42.5px;
+    left: 445px;
+    display: none;
+}
+
+.p-products .p-container .p-product-container .p-bcolor-box{
+    width: 10px;
+    height: 10px;
+    background-color: rgba(0, 0, 0, 1);
+    border: 0.5px solid rgba(163, 163, 163, 1);
+    position: absolute;
+    bottom: 42.5px;
+    left: 770px;
+    display: none;
+}
+
+.p-products .p-container .p-product-container .p-cost{
+    font-family: Beatrice Deck Trial;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 0px;
+    color: rgba(0, 0, 0, 1);
+}
+@media(min-width:2560px){
+
+    .p-main-container{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .p-main-container .head .p-container{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;  
+    }
+
+    .p-main-container .head .p-container .left-section a{
+        font-size: 2rem;
+    }
+
+    .p-main-container .head .p-container .right-section button{
+        width: 4rem;
+        height: 4rem;
+    }
+
+    .p-main-container .head .p-container .right-section .cart-button{
+        width: 6rem;
+        font-size: 1.5rem;
+    }
+    .p-main-container .head .right-section .shop-button a img{
+        width: 60%;
+        height: 60%;
+        padding: 0;
+    }
+
+    .p-main-container .head .right-section .profile-button img{
+        width: 60%;
+        height: 60%;
+        padding: auto;
+    }
+    .p-main-container .p-products .p-menu-container h3{
+        font-size: 3.5rem;
+    }
+
+    .p-main-container .p-products .p-menu-container .p-size-title{
+        font-size: 2rem;
+        
+    }
+
+    .p-main-container .p-products .p-menu-container .p-sizes{
+        gap: 0.5rem;
+        justify-content: flex-start;
+    }
+
+    .p-main-container .p-products .p-menu-container .p-sizes div{
+        width: 3.5rem;
+        height: 100%;
+        text-align: center;
+        font-size: 1.5rem;
+        padding: 0.5rem;
+        
+    }
+
+    .p-main-container .p-products .p-menu-container .p-menu ul li{
+        font-size: 2rem;
+        text-wrap: nowrap;
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+        border-top: 0.1rem dashed rgba(1, 1, 1, 0.1);
+        border-bottom: 0.1rem dashed rgba(1, 1, 1, 0.1);
+    }
+
+    .p-main-container .p-products .p-menu-container .p-menu ul .p-sub-menu li p{
+        font-size: 1.5rem;
+    }
+
+    .p-main-container .p-products .p-menu-container .p-menu ul .p-sub-menu li p span{
+        font-size: 1.5rem;
+    }
+
+    .p-main-container .p-products{
+        display: flex;
+        gap: 3rem;
+        
+    }
+
+    .p-main-container .p-container .p-top .p-left-part p{
+        font-size: 2rem;
+    }
+    .p-main-container .p-container .p-top .p-left-part p span{
+        font-size: 2rem;
+    }
+    .p-main-container .p-container .p-top .p-left-part h1{
+        font-size: 2.5rem;
+    }
+    .p-main-container .p-container .p-top .p-right-part button{
+        font-size: 1rem;
+        width: 100%;
+        height: 100%;
+        padding: 1rem 2rem;
+        text-align: center;
+        text-wrap: nowrap;
+    }
+
+    .p-main-container .p-container .p-bottom{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+
+    }
+    .p-main-container .p-container .p-bottom .p-product-container .p-product-t{
+        font-size: 1.5rem;
+    }
+    .p-main-container .p-container .p-bottom .p-product-container .p-product-d{
+        font-size: 1.5rem;
+        display: flex;
+        gap: 3rem;
+    }
+    .p-main-container .p-container .p-bottom .p-product-container .p-product-d span{
+        font-size: 1.5rem;
+    }
+    .p-main-container .p-container .p-bottom .p-product-container img{
+        width: 100%;
+        height: 70%;
+    }
+
+}
+
+@media(max-width:1220px){
+    .p-products .p-container .p-bottom{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .p-products .p-container .p-top{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap:1rem;
+    }
+    .p-products .p-container .p-top .p-right-part{
+        display: grid;
+        grid-template-columns: auto auto auto auto auto;    
+    }
+    .p-products .p-container .p-product-container .color-box{
+        display: none;
+    }
+
+}
+
+@media(max-width:824px){
+    .p-products .p-container .p-bottom{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .p-products .p-container .p-top .p-right-part{
+        display: grid;
+        grid-template-columns: auto auto auto auto;   
+    }
+    .p-products .p-container .p-bottom .p-product-container .bcolor-box{
+        display: none;
+    }
+}
+
+@media(max-width:716px){
+     .p-products .p-container .p-top .p-right-part{
+        display: grid;
+        grid-template-columns: auto auto auto auto;   
+    }
+}
+    
+@media(max-width:638px){
+
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .p-main-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .p-main-container .head{
+        width: 100%;
+    }
+
+    .p-main-container .head .p-container{
+        justify-content: space-between;
+        margin: 0;  
+    }
+
+    .p-main-container .head .left-section a{
+        display: none;
+    }
+
+    .p-main-container .head .left-section img{
+        width: 2rem;
+        height: auto;
+    }
+
+    .p-main-container .head .middle-section div{
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .p-main-container .head .right-section .like-button{
+        display: none;
+    }
+
+    .p-main-container .head .right-section .cart-button{
+        display: none;
+    }
+
+    .p-main-container .head .right-section .shop-button{
+        width: 3rem;
+        height: 3rem;
+        border-width: 0.5rem;
+    }
+    .p-main-container .head .right-section .profile-button{
+        width: 3rem;
+        height: 3rem;
+    }
+
+    .p-main-container .head .right-section .shop-button a img{
+        width: 60%;
+        height: 60%;
+        padding: 0;
+    }
+
+    .p-main-container .head .right-section .profile-button img{
+        width: 60%;
+        height: 60%;
+        padding: auto;
+    }
+
+    .p-main-container .p-products {
+        gap: 1rem;
+        align-items: flex-start;
+    }
+
+    .p-main-container .p-products .p-menu-container{
+        gap: 2.5rem;
+        margin: 0;
+        display: none;
+         
+    }
+
+    .p-main-container .p-products .p-menu-container h3{
+        font-size: 3rem;
+    }
+
+    .p-main-container .p-products .p-menu-container .size-title{
+        font-size: 2rem;
+        
+    }
+
+    .p-main-container .p-products .p-menu-container .p-sizes{
+        gap: 0.5rem;
+        justify-content: flex-start;
+    }
+
+    .p-main-container .p-products .p-menu-container .p-sizes div{
+        width: 3.5rem;
+        height: 100%;
+        text-align: center;
+        font-size: 1.5rem;
+        padding: 0.5rem;
+        
+    }
+
+    .p-main-container .p-products .p-menu-container .p-menu ul li{
+        font-size: 2rem;
+        text-wrap: nowrap;
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+        border-top: 0.1rem dashed rgba(1, 1, 1, 0.1);
+        border-bottom: 0.1rem dashed rgba(1, 1, 1, 0.1);
+    }
+
+    .p-main-container .p-products .p-menu-container .p-menu ul .p-sub-menu li p{
+        font-size: 1.5rem;
+    }
+
+    .p-main-container .p-products .p-menu-container .p-menu ul .p-sub-menu li p span{
+        font-size: 1.5rem;
+    }
+
+    .p-main-container .p-container .p-top {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5rem;
+    }
+
+    .p-main-container .p-container .p-top .p-left-part{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .p-main-container .p-container .p-top .p-left-part h1{
+        font-size: 3rem;
+    }
+
+    .p-main-container .p-container .p-top .p-left-part p{
+        font-size: 2rem;
+    }
+
+    .p-main-container .p-container .p-top .p-left-part p span{
+        font-size: 2rem;
+    }
+
+    .p-main-container .p-container .p-top .p-left-part input{
+        width: 95%;
+        margin: 0;
+    }
+
+    .p-main-container .p-container .p-top .p-left-part input::placeholder{
+        font-size: 1rem;
+        padding-right: 1rem;
+    }
+
+    
+
+    .p-main-container .p-container .p-top .p-right-part{
+        gap: 1rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .p-main-container .p-container .p-top .p-right-part button{
+        font-size: 1rem;
+        width: 100%;
+        height: 100%;
+        padding: 1rem;
+        text-wrap: nowrap;
+    
+    }
+
+    .p-main-container .p-container .p-bottom{
+        margin: 0;
+        grid-template-columns: auto ;
+        row-gap: 2rem;
+    }
+
+    .p-main-container .p-products{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    
+    .p-main-container .p-container .p-bottom .p-product-container img{
+        width: 100%;
+        height: auto;
+        object-fit:fill;
+    }
+
+    .p-main-container .p-container .p-bottom .p-product-container .p-product-t{   
+        font-size: 1rem;
+    }
+
+    .p-main-container .p-container .p-bottom .p-product-container .p-product-d{
+        gap:3rem;
+        font-size: 1rem;
+    }
+
+    .p-main-container .p-container .p-bottom .p-product-container .p-product-d span{
+        font-size: 1rem;
+    }
+
+    .p-main-container .p-container .p-bottom .p-product-container .bcolor-box{
+        display: none;
+    }
+}
+
+@media(max-width:503px){
+    .p-products .p-container .p-top .p-right-part{
+        display: grid;
+        grid-template-columns: auto auto;
+        align-self: center;
+    }
+}
+
+@media(max-width:428px){
+    .p-main-container .head .p-container{
+        display: flex;
+        justify-content: space-between;
+    }
+    
+
+    .p-main-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .p-main-container .p-container .p-top .p-left-part p{
+        align-self: center;
+    }
+    .p-main-container .p-container .p-top .p-left-part h1{
+        align-self: center;
+    }
+    .p-products .p-container .p-top .p-right-part{
+        display: grid;
+        grid-template-columns: auto auto ;
+    }
+    .p-products .p-container .p-top .p-right-part button{
+        width: 100%;
+        font-size:  1rem;
+        text-wrap: wrap;
+        
+     }
+    .p-products .p-container .p-bottom{
+        gap: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .p-products .p-container .p-bottom .p-product-container img{
+        width: 100%;
+    }
+    .p-products .p-container .p-bottom .p-product-container .p-product-d{
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        font-size: 1rem;
+    }
+    .p-products .p-container .p-bottom .p-product-container .p-product-d span{
+        font-size: 1rem;
+    }
+    .p-products .p-container .p-bottom .p-product-container .p-product-t{
+        font-size: 1rem;
+    }
+    
+    .p-main-container .p-container .p-left-part p{
+        align-self: flex-start;
+    }
+    .p-main-container .p-container .p-left-part h1{
+        align-self: flex-start;
+    }
+}
+
+@media(max-width:320px){
+    .p-products .p-container .p-top .p-right-part{
+        display: grid;
+        grid-template-columns: auto auto;
+    }
+    .p-products .p-container .p-top .p-right-part button{
+        font-size: 1rem;
+    }
+
+    .p-products .p-container .p-top .p-left-part p{
+        font-size: 1.5rem;
+    }
+    .p-products .p-container .p-top .p-left-part p span{
+        font-size: 1.5rem;
+    }
+    .p-products .p-container .p-top .p-left-part h1{
+        font-size: 1.5rem;
+    }
+
+    .p-products .p-container .p-bottom .p-product-container .p-product-d{
+        font-size: 1rem;
+    }
+    .p-products .p-container .p-bottom .p-product-container .p-product-d span{
+        font-size: 1rem;
+    }
+    .p-products .p-container .p-bottom .p-product-container .p-product-t{
+        font-size: 1rem;
+    }
+}
+
+/*shopping-bag-style.css*/
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body button,a,input {
+    cursor: pointer;
+}
+
+body{
+    background: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)),
+    url("images/noisy-background.jpg");
+    background-size: cover;
+    
+}
+
+.sbp-main-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.head .container{
+    display: flex;
+    justify-content:space-between;
+    margin-left: 20px;
+    align-items: center;
+    padding: 20px;
+   
+       
+}
+
+.head .p-container .p-menu-icon{
+    width: 26px;
+    height: 16px;
+    
+}
+
+.middle-section{
+    display: none;
+}
+
+
+.left-section a{
+    text-decoration: none;
+    margin: 10px;
+    color: rgb(0,0,0,1);
+    font-size: 18px;
+    font-family: "Beatrice Deck Trial";
+    font-weight: 500;
+    line-height: 100%;
+}
+
+ 
+.left-section .p-menu-icon{
+    width: 30px;
+    height: 30px;
+}
+
+.p-container .right-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right-section .like-button{
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+    margin-right: 20px;
+    background-color: #262222;
+}
+
+.right-section .like-button img{
+    transform: rotate(-45deg);
+    padding-top: 7px;
+    padding-right: 2px;
+}
+
+.right-section .cart-button{
+    height: 50px;
+    width: 76px;
+    border:1px solid #262222;
+    border-radius: 22px;
+    background-color: #262222;
+    color: #F5F5F5;
+
+    font-size: 12px;
+    font-family: "Beatrice Deck Trial";
+}
+
+.right-section .shop-button{
+    height: 50px;
+    width: 50px;
+    background-color: #fff;
+    margin-left: -5px;
+    
+    border: 7px solid rgba(0, 0, 0, 1);
+    border-radius: 100%; 
+    position: relative;
+}
+.right-section .shop-button .total-amount{
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: red;
+    position: absolute;
+    border-radius: 100%;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    text-align: center;
+    font-family: "Beatrice Deck Trial";
+    color: white;
+    font-size: 1rem;
+}
+
+.right-section .shop-button img{
+    width: 20px;
+    height: 19px;
+    padding-left: 1px;
+    padding-top: 2px;
+}
+
+.right-section .profile-button{
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+    margin-left: 20px;
+    background-color: #262222;
+    color: #F5F5F5;
+}
+
+.right-section .profile-button img{
+    padding-top: 4px;
+    opacity: 1;
+}   
+
+.sbp-sb-title{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 30px;
+    margin-left: 40px;
+    margin-top: 70px;
+    margin-bottom: 10px;
+}
+
+.sbp-sb-title .sbp-sb{
+    font-family: Beatrice Trial;
+    font-weight: 500;
+    font-style: medium;
+    font-size: 13px;
+    line-height: 40px;
+    letter-spacing: 0px;
+    text-transform: uppercase;
+
+}
+
+.sbp-sb-title .sbp-fav-icon{
+    margin-right: -27px;
+    transform: rotate(-45deg);
+    width: 11px;
+    height: 11px;
+}
+
+.sbp-sb-title .sbp-fav{
+    font-family: Beatrice Trial;
+    font-weight: 400;
+    font-style: regular;
+    font-size: 11px;
+    line-height: 40px;
+    letter-spacing: 0px;
+    text-transform: uppercase;
+    color:rgba(138, 138, 138, 1);
+    cursor: pointer;
+    
+}
+
+.sbp-container .sbp-sb-title .sbp-fav-icon{
+    width: 15px;
+    height: 15px;
+    transform: rotate(-45deg);
+}
+
+.sbp-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 40px;
+    margin-right: 40px;
+    gap: 3rem;
+}
+
+.sbp-container .sbp-left-part{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    border-top: 1px solid rgba(201, 201, 201, 1);
+    border-bottom: 1px solid rgba(201, 201, 201, 1);
+    padding-bottom: 20px;
+    padding-top: 20px;
+    gap: 3rem;
+    flex: 1 1 100%;
+}
+
+.sbp-container .sbp-left-part.grid {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 2.5rem;
+}
+
+.sbp-container .sbp-left-part .sbp-product-container img{
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border: 1px solid rgba(217,217,217,1);
+    object-fit: cover;
+
+}
+
+.sbp-container .sbp-left-part .sbp-product-container .sbp-product-t{
+    font-family: Beatrice Deck Trial;
+    font-weight: 500;
+    font-style: medium;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: 0px;
+    color: rgba(0, 0, 0, 0.66);
+    margin-top: 5px;
+}
+
+.sbp-container .sbp-left-part .sbp-product-container .sbp-product-d{
+    font-family: Beatrice Deck Trial;
+    font-weight: 500;
+    font-style: medium;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 0px;
+    color: rgba(0, 0, 0, 1);
+    margin-top: 7px;
+    width: 100%;
+    display: inline;
+    justify-content: space-between;
+    gap: 5rem;
+}
+
+.sbp-container .sbp-left-part .sbp-product-container .sbp-info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sbp-container .sbp-left-part .sbp-product-container .sb-cost{
+     font-family: Beatrice Deck Trial;
+    font-weight: 500;
+    font-style: medium;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 0px;
+    color: rgba(0, 0, 0, 1);
+    margin-left: auto;
+    display: inline;
+}
+
+.sbp-container .sbp-left-part .sbp-transaction{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    align-self: flex-start;
+    margin-top: 8rem;
+}
+
+.sbp-container .sbp-left-part .sbp-transaction.grid {
+    align-self: center;
+}
+
+.sbp-container .sbp-left-part .sbp-transaction p{
+    align-self: flex-start;
+    margin-top: 20px;
+    margin-bottom: -15px;
+    font-family: Beatrice Deck Trial;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 0px;
+}
+
+.sbp-container .sbp-left-part .sbp-transaction .sbp-close-icon{
+    align-self: flex-start;
+    margin-top: -125px;
+    cursor: pointer;
+}
+
+.sbp-container .sbp-left-part .sbp-transaction img{
+    width: 20px;
+    height: 20px;
+    border: none;
+}
+
+.sbp-container .sbp-left-part .sbp-transaction .sbp-color-box{
+    width: 25px;
+    height: 25px;
+    background-color: rgba(0, 0, 0, 1);
+    margin-bottom: -20px;
+}
+
+.sbp-container .sbp-left-part .sbp-transaction .sbp-buttons .sbp-increase,.sbp-amount,.sbp-decrease{
+    width: 25px;
+    height: 23px;
+
+    border: 1px solid rgba(138, 138, 138, 1);
+    text-align: center;
+
+    font-family: "Beatrice Deck Trial";
+    font-size: 14px;
+    
+}
+
+.sbp-container .sbp-left-part .sbp-transaction .sbp-refresh-icon{
+    margin-top: -15px;
+    cursor: pointer;
+}
+
+.sbp-container .sbp-right-part{
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+    gap: 1.5rem;
+    border: 1px solid rgba(217, 217, 217, 1);
+    padding: 1rem;
+    position: relative;
+    flex: 1 1 40%;
+    min-width: 0;
+
+    align-self: flex-start;
+
+
+}
+
+.sbp-container .sbp-right-part h3{
+    font-family: Beatrice Deck Trial;
+    font-weight: 500;
+    font-style: medium;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 1px;
+
+    margin-bottom: 15px;
+
+}
+
+.sbp-container .sbp-right-part p{
+    font-family: Beatrice Deck Trial;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: 1px;
+
+}
+
+.sbp-container .sbp-right-part .sbp-subt{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.sbp-container .sbp-right-part .sbp-shp{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.sbp-container .sbp-right-part .sbp-ttl{
+    display: flex;
+    width: 100%;
+}
+
+.sbp-container .sbp-right-part .sbp-ttl .sbp-total{
+    margin-left: auto;
+}
+.sbp-container .sbp-right-part .sbp-tax-inc{
+    margin-left: 3px;
+
+    font-family: Beatrice Deck Trial;
+    font-weight: 500;
+    font-style: medium;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: 1px;
+
+    color :rgba(0, 0, 0, 0.66);
+   
+}
+
+.sbp-container .sbp-right-part hr{
+    
+    border: 1px solid rgba(217, 217, 217, 1);
+    width: 100%;
+    text-align: center;
+}
+
+.sbp-container .sbp-right-part label{
+    font-family: Beatrice Deck Trial;
+    font-weight: 250;
+    font-style: Thin;
+    font-size: 11px;
+    line-height: 100%;
+    letter-spacing: 0px;
+
+    color :rgba(0, 0, 0, 0.66);
+
+    position: absolute;
+    bottom:5.08rem;
+    left: 2.5rem;
+} 
+
+.sbp-container .sbp-right-part button{
+    width: 100%;
+    height: 40px;
+    opacity: 1;
+    
+    font-family: Beatrice Deck Trial;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: 0px;
+    text-align: center;
+
+    background-color: rgba(217, 217, 217, 1);
+    border: none;
+}
+
+@media (min-width: 2560px){
+
+   
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: content-box;
+        
+    }
+
+    .sbp-main-container{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; 
+    }
+
+    .head{
+        width: 100%;
+    }
+
+    .head .sbp-container{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+       
+    }
+
+    .sbp-main-container .head .left-section{
+        display: flex;
+        justify-content: space-between;
+        gap: 3rem;
+    }
+
+    .p-main-container .head .left-section img{
+        width: 3rem;
+        height: 3rem;
+    }
+
+    .p-main-container .head .left-section a{
+        font-size: 2rem;
+    }
+
+    .p-main-container .head .middle-section div{
+        width: 4rem;
+        height: 4rem;
+    }
+
+    .p-main-container .head .right-section button{
+        width: 5.2rem;
+        height: 5rem;
+        font-size: 1.3rem;
+    }
+
+     .p-main-container .head .right-section .cart-button{
+        width: 7rem;
+        
+    }
+
+    .p-main-container .head .right-section button img{
+        width: 50%;
+        height: auto;
+        opacity: 1;
+    }
+
+    .sbp-main-container .sbp-bag .sbp-sb-title p{
+        font-size: 1.5rem;
+    }
+
+    .sbp-main-container .sbp-bag .sbp-sb-title img{
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+
+    .p-main-container .sbp-product .sbp-container{
+        display: flex;
+        justify-content: flex-start;
+        padding: 0;
+    }
+
+} 
+
+@media (max-width: 910px) {
+  
+
+    body{
+       overflow: scroll;
+    }
+
+    .sbp-main-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .head .p-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin: 0;
+    
+  }
+  .head {
+    width: 100%;
+  }
+
+
+  .head .p-container .left-section{
+    display: flex;
+  }
+
+  .head .p-container .middle-section{
+    display: flex;
+    
+  }
+
+  .head .p-container .middle-section .amblem{
+    width: 40px;
+    height: 40px;
+    transform: rotate(45deg);
+    background: linear-gradient(
+        45deg,
+        rgba(217,217,217,1) 50%,
+        black 50%
+    );
+  }
+
+  .head .p-container .left-section a{
+    display: none;
+  }
+
+  .head .p-container .p-right-part ,.like-button,.cart-button{
+    display: none;
+  }
+
+  .head .p-container .right-section{
+    display: flex;
+    flex-direction: row;
+    gap: 0.4rem;
+
+  }
+
+  .head .p-container .right-section .profile-button{
+    margin: 0;
+  }
+
+  .head .p-container .right-section .shop-button{
+    margin: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-width: 5px;
+  }
+
+   .head .p-container .left-section{
+    display: flex;
+    align-items: center;
+  }
+  .sbp-sb-title{
+    margin: 0;
+  }
+
+    .sbp-container .sbp-left-part{
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 0.5rem;
+        border: none;
+  }
+    .sbp-container .sbp-left-part .sbp-transaction{
+        width: max-content;
+        margin: 0;
+    }
+    .sbp-container .sbp-left-part  img{
+        width: 100%;
+        object-fit: cover;
+    
+    }
+    .sbp-container .sbp-left-part .sbp-product-container .sbp-product-d{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .sbp-bag .sbp-container{
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin: 0;
+        
+    }
+    .head .p-container .middle-section{
+        display: none;
+    }
+
+    @media(max-width:768px){
+        .sbp-main-container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    @media(max-width:320px){
+
+        .p-main-container
+        .head .p-container{
+            margin: 0;
+        }
+        .head .p-container .middle-section{
+            display: none;
+        }
+        .head .p-container .right-section{
+            display: none;
+        }
+        .sbp-main-container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .sbp-container .sbp-right-part{
+            align-self: center;
+        }
+        .sbp-container .sbp-left-part{
+            align-self: center;
+        }
+        
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
