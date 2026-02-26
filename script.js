@@ -2,6 +2,48 @@
 //HOME PAGE SCRIPTLERI
 if(document.body.className === "hp"){
 
+     fetch("header.html")
+        .then(response => response.text())
+        .then(data => {
+            document.querySelector("header").innerHTML = data;
+
+            const menuIcon = document.querySelector(".menu-icon");
+            menuIcon.addEventListener("click", () => {
+                document.querySelector(".drawer").style.left = 0;
+            })
+        });
+
+    const closeMenu = document.querySelector(".close-menu");
+    closeMenu.addEventListener("click",() => {
+        document.querySelector(".drawer").style.left = "-300px";
+    })
+
+    const collections = document.querySelector(".col");
+    collections.addEventListener("click",() => {
+        window.location.replace("products.html")
+    })
+
+    const productImage = document.querySelectorAll(".product-img")
+    const productTitle = document.querySelectorAll(".product-description")
+
+
+    productImage.forEach((item,index) => {
+    item.addEventListener("click" , () => {
+        window.location.href = `products-page.html?id=${index+1}`;
+        })
+    })
+
+    productTitle.forEach((item,index) => {
+    item.addEventListener("click" , () => {
+        window.location.href = `products-page.html?id=${index+1}`;
+        })
+    })
+
+    const seeAllButton = document.querySelector(".see-all")
+    seeAllButton.addEventListener("click" , () => {
+        window.location.replace("products.html")
+    })
+
     const searchInput = document.querySelector("input")
     const products = document.querySelectorAll(".product-container");
 
@@ -24,8 +66,8 @@ if(document.body.className === "hp"){
             product.style.display = "none";
         }
 
+        });
     });
-});
 
     let totalProduct = document.querySelector(".total-amount");
     let cart = JSON.parse(localStorage.getItem("Cart")) || [];
@@ -36,7 +78,7 @@ if(document.body.className === "hp"){
         total += Number(item.quantity); 
     });
 
-    totalProduct.textContent = total;
+    /*totalProduct.textContent = total;*/
     
     const addButton = document.querySelectorAll(".add-button");
 
@@ -60,6 +102,8 @@ if(document.body.className === "hp"){
             cart.push(product);
 
             localStorage.setItem("Cart", JSON.stringify(cart));
+
+            alert("Ürün başarıyla sepete eklendi")
               
         })
     })
@@ -73,6 +117,22 @@ if(document.body.className === "hp"){
 
 //PRODUCTS SCRIPTLERI
 if(document.body.className === "p"){
+
+       fetch("header.html")
+        .then(response => response.text())
+        .then(data => {
+            document.querySelector("header").innerHTML = data;
+
+            const menuIcon = document.querySelector(".menu-icon");
+            menuIcon.addEventListener("click", () => {
+                document.querySelector(".drawer").style.left = 0;
+            })
+        });
+
+    const closeMenu = document.querySelector(".close-menu");
+    closeMenu.addEventListener("click",() => {
+        document.querySelector(".drawer").style.left = "-300px";
+    })
 
     const searchInput = document.querySelector(".search")
 
@@ -125,18 +185,27 @@ if(document.body.className === "p"){
         })
     })
 
-    const menuIcon = document.querySelector(".menu-icon")
-    const menu = document.querySelector(".menu-container")
-    
-    menuIcon.addEventListener("click" , () => {
-        menu.classList.toggle("active");
-        
-    })
-
 }
 
 //PRODUCT PAGE SCRIPTLERI 
 if(document.body.className === "pp"){
+
+    fetch("header.html")
+        .then(response => response.text())
+        .then(data => {
+            document.querySelector("header").innerHTML = data;
+
+            const menuIcon = document.querySelector(".menu-icon");
+            menuIcon.addEventListener("click", () => {
+                document.querySelector(".drawer").style.left = 0;
+            })
+    });
+
+    const closeMenu = document.querySelector(".close-menu");
+    closeMenu.addEventListener("click",() => {
+        document.querySelector(".drawer").style.left = "-300px";
+    })
+    
     const totalProduct = document.querySelector(".total-amount")
     let cart = JSON.parse(localStorage.getItem("Cart")) || [];
     
@@ -146,7 +215,7 @@ if(document.body.className === "pp"){
         total += Number(item.quantity); 
     });
 
-    totalProduct.textContent = total;
+    /*totalProduct.textContent = total;*/
 
     const smallImages = document.querySelectorAll(".small-images");
     const mainImage = document.querySelector(".photo");
@@ -271,6 +340,23 @@ if(document.body.className === "pp"){
 //SHOPPING-BAG-PAGE SCRIPTLERI 
 if(document.body.className ==="sbp"){
 
+      fetch("header.html")
+        .then(response => response.text())
+        .then(data => {
+            document.querySelector("header").innerHTML = data;
+
+            const menuIcon = document.querySelector(".menu-icon");
+            menuIcon.addEventListener("click", () => {
+                document.querySelector(".drawer").style.left = 0;
+            })
+        });
+
+    const closeMenu = document.querySelector(".close-menu");
+    closeMenu.addEventListener("click",() => {
+        document.querySelector(".drawer").style.left = "-300px";
+    })
+
+   
     let cart = JSON.parse(localStorage.getItem("Cart")) || [];
 
     const totalProduct = document.querySelector(".total-amount")
@@ -281,7 +367,7 @@ if(document.body.className ==="sbp"){
         total += Number(item.quantity); 
     });
 
-    totalProduct.textContent = total;
+    /*totalProduct.textContent = total;*/
    
     const continueButton = document.querySelector(".continue-button");
     const acceptCheckBox = document.getElementById("accept");
@@ -295,7 +381,7 @@ if(document.body.className ==="sbp"){
                 <img class="product-img" src="${item.photo}">
                 <p class="product-t">${item.title}</p>
                 <div class = "p-info">
-                    <p class="product-d">${item.description.replace("$99","")}</p>
+                    <p class="product-d">${item.description.replace(/\$\d+$/, "")}</p>
                     <p class="cost">${item.price}</p>
                 </div>
             </div>
@@ -313,6 +399,16 @@ if(document.body.className ==="sbp"){
             </div>
         `;
     });
+
+   const productContainer = document.querySelectorAll(".product-container")
+   
+   if(productContainer.length > 3){
+        leftPart.classList.add("grid");
+    }
+
+    else{
+        leftPart.classList.remove("grid")
+    }
 
     const sizes = document.querySelectorAll(".size")
     const colors = document.querySelectorAll(".color-box")
@@ -336,7 +432,6 @@ if(document.body.className ==="sbp"){
        subT.textContent = "$"+cost
        totalCost.textContent = "$" + parseInt(cost + Number(shippingCost.textContent.replace("$","")))
 
-        
     })
   
     const amount = document.querySelectorAll('.amount');
