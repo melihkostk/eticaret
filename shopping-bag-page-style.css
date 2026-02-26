@@ -202,6 +202,12 @@ body{
     flex: 1 1 100%;
 }
 
+.container .left-part.grid {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 2.5rem;
+}
+
 .container .left-part .product-container img{
     max-width: 100%;
     height: auto;
@@ -259,9 +265,13 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 30px;
+    gap: 2rem;
     align-self: flex-start;
     margin-top: 8rem;
+}
+
+.container .left-part .transaction.grid {
+    align-self: center;
 }
 
 .container .left-part .transaction p{
