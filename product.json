@@ -11,7 +11,9 @@
     "grey",
     "white",
     "cream"
-  ]
+  ],
+  "category": "t-shirt"
+  
 },
 
 {
@@ -20,13 +22,16 @@
     "name": "Basic Slim Fit T-Shirt",
     "price": "$99",
     "sizes": ["M", "L", "XL", "2X"],
+
     "colors": [
         "black",
         "grey",
         "white",
         "blue",
         "cream"
-    ]
+    ],
+
+    "category": "shorts"
 },
 
 {
@@ -42,7 +47,9 @@
         "white",
         "blue",
         "cream"
-    ]
+    ],
+
+    "category": "jackets"
 },
 
 {
@@ -56,7 +63,9 @@
         "black",
         "blue",
         "cream"
-    ]
+    ],
+
+    "category": "jeans"
 },
 
 {
@@ -72,7 +81,9 @@
         "white",
         "blue",
         "cream"
-    ]
+    ],
+
+    "category": "coats"
 },
 
 {
@@ -84,7 +95,9 @@
     "colors": [
         "black",
         "white"
-    ]
+    ],
+
+    "category": "suits"
 },
 
 {
@@ -98,7 +111,98 @@
         "black",
         "grey",
         "white"
-    ]
+    ],
+    "category": "best sellers"
+},
+
+{
+    "id": "8",
+    "type": "Cotton T Shirt",
+    "name": "Basic Heavy Weight T-shirt",
+    "price": "$99",
+    "sizes": ["XS","2X"],
+    "colors": [
+        "green",
+        "black",
+        "grey",
+        "white"
+    ],
+    "category": "best sellers"
+},
+
+{
+    "id": "9",
+    "type": "Cotton T Shirt",
+    "name": "Basic Heavy Weight T-shirt",
+    "price": "$99",
+    "sizes": ["XS","2X"],
+    "colors": [
+        "green",
+        "black",
+        "grey",
+        "white"
+    ],
+    "category": "shirt"
+},
+
+{
+    "id": "10",
+    "type": "Cotton T Shirt",
+    "name": "Basic Heavy Weight T-shirt",
+    "price": "$99",
+    "sizes": ["XS","2X"],
+    "colors": [
+        "green",
+        "black",
+        "grey",
+        "white"
+    ],
+    "category": "t-shirt"
+},
+
+{
+    "id": "11",
+    "type": "Cotton T Shirt",
+    "name": "Basic Heavy Weight T-shirt",
+    "price": "$99",
+    "sizes": ["XS","2X"],
+    "colors": [
+        "green",
+        "black",
+        "grey",
+        "white"
+    ],
+    "category": "polo shirts"
+},
+
+{
+    "id": "12",
+    "type": "Cotton T Shirt",
+    "name": "Basic Heavy Weight T-shirt",
+    "price": "$99",
+    "sizes": ["XS","2X"],
+    "colors": [
+        "green",
+        "black",
+        "grey",
+        "white"
+    ],
+    "category": "new"
+},
+
+{
+    "id": "13",
+    "type": "Cotton T Shirt",
+    "name": "Basic Heavy Weight T-shirt",
+    "price": "$99",
+    "sizes": ["XS","2X"],
+    "colors": [
+        "green",
+        "black",
+        "grey",
+        "white"
+    ],
+    "category": "new"
 }
 ]
 }
