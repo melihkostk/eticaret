@@ -1,4 +1,3 @@
-
 //HOME PAGE SCRIPTLERI
 if(document.body.className === "hp"){
 
@@ -11,6 +10,17 @@ if(document.body.className === "hp"){
             menuIcon.addEventListener("click", () => {
                 document.querySelector(".drawer").style.left = 0;
             })
+
+            let totalProduct = document.querySelector(".total-amount");
+            let cart = JSON.parse(localStorage.getItem("Cart")) || [];
+
+            let total = 0;
+
+            cart.forEach(item => {
+                total += Number(item.quantity); 
+            });
+
+            totalProduct.textContent = total;
         });
 
     const closeMenu = document.querySelector(".close-menu");
@@ -18,13 +28,13 @@ if(document.body.className === "hp"){
         document.querySelector(".drawer").style.left = "-300px";
     })
 
-    const collections = document.querySelector(".col");
+    const collections = document.querySelector(".hp-col");
     collections.addEventListener("click",() => {
         window.location.replace("products.html")
     })
 
-    const productImage = document.querySelectorAll(".product-img")
-    const productTitle = document.querySelectorAll(".product-description")
+    const productImage = document.querySelectorAll(".hp-product-img")
+    const productTitle = document.querySelectorAll(".hp-product-description")
 
 
     productImage.forEach((item,index) => {
@@ -39,13 +49,13 @@ if(document.body.className === "hp"){
         })
     })
 
-    const seeAllButton = document.querySelector(".see-all")
+    const seeAllButton = document.querySelector(".hp-see-all")
     seeAllButton.addEventListener("click" , () => {
         window.location.replace("products.html")
     })
 
     const searchInput = document.querySelector("input")
-    const products = document.querySelectorAll(".product-container");
+    const products = document.querySelectorAll(".hp-product-container");
 
     searchInput.addEventListener("input", function () {
 
@@ -54,7 +64,7 @@ if(document.body.className === "hp"){
     products.forEach(product => {
 
         const title = product
-            .querySelector(".product-description")
+            .querySelector(".hp-product-description")
             .textContent
             .toLowerCase();
 
@@ -69,29 +79,18 @@ if(document.body.className === "hp"){
         });
     });
 
-    let totalProduct = document.querySelector(".total-amount");
-    let cart = JSON.parse(localStorage.getItem("Cart")) || [];
-
-    let total = 0;
-
-    cart.forEach(item => {
-        total += Number(item.quantity); 
-    });
-
-    /*totalProduct.textContent = total;*/
-    
-    const addButton = document.querySelectorAll(".add-button");
+    const addButton = document.querySelectorAll(".hp-add-button");
 
     addButton.forEach((button,index)=>{
         button.addEventListener("click" , function(){
 
-            const productCard = this.closest(".product-container");
+            const productCard = this.closest(".hp-product-container");
 
             const product = {
-                title: productCard.querySelector(".product-type").textContent,
-                description: productCard.querySelector(".product-description").textContent,
+                title: productCard.querySelector(".hp-product-type").textContent,
+                description: productCard.querySelector(".hp-product-description").textContent,
                 price: productCard.querySelector(".cost").textContent,
-                photo: productCard.querySelector(".product-img").src,
+                photo: productCard.querySelector(".hp-product-img").src,
                 size:null,
                 color:null,
                 quantity:1
@@ -144,7 +143,7 @@ if(document.body.className === "p"){
         fetch("product.json")
             .then(response => response.json())
             .then(data => {
-                const filteredProducts = data.products.filter(product => product.category === category); 
+                const filteredProducts = data.products.filter(product => product.category === category);  //Map ekleme fikrini kod yazdırmadan ChatGPT ye sordum 
                  const productContainer = filteredProducts.map(product => ` 
                     <div class="product-container">
                         <img class="product-img" src="${product.photo}">
@@ -224,34 +223,31 @@ if(document.body.className === "pp"){
             menuIcon.addEventListener("click", () => {
                 document.querySelector(".drawer").style.left = 0;
             })
+
+            const totalProduct = document.querySelector(".total-amount")
+            let cart = JSON.parse(localStorage.getItem("Cart")) || [];
+            
+            let total = 0;
+
+            cart.forEach(item => {
+                total += Number(item.quantity); 
+            });
+
+            totalProduct.textContent = total;
     });
 
-    const closeMenu = document.querySelector(".close-menu");
+    const closeMenu = document.querySelector(".pp-close-menu");
     closeMenu.addEventListener("click",() => {
         document.querySelector(".drawer").style.left = "-300px";
     })
     
-    const totalProduct = document.querySelector(".total-amount")
-    let cart = JSON.parse(localStorage.getItem("Cart")) || [];
-    
-    let total = 0;
 
-    cart.forEach(item => {
-        total += Number(item.quantity); 
-    });
-
-    /*totalProduct.textContent = total;*/
-
-    const smallImages = document.querySelectorAll(".small-images");
-    const mainImage = document.querySelector(".photo");
-    /*const colors = document.querySelector(".colors");
-    const color = colors.querySelectorAll("label");
-    const sizes = document.querySelector(".size");
-    const size = sizes.querySelectorAll("span");*/
-    const addBasket = document.querySelector(".add-button");
-    const productTitle = document.querySelector(".product-title")
-    const cost = document.querySelector(".cost")
-    const firstSmallImage = document.querySelector('.small-images img');
+    const smallImages = document.querySelectorAll(".pp-small-images");
+    const mainImage = document.querySelector(".pp-photo");
+    const addBasket = document.querySelector(".pp-add-button");
+    const productTitle = document.querySelector(".pp-product-title")
+    const cost = document.querySelector(".pp-cost")
+    const firstSmallImage = document.querySelector('.pp-small-images img');
 
     let URL = new URLSearchParams(document.location.search);
     let productId = URL.get("id");
@@ -259,8 +255,8 @@ if(document.body.className === "pp"){
     let selectedSize = null;
     let selectedColor = null;
 
-    document.querySelector(".size").innerHTML = "";
-    document.querySelector(".colors").innerHTML = "";
+    document.querySelector(".pp-size").innerHTML = "";
+    document.querySelector(".pp-colors").innerHTML = "";
 
     fetch('product.json')
         .then(res =>res.json())
@@ -268,7 +264,7 @@ if(document.body.className === "pp"){
             data.products.forEach((item) => {
                 if(productId === item.id){
                     item.sizes.forEach(size => {
-                        document.querySelector(".size").innerHTML += `
+                        document.querySelector(".pp-size").innerHTML += `
                             <label class="size-${size}">
                                 <input type="checkbox" name="size" value="${size}">
                                 <span>${size}</span>
@@ -276,18 +272,20 @@ if(document.body.className === "pp"){
                     `;
                     })
                     item.colors.forEach(color => {
-                        document.querySelector(".colors").innerHTML += `
-                            <label class="${color}-box">
+                        document.querySelector(".pp-colors").innerHTML += `
+                            <label class="pp-${color}-box">
                                 <input type="checkbox" name="color" value="${color}">
                                 <span></span>
                             </label>
                     `;
-                }) 
+                })
+                
+                mainImage.src = item.photo
             }
         })
-        const colors = document.querySelector(".colors");
+        const colors = document.querySelector(".pp-colors");
         const color = colors.querySelectorAll("label");
-        const sizes = document.querySelector(".size");
+        const sizes = document.querySelector(".pp-size");
         const size = sizes.querySelectorAll("span");
 
         size.forEach(item => {
@@ -318,9 +316,11 @@ if(document.body.className === "pp"){
     }
     )
 
+    let cart = JSON.parse(localStorage.getItem("Cart")) || [];
+
+
     if (cart.length > 0) {
         const lastProduct = cart[cart.length - 1];
-        mainImage.src = lastProduct.photo;
         firstSmallImage.src = lastProduct.photo;
         productTitle.textContent = lastProduct.title;
         cost.textContent = lastProduct.price
@@ -334,8 +334,28 @@ if(document.body.className === "pp"){
     })
 
     addBasket.addEventListener("click", function(){
+
+        const rightPart = document.querySelector(".pp-right-part"); 
+        const leftPart = document.querySelector(".pp-left-part");
        
         if(selectedColor && selectedSize){
+            const product = {
+                title: rightPart.querySelector(".pp-product-title").textContent,
+                price: rightPart.querySelector(".pp-cost").textContent,
+                photo: leftPart.querySelector(".pp-photo").src,
+                size:null,
+                color:null,
+                quantity:1
+            }
+        
+            let cart = JSON.parse(localStorage.getItem("Cart")) || [];
+
+            cart.push(product);
+
+            localStorage.setItem("Cart", JSON.stringify(cart));
+
+            alert("Ürün başarıyla sepete eklendi")
+
             window.location.replace("shopping-bag-page.html");
         } 
 
@@ -344,7 +364,7 @@ if(document.body.className === "pp"){
         }
     });
  
-    const favIcon = document.querySelector(".black-fav-icon");
+    const favIcon = document.querySelector(".pp-black-fav-icon");
     favIcon.addEventListener("click" , () => {
 
         favIcon.classList.toggle("active");
@@ -352,9 +372,9 @@ if(document.body.className === "pp"){
         let favorites = JSON.parse(localStorage.getItem("Favorites")) || [];
 
         const newFavorite = {
-            title: document.querySelector(".product-title").textContent,
-            price: document.querySelector(".cost").textContent,
-            photo: document.querySelector(".photo").src,
+            title: document.querySelector(".pp-product-title").textContent,
+            price: document.querySelector(".pp-cost").textContent,
+            photo: document.querySelector(".pp-photo").src,
     };
 
         favorites.push(newFavorite);
@@ -374,6 +394,16 @@ if(document.body.className ==="sbp"){
             menuIcon.addEventListener("click", () => {
                 document.querySelector(".drawer").style.left = 0;
             })
+
+            const totalProduct = document.querySelector(".total-amount")
+    
+            let total = 0;
+
+            cart.forEach(item => {
+                total += Number(item.quantity); 
+            });
+
+            totalProduct.textContent = total;
         });
 
     const closeMenu = document.querySelector(".close-menu");
@@ -384,48 +414,37 @@ if(document.body.className ==="sbp"){
    
     let cart = JSON.parse(localStorage.getItem("Cart")) || [];
 
-    const totalProduct = document.querySelector(".total-amount")
-    
-    let total = 0;
-
-    cart.forEach(item => {
-        total += Number(item.quantity); 
-    });
-
-    /*totalProduct.textContent = total;*/
-   
-    const continueButton = document.querySelector(".continue-button");
+    const continueButton = document.querySelector(".sbp-continue-button");
     const acceptCheckBox = document.getElementById("accept");
-    const leftPart = document.querySelector(".left-part");
+    const leftPart = document.querySelector(".sbp-left-part");
 
     leftPart.innerHTML = "";
 
     cart.forEach((item, index) => {
         leftPart.innerHTML += `
-            <div class="product-container" data-index="${index}">
-                <img class="product-img" src="${item.photo}">
-                <p class="product-t">${item.title}</p>
-                <div class = "p-info">
-                    <p class="product-d">${item.description.replace(/\$\d+$/, "")}</p>
-                    <p class="cost">${item.price}</p>
+            <div class="sbp-product-container" data-index="${index}">
+                <img class="sbp-product-img" src="${item.photo}">
+                <p class="sbp-product-t">${item.title}</p>
+                <div class = "sbp-p-info">
+                    <p class="sbp-cost">${item.price}</p>
                 </div>
             </div>
-            <div class="transaction">
-                <img class="close-icon" src="icons/close-icon.png">
-                <p class="size">L</p>
-                <div class="color-box"></div>
+            <div class="sbp-transaction">
+                <img class="sbp-close-icon" src="icons/close-icon.png">
+                <p class="sbp-size">L</p>
+                <div class="sbp-color-box"></div>
                         
-                <div class="buttons">    
-                    <button class="increase">+</button>
-                    <div class="amount">1</div>
-                    <button class="decrease">-</button>
+                <div class="sbp-buttons">    
+                    <button class="sbp-increase">+</button>
+                    <div class="sbp-amount">1</div>
+                    <button class="sbp-decrease">-</button>
                 </div>
-                <img class="refresh-icon" src="icons/refresh.png">
+                <img class="sbp-refresh-icon" src="icons/refresh.png">
             </div>
         `;
     });
 
-   const productContainer = document.querySelectorAll(".product-container")
+   const productContainer = document.querySelectorAll(".sbp-product-container")
    
    if(productContainer.length > 3){
         leftPart.classList.add("grid");
@@ -435,8 +454,8 @@ if(document.body.className ==="sbp"){
         leftPart.classList.remove("grid")
     }
 
-    const sizes = document.querySelectorAll(".size")
-    const colors = document.querySelectorAll(".color-box")
+    const sizes = document.querySelectorAll(".sbp-size")
+    const colors = document.querySelectorAll(".sbp-color-box")
 
     sizes.forEach((size, index) => {
         size.innerHTML = cart[index].size;
@@ -446,9 +465,9 @@ if(document.body.className ==="sbp"){
         color.style.backgroundColor = cart[index].color;
     })
 
-    const subT =  document.querySelector(".sub-total")
-    const totalCost = document.querySelector(".total")
-    const shippingCost = document.querySelector(".shipping")
+    const subT =  document.querySelector(".sbp-sub-total")
+    const totalCost = document.querySelector(".sbp-total")
+    const shippingCost = document.querySelector(".sbp-shipping")
     subT.textContent = ""
 
     let cost = 0;
@@ -459,16 +478,16 @@ if(document.body.className ==="sbp"){
 
     })
   
-    const amount = document.querySelectorAll('.amount');
-    const increaseButton = document.querySelectorAll(".increase")
+    const amount = document.querySelectorAll('.sbp-amount');
+    const increaseButton = document.querySelectorAll(".sbp-increase")
     increaseButton.forEach((button, index) => {
     button.addEventListener("click", () => {
         cart[index].quantity += 1;
         amount[index].textContent = cart[index].quantity;
         localStorage.setItem("Cart" , JSON.stringify(cart));
-        const subTotal = document.querySelector(".sub-total");
-        const shippingCost = document.querySelector(".shipping")
-        const totalCost = document.querySelector(".total")
+        const subTotal = document.querySelector(".sbp-sub-total");
+        const shippingCost = document.querySelector(".sbp-shipping")
+        const totalCost = document.querySelector(".sbp-total")
 
         let cost = 0;
 
@@ -484,7 +503,7 @@ if(document.body.className ==="sbp"){
     });
 });
     
-    const decreaseButton = document.querySelectorAll('.decrease');
+    const decreaseButton = document.querySelectorAll('.sbp-decrease');
     decreaseButton.forEach((button, index) => {
         button.addEventListener("click", () => {
             if (cart[index].quantity > 1) {
@@ -492,9 +511,9 @@ if(document.body.className ==="sbp"){
                 amount[index].textContent = cart[index].quantity;
                 localStorage.setItem("Cart" , JSON.stringify(cart));
             }
-            const subTotal = document.querySelector(".sub-total");
-            const shippingCost = document.querySelector(".shipping")
-            const totalCost = document.querySelector(".total")
+            const subTotal = document.querySelector(".sbp-sub-total");
+            const shippingCost = document.querySelector(".sbp-shipping")
+            const totalCost = document.querySelector(".sbp-total")
 
             let cost = 0;
 
@@ -509,16 +528,16 @@ if(document.body.className ==="sbp"){
         });
     });
 
-    const refreshButton = document.querySelectorAll('.refresh-icon');
+    const refreshButton = document.querySelectorAll('.sbp-refresh-icon');
     refreshButton.forEach((btn, index) => {
         btn.addEventListener("click", () => {
             cart[index].quantity = 1;
             amount[index].textContent = 1;
             localStorage.setItem("Cart" , JSON.stringify(cart));
             
-            const subTotal = document.querySelector(".sub-total");
-            const shippingCost = document.querySelector(".shipping")
-            const totalCost = document.querySelector(".total")
+            const subTotal = document.querySelector(".sbp-sub-total");
+            const shippingCost = document.querySelector(".sbp-shipping")
+            const totalCost = document.querySelector(".sbp-total")
 
             let cost = 0;
 
@@ -534,18 +553,27 @@ if(document.body.className ==="sbp"){
     });
   
     document.addEventListener("click", function(e) {
-        if (e.target.classList.contains("close-icon")) {
+        if (e.target.classList.contains("sbp-close-icon")) {
             
-            const transaction = e.target.closest(".transaction");
+            const transaction = e.target.closest(".sbp-transaction");
             const product = transaction.previousElementSibling;
+
+            const allTransactions = document.querySelectorAll(".sbp-transaction")
+            const index = Array.from(allTransactions).indexOf(transaction); 
+
+            let cart = JSON.parse(localStorage.getItem("Cart")) || [];
+           
+            cart.splice(index, 1); //ChatGPT ye kodu yazdırmadan fikir sorarak yazdım 
+
+            localStorage.setItem("Cart", JSON.stringify(cart));
 
             product.remove();
             transaction.remove();
 
-            const leftPart = document.querySelector(".left-part");
-            const rightPart = document.querySelector(".right-part");
+            const leftPart = document.querySelector(".sbp-left-part");
+            const rightPart = document.querySelector(".sbp-right-part");
 
-            if (!leftPart.querySelector(".product-container")) {
+            if (!leftPart.querySelector(".sbp-product-container")) {
                 leftPart.remove()
                 rightPart.remove()
                 localStorage.clear()
@@ -560,7 +588,6 @@ if(document.body.className ==="sbp"){
     continueButton.addEventListener("click" , () => {
         
         if(acceptCheckBox.checked){
-    
             window.location.replace("checkout.html");
         }
 
@@ -569,7 +596,7 @@ if(document.body.className ==="sbp"){
         }
     })
 
-    const favoritePage = document.querySelector(".fav")
+    const favoritePage = document.querySelector(".sbp-fav")
     
     favoritePage.addEventListener("click" , () => {
 
@@ -592,7 +619,7 @@ if(document.body.className ==="sbp"){
 
 //CHECKOUT PAGE SCRIPTLERI
 if(document.body.className === "cp"){
-    const backButton = document.querySelector(".forward-arrow")
+    const backButton = document.querySelector(".cp-forward-arrow")
     const cost = document.querySelector(".t-cost")
     const totalCost = document.querySelector(".total-c")
     const form = document.querySelector("form")
@@ -604,7 +631,7 @@ if(document.body.className === "cp"){
     
     let cart = JSON.parse(localStorage.getItem("Cart")) || [];
 
-    const products = document.querySelector(".products-area");
+    const products = document.querySelector(".cp-products-area");
     products.innerHTML = ""
 
     let subtotal = 0;
@@ -623,7 +650,7 @@ if(document.body.className === "cp"){
     cart.forEach((item,index) => {
 
         totalProduct += parseInt(item.quantity)
-        const totalAmount = document.querySelector(".t-amount")
+        const totalAmount = document.querySelector(".cp-t-amount")
         totalAmount.textContent = "(" + totalProduct + ")"
 
         let priceNumber = parseInt(item.price.replace("$", ""));
@@ -632,16 +659,16 @@ if(document.body.className === "cp"){
         let colorName = colorMap[item.color] || "Empty Color";
 
         products.innerHTML += `
-            <div class="product-container" data-index="${index}">
-                    <img class="product-img" src="${item.photo}">
-                    <div class="product-d">
+            <div class="cp-product-container" data-index="${index}">
+                    <img cp-class="product-img" src="${item.photo}">
+                    <div class="cp-product-d">
                         <div>
-                            <p class="product-t">${item.title}</p>
-                            <p class="product-s">${colorName}/${item.size}</p>
+                            <p class="cp-product-t">${item.title}</p>
+                            <p class="cp-product-s">${colorName}/${item.size}</p>
                         </div>
-                        <div class="amount-co">
-                            <p class="amount">(${item.quantity})</p>
-                            <p class="cost">${(item.price)}</p>
+                        <div class="cp-amount-co">
+                            <p class="cp-amount">(${item.quantity})</p>
+                            <p class="cp-cost">${(item.price)}</p>
                         </div>
                     </div>  
             </div>
