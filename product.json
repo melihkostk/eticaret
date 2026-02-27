@@ -4,7 +4,7 @@
   "id": "1",
   "type": "V Neck T-shirt",
   "name": "Embroidered Seersucker Shirt",
-  "price": "$99",
+  "price": "$120",
   "sizes": ["XS", "S", "M", "L"],
   "colors": [
     "green",
@@ -21,7 +21,7 @@
     "id": "2",
     "type": "Cotton T Shirt",
     "name": "Basic Slim Fit T-Shirt",
-    "price": "$99",
+    "price": "$110",
     "sizes": ["M", "L", "XL", "2X"],
 
     "colors": [
@@ -40,7 +40,7 @@
     "id": "3",
     "type": "Henley T-Shirt",
     "name": "Blurred Print T-Shirt",
-    "price": "$99",
+    "price": "$90",
     "sizes": ["XS", "S", "M", "L", "XL", "2X"],
     "colors": [
         "green",
@@ -59,7 +59,7 @@
     "id": "4",
     "type": "Crewneck T-Shirt",
     "name": "Full Sleeve Zipper",
-    "price": "$99",
+    "price": "$100",
     "sizes": ["XS", "S","XL", "2X"],
     "colors": [
         "green",
@@ -76,7 +76,7 @@
     "id": "5",
     "type": "Cotton T Shirt",
     "name": "Basic Heavy Weight T-Shirt",
-    "price": "99",
+    "price": "$80",
     "sizes": ["XS", "S", "M", "L", "XL", "2X"],
     "colors": [
         "green",
@@ -95,7 +95,7 @@
     "id": "6",
     "type": "Cotton Jeans",
     "name": "Soft Wash Straight Fit Jeans",
-    "price": "$99",
+    "price": "$100",
     "sizes": ["XS", "S", "M", "L"],
     "colors": [
         "black",
@@ -110,7 +110,7 @@
     "id": "7",
     "type": "Cotton T Shirt",
     "name": "Basic Heavy Weight T-shirt",
-    "price": "$99",
+    "price": "$70",
     "sizes": ["XS","2X"],
     "colors": [
         "green",
@@ -142,7 +142,7 @@
     "id": "9",
     "type": "Cotton T Shirt",
     "name": "Basic Heavy Weight T-shirt",
-    "price": "$99",
+    "price": "$130",
     "sizes": ["XS","2X"],
     "colors": [
         "green",
@@ -158,7 +158,7 @@
     "id": "10",
     "type": "Cotton T Shirt",
     "name": "Basic Heavy Weight T-shirt",
-    "price": "$99",
+    "price": "$140",
     "sizes": ["XS","2X"],
     "colors": [
         "green",
@@ -174,7 +174,7 @@
     "id": "11",
     "type": "Cotton T Shirt",
     "name": "Basic Heavy Weight T-shirt",
-    "price": "$99",
+    "price": "$60",
     "sizes": ["XS","2X"],
     "colors": [
         "green",
@@ -190,7 +190,7 @@
     "id": "12",
     "type": "Cotton T Shirt",
     "name": "Basic Heavy Weight T-shirt",
-    "price": "$99",
+    "price": "$80",
     "sizes": ["XS","2X"],
     "colors": [
         "green",
@@ -206,7 +206,7 @@
     "id": "13",
     "type": "Cotton T Shirt",
     "name": "Basic Heavy Weight T-shirt",
-    "price": "$99",
+    "price": "$70",
     "sizes": ["XS","2X"],
     "colors": [
         "green",
