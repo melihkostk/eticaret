@@ -1648,6 +1648,10 @@ body::before {
     flex-direction: column; 
 }
 
+.cp-titles{
+    margin-left: 1rem;
+}
+
 .cp-titles .cp-container {
     display: flex;
     
@@ -2007,6 +2011,14 @@ body::before {
     padding-top: 10px;
     width: 100%;
     
+}
+
+.cp-forward-arrow{
+    width: 40px;
+    height: 40px;
+    transform: rotate(180deg);
+    margin-left: 1rem;
+    cursor: pointer;
 }
 
 .cp-container .cp-right-part .cp-shipping{
@@ -2845,10 +2857,11 @@ body{
     align-items: flex-start;
     gap: 2rem;
     margin-top: 160px;
-    /*display: none;*/
-}
-.p-products .p-menu-container.active{
     display: block;
+
+}
+.p-products .p-menu-container.closed{
+    display: none;
 }
 
 .p-products .p-menu-container .p-menu{
@@ -2863,9 +2876,7 @@ body{
     
 }
 
-.p-products .p-menu-container:active{
-    display: block;
-}
+
 
 .p-products .p-menu-container .p-menu ul{
     list-style: none;
@@ -3827,13 +3838,13 @@ body{
     gap: 5rem;
 }
 
-.sbp-container .sbp-left-part .sbp-product-container .sbp-info{
+.sbp-container .sbp-left-part .sbp-product-container .sbp-p-info{
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.sbp-container .sbp-left-part .sbp-product-container .sb-cost{
+.sbp-container .sbp-left-part .sbp-product-container .sbp-cost{
      font-family: Beatrice Deck Trial;
     font-weight: 500;
     font-style: medium;
