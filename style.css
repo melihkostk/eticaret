@@ -1,3 +1,142 @@
+.head .container{
+    display: flex;
+    justify-content:space-between;
+    margin-left: 20px;
+    align-items: center;
+    margin-top: 0.5rem;
+    padding: 1rem;   
+}
+
+.head .container .menu-icon{
+    width: 26px;
+    height: 16px;
+    
+}
+
+.left-section{
+    display: flex;
+    align-items: center;
+}
+
+.left-section a{
+    text-decoration: none;
+    margin: 10px;
+    color: rgb(0,0,0,1);
+    font-size: 18px;
+    font-family: "Beatrice Deck Trial";
+    font-weight: 500;
+    line-height: 100%;
+    cursor: pointer;
+}
+
+.middle-section{
+    display: flex;
+    justify-content: center;   
+}
+
+.middle-section .amblem{
+    width: 40px;
+    height: 40px;
+    transform: rotate(45deg);
+    background: linear-gradient(
+        45deg,
+        rgba(217,217,217,1) 50%,
+        black 50%
+    );
+}
+
+ 
+.left-section .menu-icon{
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.container .right-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right-section .like-button{
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+    margin-right: 20px;
+    background-color: #262222;
+    cursor: pointer;
+}
+
+.right-section .like-button img{
+    transform: rotate(-45deg);
+    padding-top: 7px;
+    padding-right: 2px;
+}
+
+.right-section .cart-button{
+    height: 50px;
+    width: 76px;
+    border:1px solid #262222;
+    border-radius: 22px;
+    background-color: #262222;
+    color: #F5F5F5;
+
+    font-size: 12px;
+    font-family: "Beatrice Deck Trial";
+    cursor: pointer;
+}
+
+.right-section .shop-button{
+    height: 50px;
+    width: 50px;
+    background-color: #fff;
+    margin-left: -5px;
+    
+    border: 7px solid rgba(0, 0, 0, 1);
+    border-radius: 100%;
+    cursor: pointer;
+    position: relative;
+}
+
+.right-section .shop-button .total-amount{
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: red;
+    position: absolute;
+    border-radius: 100%;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    text-align: center;
+    font-family: "Beatrice Deck Trial";
+    color: white;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.right-section .shop-button img{
+    width: 20px;
+    height: 19px;
+    padding-left: 1px;
+    padding-top: 2px;
+    
+}
+
+.right-section .profile-button{
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+    margin-left: 20px;
+    background-color: #262222;
+    color: #F5F5F5;
+    cursor: pointer;
+}
+
+.right-section .profile-button img{
+    padding-top: 4px;
+    opacity: 1;
+}
+
+
 /*index.css*/
 *{
     padding: 0px;
@@ -13,15 +152,6 @@ body{
     background: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)),
     url("images/noisy-background.jpg");
     background-size: cover;
-}
-
-.head .hp-container{
-    display: flex;
-    justify-content:space-between;
-    margin-left: 20px;
-    align-items: center;
-    margin-top: 0.5rem;
-    padding: 1rem;   
 }
 
 .drawer{
@@ -54,130 +184,6 @@ body{
     margin-left: 0.5rem;
     cursor: pointer;
 }
-
-.head .hp-container .p-menu-icon{
-    width: 26px;
-    height: 16px;
-    
-}
-
-.hp-left-section a{
-    text-decoration: none;
-    margin: 10px;
-    color: rgb(0,0,0,1);
-    font-size: 18px;
-    font-family: "Beatrice Deck Trial";
-    font-weight: 500;
-    line-height: 100%;
-    cursor: pointer;
-}
-
-.hp-middle-section{
-    display: flex;
-    justify-content: center;   
-}
-
-.hp-middle-section .amblem{
-    width: 40px;
-    height: 40px;
-    transform: rotate(45deg);
-    background: linear-gradient(
-        45deg,
-        rgba(217,217,217,1) 50%,
-        black 50%
-    );
-}
-
- 
-.hp-left-section .p-menu-icon{
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
-}
-
-.hp-container .hp-right-section{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.hp-right-section .like-button{
-    height: 50px;
-    width: 50px;
-    border-radius: 100%;
-    margin-right: 20px;
-    background-color: #262222;
-    cursor: pointer;
-}
-
-.hp-right-section .like-button img{
-    transform: rotate(-45deg);
-    padding-top: 7px;
-    padding-right: 2px;
-}
-
-.hp-right-section .cart-button{
-    height: 50px;
-    width: 76px;
-    border:1px solid #262222;
-    border-radius: 22px;
-    background-color: #262222;
-    color: #F5F5F5;
-
-    font-size: 12px;
-    font-family: "Beatrice Deck Trial";
-    cursor: pointer;
-}
-
-.hp-right-section .shop-button{
-    height: 50px;
-    width: 50px;
-    background-color: #fff;
-    margin-left: -5px;
-    
-    border: 7px solid rgba(0, 0, 0, 1);
-    border-radius: 100%;
-    cursor: pointer;
-    position: relative;
-}
-
-.hp-right-section .shop-button .total-amount{
-    width: 1.5rem;
-    height: 1.5rem;
-    background-color: red;
-    position: absolute;
-    border-radius: 100%;
-    bottom: 1.5rem;
-    left: 1.5rem;
-    text-align: center;
-    font-family: "Beatrice Deck Trial";
-    color: white;
-    font-size: 1rem;
-    font-weight: 700;
-}
-
-.hp-right-section .shop-button img{
-    width: 20px;
-    height: 19px;
-    padding-left: 1px;
-    padding-top: 2px;
-}
-
-.hp-right-section .profile-button{
-    height: 40px;
-    width: 40px;
-    border-radius: 100%;
-    margin-left: 20px;
-    background-color: #262222;
-    color: #F5F5F5;
-    cursor: pointer;
-}
-
-.hp-right-section .profile-button img{
-    padding-top: 4px;
-    opacity: 1;
-}   
-
 .hp-gender .hp-container{
     margin-top: 30px;
     margin-left: 50px;
@@ -1642,17 +1648,6 @@ body::before {
     flex-direction: column; 
 }
 
-header img{
-    width: 59.5px;
-    height: 17px;
-    opacity: 1;
-    border-width: 1.5px;
-    transform: rotate(180deg);
-    margin-left: 40px;
-    cursor: pointer;
-}
-
-
 .cp-titles .cp-container {
     display: flex;
     
@@ -2285,147 +2280,6 @@ body{
     box-sizing: border-box;
 }
 
-.head{
-    padding: 10px; 
-    width: 100%;
-}
-
-.head .p-container{
-    display: flex;
-    justify-content:space-between;
-    align-self: flex-start;
-    
-       
-}
-
-.head .p-container .p-menu-icon{
-    width: 26px;
-    height: 16px;
-    
-}
-
-.left-section{
-    display: flex;
-    align-items: center;
-}
-
-.left-section a{
-    text-decoration: none;
-    margin: 10px;
-    color: rgb(0,0,0,1);
-    font-size: 18px;
-    font-family: "Beatrice Deck Trial";
-    font-weight: 500;
-    line-height: 100%;
-    cursor: pointer;
-}
-
-.middle-section{
-    display: flex;
-    justify-content: center;
-}
-
-.middle-section .amblem{
-    width: 2.5rem;
-    height: 2.5rem;
-    transform: rotate(45deg);
-    background: linear-gradient(
-        45deg,
-        rgba(217,217,217,1) 50%,
-        black 50%
-    );
-}
-
- 
-.left-section .p-menu-icon{
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
-}
-
-.pp-container .right-section{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.right-section .like-button{
-    height: 50px;
-    width: 50px;
-    border-radius: 100%;
-    margin-right: 20px;
-    background-color: #262222;
-    cursor: pointer;
-    
-}
-
-.right-section .like-button img{
-    transform: rotate(-45deg);
-    padding-top: 7px;
-    padding-right: 2px;
-}
-
-.right-section .cart-button{
-    height: 50px;
-    width: 76px;
-    border:1px solid #262222;
-    border-radius: 22px;
-    background-color: #262222;
-    color: #F5F5F5;
-
-    font-size: 12px;
-    font-family: "Beatrice Deck Trial";
-    cursor: pointer;
-}
-
-.right-section .shop-button{
-    height: 50px;
-    width: 50px;
-    background-color: #fff;
-    margin-left: -5px;
-    
-    border: 7px solid rgba(0, 0, 0, 1);
-    border-radius: 100%;
-    cursor: pointer;
-    position: relative;
-}
-.right-section .shop-button .total-amount{
-    width: 1.5rem;
-    height: 1.5rem;
-    background-color: red;
-    position: absolute;
-    border-radius: 100%;
-    bottom: 1.5rem;
-    left: 1.5rem;
-    text-align: center;
-    font-family: "Beatrice Deck Trial";
-    color: white;
-    font-size: 1rem;
-    font-weight: 700;
-}
-
-.right-section .shop-button img{
-    width: 20px;
-    height: 19px;
-    padding-left: 1px;
-    padding-top: 2px;
-}
-
-.right-section .profile-button{
-    height: 40px;
-    width: 40px;
-    border-radius: 100%;
-    margin-left: 20px;
-    background-color: #262222;
-    color: #F5F5F5;
-    cursor: pointer;
-}
-
-.right-section .profile-button img{
-    padding-top: 4px;
-    opacity: 1;
-}   
-
 .pp-main-container {
     display: flex;
     flex-direction: column;
@@ -2976,121 +2830,6 @@ body{
     url("images/noisy-background.jpg");
     background-size: cover;
    
-}
-
-.head {
-    width: 100%;
-}
-
-.head .p-container{
-    display: flex;
-    justify-content:space-between;
-    margin-left: 20px;
-    align-items: center;
-    
-
-    margin-top: 30px;
-    padding: 20px;   
-}
-
-.head .p-container .p-menu-icon{
-    width: 26px;
-    height: 16px;
-    
-}
-
-.left-section a{
-    text-decoration: none;
-    margin: 10px;
-    color: rgb(0,0,0,1);
-    font-size: 18px;
-    font-family: "Beatrice Deck Trial";
-    font-weight: 500;
-    line-height: 100%;
-}
-
-.middle-section{
-    display: flex;
-    justify-content: center;   
-}
-
-.middle-section .amblem{
-    width: 40px;
-    height: 40px;
-    transform: rotate(45deg);
-    background: linear-gradient(
-        45deg,
-        rgba(217,217,217,1) 50%,
-        black 50%
-    );
-}
-
-.left-section .p-menu-icon{
-    width: 30px;
-    height: 30px;
-}
-
-.p-container .right-section{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.right-section .like-button{
-    height: 50px;
-    width: 50px;
-    border-radius: 100%;
-    margin-right: 20px;
-    background-color: #262222;
-}
-
-.right-section .like-button img{
-    transform: rotate(-45deg);
-    padding-top: 7px;
-    padding-right: 2px;
-}
-
-.right-section .cart-button{
-    height: 50px;
-    width: 76px;
-    border:1px solid #262222;
-    border-radius: 22px;
-    background-color: #262222;
-    color: #F5F5F5;
-
-    font-size: 12px;
-    font-family: "Beatrice Deck Trial";
-}
-
-.right-section .shop-button{
-    height: 50px;
-    width: 50px;
-    background-color: #fff;
-    margin-left: -5px;
-    
-    border: 7px solid rgba(0, 0, 0, 1);
-    border-radius: 100%; 
-}
-
-.right-section .shop-button img{
-    width: 20px;
-    height: 19px;
-    padding-left: 1px;
-    padding-top: 2px;
-}
-
-.right-section .profile-button{
-    height: 40px;
-    width: 40px;
-    border-radius: 100%;
-    margin-left: 20px;
-    background-color: #262222;
-    color: #F5F5F5;
-}
-
-.right-section .profile-button img{
-    padding-top: 4px;
-    opacity: 1;
 }
 
 .p-products{
@@ -3978,120 +3717,6 @@ body{
     display: flex;
     flex-direction: column;
 }
-
-.head .container{
-    display: flex;
-    justify-content:space-between;
-    margin-left: 20px;
-    align-items: center;
-    padding: 20px;
-   
-       
-}
-
-.head .p-container .p-menu-icon{
-    width: 26px;
-    height: 16px;
-    
-}
-
-.middle-section{
-    display: none;
-}
-
-
-.left-section a{
-    text-decoration: none;
-    margin: 10px;
-    color: rgb(0,0,0,1);
-    font-size: 18px;
-    font-family: "Beatrice Deck Trial";
-    font-weight: 500;
-    line-height: 100%;
-}
-
- 
-.left-section .p-menu-icon{
-    width: 30px;
-    height: 30px;
-}
-
-.p-container .right-section{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.right-section .like-button{
-    height: 50px;
-    width: 50px;
-    border-radius: 100%;
-    margin-right: 20px;
-    background-color: #262222;
-}
-
-.right-section .like-button img{
-    transform: rotate(-45deg);
-    padding-top: 7px;
-    padding-right: 2px;
-}
-
-.right-section .cart-button{
-    height: 50px;
-    width: 76px;
-    border:1px solid #262222;
-    border-radius: 22px;
-    background-color: #262222;
-    color: #F5F5F5;
-
-    font-size: 12px;
-    font-family: "Beatrice Deck Trial";
-}
-
-.right-section .shop-button{
-    height: 50px;
-    width: 50px;
-    background-color: #fff;
-    margin-left: -5px;
-    
-    border: 7px solid rgba(0, 0, 0, 1);
-    border-radius: 100%; 
-    position: relative;
-}
-.right-section .shop-button .total-amount{
-    width: 1.5rem;
-    height: 1.5rem;
-    background-color: red;
-    position: absolute;
-    border-radius: 100%;
-    bottom: 1.5rem;
-    left: 1.5rem;
-    text-align: center;
-    font-family: "Beatrice Deck Trial";
-    color: white;
-    font-size: 1rem;
-}
-
-.right-section .shop-button img{
-    width: 20px;
-    height: 19px;
-    padding-left: 1px;
-    padding-top: 2px;
-}
-
-.right-section .profile-button{
-    height: 40px;
-    width: 40px;
-    border-radius: 100%;
-    margin-left: 20px;
-    background-color: #262222;
-    color: #F5F5F5;
-}
-
-.right-section .profile-button img{
-    padding-top: 4px;
-    opacity: 1;
-}   
 
 .sbp-sb-title{
     display: flex;
