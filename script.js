@@ -133,34 +133,31 @@ if(document.body.className === "p"){
         document.querySelector(".drawer").style.left = "-300px";
     })
 
-    const cateButtons = document.querySelectorAll(".cate-button")
+    const cateButtons = document.querySelectorAll(".p-cate-button")
 
     cateButtons.forEach(function(button) {
     button.addEventListener("click", function() {
         const category = this.textContent.toLowerCase();
-        console.log(category) 
-
         fetch("product.json")
             .then(response => response.json())
             .then(data => {
                 const filteredProducts = data.products.filter(product => product.category === category);  //Map ekleme fikrini kod yazdırmadan ChatGPT ye sordum 
                  const productContainer = filteredProducts.map(product => ` 
-                    <div class="product-container">
-                        <img class="product-img" src="${product.photo}">
-                        <p class="product-t">${product.type}</p>
-                        <div class="color-box" style="background-color:${product.color || '#fff'}"></div>
-                        <p class="product-d">${product.name}<span class="cost">${product.price}</span></p>
+                    <div class="p-product-container">
+                        <img class="p-product-img" src="${product.photo}">
+                        <p class="p-product-t">${product.type}</p>
+                        <p class="p-product-d">${product.name}<span class="cost">${product.price}</span></p>
                     </div>
                 `).join(''); 
 
-                document.querySelector(".bottom").innerHTML = productContainer;
+                document.querySelector(".p-bottom").innerHTML = productContainer;
             })
     });
 });
     
-    const searchInput = document.querySelector(".search")
+    const searchInput = document.querySelector(".p-search")
 
-    const productTitles = document.querySelectorAll(".product-container");
+    const productTitles = document.querySelectorAll(".p-product-container");
 
     searchInput.addEventListener("input", function () {
 
@@ -169,7 +166,7 @@ if(document.body.className === "p"){
     products.forEach(product => {
 
         const title = product
-            .querySelector(".product-d")
+            .querySelector(".p-product-d")
             .textContent
             .toLowerCase();
 
@@ -183,18 +180,18 @@ if(document.body.className === "p"){
     });
 });
 
-    const products = document.querySelectorAll(".product-container");
+    const products = document.querySelectorAll(".p-product-container");
     
     products.forEach(item =>{
         item.addEventListener("click" , function(e){
             
-           const productCard = this.closest(".product-container");
+           const productCard = this.closest(".p-product-container");
 
             const product = {
-                title: productCard.querySelector(".product-t").textContent,
-                description: productCard.querySelector(".product-d").textContent,
-                price: productCard.querySelector(".cost").textContent,
-                photo: productCard.querySelector(".product-img").src,
+                title: productCard.querySelector(".p-product-t").textContent,
+                description: productCard.querySelector(".p-product-d").textContent,
+                price: productCard.querySelector(".p-cost").textContent,
+                photo: productCard.querySelector(".p-product-img").src,
                 size:null,
                 color:null,
                 quantity:1
@@ -209,6 +206,13 @@ if(document.body.className === "p"){
         })
     })
 
+    const menuOpener = document.querySelector(".p-filter-opener");
+    const menu = document.querySelector(".p-menu-container");
+    const menuTitle = document.querySelectorAll(".p-menu-title");
+    
+    menuOpener.addEventListener("click" , () => {
+        menu.classList.toggle("closed");
+    })
 }
 
 //PRODUCT PAGE SCRIPTLERI 
@@ -281,6 +285,9 @@ if(document.body.className === "pp"){
                 })
                 
                 mainImage.src = item.photo
+                document.querySelector(".pp-product-title").textContent = item.name;
+                document.querySelector(".pp-cost").textContent = item.price
+                
             }
         })
         const colors = document.querySelector(".pp-colors");
@@ -295,8 +302,6 @@ if(document.body.className === "pp"){
                     this.classList.add("active")
                     
                     selectedSize = this.textContent;
-                    cart[cart.length-1].size = selectedSize
-                    localStorage.setItem("Cart",JSON.stringify(cart))
                 }
             });
         });
@@ -308,8 +313,6 @@ if(document.body.className === "pp"){
                     this.classList.add("active")
                     
                     selectedColor = window.getComputedStyle(this).backgroundColor;
-                    cart[cart.length-1].color = selectedColor
-                    localStorage.setItem("Cart" , JSON.stringify(cart))
                 }
             });
         });
@@ -343,8 +346,8 @@ if(document.body.className === "pp"){
                 title: rightPart.querySelector(".pp-product-title").textContent,
                 price: rightPart.querySelector(".pp-cost").textContent,
                 photo: leftPart.querySelector(".pp-photo").src,
-                size:null,
-                color:null,
+                size:selectedSize,
+                color:selectedColor,
                 quantity:1
             }
         
