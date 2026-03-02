@@ -31,7 +31,7 @@ if(document.body.className === "hp"){
 
     forwardButton.forEach(item => {
         item.addEventListener("click" ,() => {
-            slider.scrollBy({ left: 400, behavior: 'smooth' }); //https://developer.mozilla.org/en-US/docs/Web/API/Window/scroll'dan scroll fonsksiyonuna baktım
+            slider.scrollBy({ left: 400, behavior: 'smooth' }); //https://developer.mozilla.org/en-US/docs/Web/API/Window/scroll'd scroll fonsksiyonuna baktım
         })
     })
 
@@ -213,7 +213,7 @@ if(document.body.className === "p"){
     
     products.forEach((item,index) => {
         item.addEventListener("click",()=>{
-            window.location.href = `products-page.html?id=${index+8}`;
+            window.location.href = `products-page.html?id=${index+10}`;
         })
     })
 
@@ -224,7 +224,7 @@ if(document.body.className === "p"){
         .then(data => {
             productCost.forEach((item,index) => {
             console.log(data)
-            item.textContent = data.products[index+7].price; 
+            item.textContent = data.products[index+9].price; 
             });
         })
         

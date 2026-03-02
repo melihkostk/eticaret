@@ -485,7 +485,8 @@ body{
     height: auto;
     border: 1px solid rgba(215, 215, 215, 1);
     object-fit: cover;
-    cursor: pointer;   
+    cursor: pointer;
+    max-width: 376.6px;
 }
 
 .hp-new-this-week .hp-container .hp-product-container{
