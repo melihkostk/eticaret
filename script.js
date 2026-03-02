@@ -126,6 +126,17 @@ if(document.body.className === "p"){
             menuIcon.addEventListener("click", () => {
                 document.querySelector(".drawer").style.left = 0;
             })
+
+            const totalProduct = document.querySelector(".total-amount")
+            let cart = JSON.parse(localStorage.getItem("Cart"));
+                
+            let total = 0;
+
+            cart.forEach(item => {
+                total += Number(item.quantity); 
+            });
+
+            totalProduct.textContent = total;
         });
 
     const closeMenu = document.querySelector(".close-menu");
@@ -182,29 +193,23 @@ if(document.body.className === "p"){
 
     const products = document.querySelectorAll(".p-product-container");
     
-    products.forEach(item =>{
-        item.addEventListener("click" , function(e){
-            
-           const productCard = this.closest(".p-product-container");
-
-            const product = {
-                title: productCard.querySelector(".p-product-t").textContent,
-                description: productCard.querySelector(".p-product-d").textContent,
-                price: productCard.querySelector(".p-cost").textContent,
-                photo: productCard.querySelector(".p-product-img").src,
-                size:null,
-                color:null,
-                quantity:1
-            }
-
-            let cart = JSON.parse(localStorage.getItem("Cart")) || [];
-
-            cart.push(product);
-
-            localStorage.setItem("Cart", JSON.stringify(cart));
-
+    products.forEach((item,index) => {
+        item.addEventListener("click",()=>{
+            window.location.href = `products-page.html?id=${index+8}`;
         })
     })
+
+    const productCost = document.querySelectorAll(".p-cost")
+   
+    fetch("product.json")
+        .then(res => res.json())
+        .then(data => {
+            productCost.forEach((item,index) => {
+            console.log(data)
+            item.textContent = data.products[index+7].price; 
+            });
+        })
+        
 
     const menuOpener = document.querySelector(".p-filter-opener");
     const menu = document.querySelector(".p-menu-container");
@@ -285,8 +290,10 @@ if(document.body.className === "pp"){
                 })
                 
                 mainImage.src = item.photo
-                document.querySelector(".pp-product-title").textContent = item.name;
-                document.querySelector(".pp-cost").textContent = item.price
+                document.querySelector(".pp-product-title").textContent = item.type;
+                document.querySelector(".pp-cost").textContent = item.price;
+                document.querySelector(".pp-product-description").textContent = item.name;
+                firstSmallImage.src = item.photo
                 
             }
         })
@@ -324,7 +331,6 @@ if(document.body.className === "pp"){
 
     if (cart.length > 0) {
         const lastProduct = cart[cart.length - 1];
-        firstSmallImage.src = lastProduct.photo;
         productTitle.textContent = lastProduct.title;
         cost.textContent = lastProduct.price
     }
@@ -348,7 +354,8 @@ if(document.body.className === "pp"){
                 photo: leftPart.querySelector(".pp-photo").src,
                 size:selectedSize,
                 color:selectedColor,
-                quantity:1
+                quantity:1,
+                description: rightPart.querySelector(".pp-product-description").textContent
             }
         
             let cart = JSON.parse(localStorage.getItem("Cart")) || [];
@@ -383,6 +390,7 @@ if(document.body.className === "pp"){
         favorites.push(newFavorite);
         localStorage.setItem("Favorites", JSON.stringify(favorites));
     })
+
 }
 
 //SHOPPING-BAG-PAGE SCRIPTLERI 
@@ -428,6 +436,7 @@ if(document.body.className ==="sbp"){
             <div class="sbp-product-container" data-index="${index}">
                 <img class="sbp-product-img" src="${item.photo}">
                 <p class="sbp-product-t">${item.title}</p>
+                <p class="sbp-product-d">${item.description}</p>
                 <div class = "sbp-p-info">
                     <p class="sbp-cost">${item.price}</p>
                 </div>
@@ -472,13 +481,13 @@ if(document.body.className ==="sbp"){
     const totalCost = document.querySelector(".sbp-total")
     const shippingCost = document.querySelector(".sbp-shipping")
     subT.textContent = ""
+    totalCost.textContent = ""
 
     let cost = 0;
     cart.forEach(item => {
        cost += parseInt(item.price.replace("$",""))
        subT.textContent = "$"+cost
        totalCost.textContent = "$" + parseInt(cost + Number(shippingCost.textContent.replace("$","")))
-
     })
   
     const amount = document.querySelectorAll('.sbp-amount');
@@ -491,7 +500,7 @@ if(document.body.className ==="sbp"){
         const subTotal = document.querySelector(".sbp-sub-total");
         const shippingCost = document.querySelector(".sbp-shipping")
         const totalCost = document.querySelector(".sbp-total")
-
+        
         let cost = 0;
 
         cart.forEach(item => {
@@ -562,11 +571,11 @@ if(document.body.className ==="sbp"){
             const product = transaction.previousElementSibling;
 
             const allTransactions = document.querySelectorAll(".sbp-transaction")
-            const index = Array.from(allTransactions).indexOf(transaction); 
+            const index = Array.from(allTransactions).indexOf(transaction); //Array'i ChatGPT ye kodu yazdırmadan fikir sorarak yazdım   
 
             let cart = JSON.parse(localStorage.getItem("Cart")) || [];
            
-            cart.splice(index, 1); //ChatGPT ye kodu yazdırmadan fikir sorarak yazdım 
+            cart.splice(index, 1);  
 
             localStorage.setItem("Cart", JSON.stringify(cart));
 
