@@ -428,7 +428,7 @@ body{
 }
 
 .slider {
-  width: 1400px; 
+  width: 92%; 
   overflow-y: hidden;
   overflow-x: auto;
 }
