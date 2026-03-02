@@ -1080,13 +1080,13 @@ footer .container .left-section .language-title{
     .hp-main-container .hp-new-this-week .hp-container .hp-product-container .hp-product-description{
         font-size: 2rem;
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-start;
         gap: 1rem;
         
     }
     
     .hp-main-container .hp-new-this-week .hp-container .hp-product-container{
-        width: 100%;
+        width: 20%;
         
     }
     .hp-main-container .hp-new-this-week .hp-container .hp-product-container img{
@@ -1095,13 +1095,14 @@ footer .container .left-section .language-title{
         width: 100%;
         height: 80%;
         object-fit: cover;
+        position: relative;
     }
     .hp-main-container .hp-new-this-week .hp-container .hp-product-container .hp-add-button{
-        bottom: 4.7rem;
-        width: 4rem;
-        height: 4rem;
-        left: 16rem;
-       
+        top: 0;
+        width: 3rem;
+        height: 3rem;
+        left: 10rem;
+        position: absolute;
     }
     .hp-main-container .hp-new-this-week .hp-buttons button{
         width: 5rem;
@@ -1134,7 +1135,7 @@ footer .container .left-section .language-title{
     .hp-main-container .hp-collections .hp-bottom .hp-product-container .hp-product-description{
         font-size: 2rem;
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-start;
         gap: 1rem;
     }
     
@@ -1144,6 +1145,7 @@ footer .container .left-section .language-title{
     
     .hp-main-container .hp-collections .hp-bottom .hp-product-container{
         width: 100%;
+        gap: 1.5rem;
         
     }
     .hp-main-container .hp-collections .hp-bottom .hp-product-container img{
@@ -1152,14 +1154,16 @@ footer .container .left-section .language-title{
         width: 100%;
         height: 60%;
         object-fit: cover;
+        position: relative;
     }
     .hp-main-container .hp-collections .hp-bottom .hp-product-container .hp-add-button{
-        bottom: 4.7rem;
-        width: 4rem;
-        height: 4rem;
-        left: 16rem;
-       
+        top : 0;
+        width: 2.5rem;
+        height: 2.5rem;
+        left: 0;
+        position: absolute;
     }
+
     .hp-main-container .hp-more-button{
         margin-top: -5rem;
         margin-bottom: 12rem;
@@ -1552,6 +1556,11 @@ footer .container .left-section .language-title{
     .hp-main-container .hp-collections .hp-container .p-bottom{
         display: flex;
         flex-direction: column;
+    }
+
+    .hp-forward-button,
+    .hp-back-button{
+        display: none;
     }
     
 }
@@ -2861,6 +2870,7 @@ body{
         position: absolute;
         top: 0;
     }
+   
 
 }
 @media (max-width: 130px){
@@ -3668,7 +3678,7 @@ body{
         display: flex;
         justify-content: space-between;
     }
-    
+
 
     .p-main-container{
         display: flex;
