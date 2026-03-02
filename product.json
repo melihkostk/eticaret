@@ -2,9 +2,9 @@
 "products":[
 {
   "id": "1",
-  "type": "V Neck T-shirt",
-  "name": "Embroidered Seersucker Shirt",
-  "price": "$120",
+  "type": "Coton T-Shirt",
+  "name": "Basic Slim Fit T-Shirt",
+  "price": "$110",
   "sizes": ["XS", "S", "M", "L"],
   "colors": [
     "green",
@@ -13,15 +13,15 @@
     "cream"
   ],
   "category": "t-shirt",
-  "photo":"images/seer-shirt.jpg"
+  "photo":"images/basic-shirt.jpg"
   
 },
 
 {
     "id": "2",
-    "type": "Cotton T Shirt",
-    "name": "Basic Slim Fit T-Shirt",
-    "price": "$110",
+    "type": "V Neck T-Shirt",
+    "name": "Embroidered Seersucker Shirt",
+    "price": "$120",
     "sizes": ["M", "L", "XL", "2X"],
 
     "colors": [
@@ -33,7 +33,7 @@
     ],
 
     "category": "shorts",
-    "photo":"images/basic-shirt.jpg"
+    "photo":"images/seer-shirt.jpg"
 },
 
 {
@@ -57,9 +57,28 @@
 
 {
     "id": "4",
-    "type": "Crewneck T-Shirt",
-    "name": "Full Sleeve Zipper",
-    "price": "$100",
+    "type": "Coton T-Shirt",
+    "name": "Loose Fit T-Shirt",
+    "price": "$110",
+    "sizes": ["XS", "S", "M", "L", "XL", "2X"],
+    "colors": [
+        "green",
+        "black",
+        "grey",
+        "white",
+        "blue",
+        "cream"
+    ],
+
+    "category": "jackets",
+    "photo":"images/fit.jpg"
+},
+
+{
+    "id": "5",
+    "type": "Henley T-Shirt",
+    "name": "Blurred Print T-Shirt",
+    "price": "$90",
     "sizes": ["XS", "S","XL", "2X"],
     "colors": [
         "green",
@@ -69,13 +88,30 @@
     ],
 
     "category": "jeans",
-    "photo":"images/zipper.jpg"
+    "photo":"images/grey.jpg"
 },
 
 {
-    "id": "5",
+    "id": "6",
+    "type": "Cotton T-Shirt",
+    "name": "Slim Fit T-Shirt",
+    "price": "$90",
+    "sizes": ["XS", "S","XL", "2X"],
+    "colors": [
+        "green",
+        "black",
+        "blue",
+        "cream"
+    ],
+
+    "category": "jeans",
+    "photo":"images/blue-black.jpg"
+},
+
+{
+    "id": "7",
     "type": "Cotton T Shirt",
-    "name": "Basic Heavy Weight T-Shirt",
+    "name": "Slim Fit T-Shirt",
     "price": "$80",
     "sizes": ["XS", "S", "M", "L", "XL", "2X"],
     "colors": [
@@ -92,7 +128,7 @@
 },
 
 {
-    "id": "6",
+    "id": "8",
     "type": "Cotton Jeans",
     "name": "Soft Wash Straight Fit Jeans",
     "price": "$100",
@@ -107,7 +143,7 @@
 },
 
 {
-    "id": "7",
+    "id": "9",
     "type": "Cotton T Shirt",
     "name": "Basic Heavy Weight T-shirt",
     "price": "$70",
@@ -123,10 +159,10 @@
 },
 
 {
-    "id": "8",
+    "id": "10",
     "type": "Cotton T Shirt",
     "name": "Basic Heavy Weight T-shirt",
-    "price": "$99",
+    "price": "$130",
     "sizes": ["XS","2X"],
     "colors": [
         "green",
@@ -139,10 +175,10 @@
 },
 
 {
-    "id": "9",
+    "id": "11",
     "type": "Cotton T Shirt",
     "name": "Basic Heavy Weight T-shirt",
-    "price": "$130",
+    "price": "$140",
     "sizes": ["XS","2X"],
     "colors": [
         "green",
@@ -155,10 +191,10 @@
 },
 
 {
-    "id": "10",
+    "id": "12",
     "type": "Cotton T Shirt",
     "name": "Basic Heavy Weight T-shirt",
-    "price": "$140",
+    "price": "$60",
     "sizes": ["XS","2X"],
     "colors": [
         "green",
@@ -171,10 +207,10 @@
 },
 
 {
-    "id": "11",
+    "id": "13",
     "type": "Cotton T Shirt",
     "name": "Basic Heavy Weight T-shirt",
-    "price": "$60",
+    "price": "$80",
     "sizes": ["XS","2X"],
     "colors": [
         "green",
@@ -187,10 +223,10 @@
 },
 
 {
-    "id": "12",
+    "id": "14",
     "type": "Cotton T Shirt",
     "name": "Basic Heavy Weight T-shirt",
-    "price": "$80",
+    "price": "$70",
     "sizes": ["XS","2X"],
     "colors": [
         "green",
@@ -203,10 +239,10 @@
 },
 
 {
-    "id": "13",
+    "id": "15",
     "type": "Cotton T Shirt",
     "name": "Basic Heavy Weight T-shirt",
-    "price": "$70",
+    "price": "$150",
     "sizes": ["XS","2X"],
     "colors": [
         "green",
