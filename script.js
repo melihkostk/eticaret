@@ -23,6 +23,24 @@ if(document.body.className === "hp"){
             totalProduct.textContent = total;
         });
 
+    const forwardButton = document.querySelectorAll(".hp-forward-button")
+    const backButton = document.querySelectorAll(".hp-back-button")
+
+    const slider = document.querySelector(".slider")
+    
+
+    forwardButton.forEach(item => {
+        item.addEventListener("click" ,() => {
+            slider.scrollBy({ left: 400, behavior: 'smooth' }); //https://developer.mozilla.org/en-US/docs/Web/API/Window/scroll'dan scroll fonsksiyonuna baktım
+        })
+    })
+
+    backButton.forEach(item => {
+        item.addEventListener("click",() => {
+            slider.scrollBy({left:-400, behavior:'smooth'})
+        })
+    })
+
     const closeMenu = document.querySelector(".close-menu");
     closeMenu.addEventListener("click",() => {
         document.querySelector(".drawer").style.left = "-300px";
@@ -571,7 +589,7 @@ if(document.body.className ==="sbp"){
             const product = transaction.previousElementSibling;
 
             const allTransactions = document.querySelectorAll(".sbp-transaction")
-            const index = Array.from(allTransactions).indexOf(transaction); //Array'i ChatGPT ye kodu yazdırmadan fikir sorarak yazdım   
+            const index = Array.from(allTransactions).indexOf(transaction); //bu satırı ChatGPT ye kodu yazdırmadan fikir sorarak yazdım   
 
             let cart = JSON.parse(localStorage.getItem("Cart")) || [];
            

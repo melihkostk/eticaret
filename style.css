@@ -427,6 +427,20 @@ body{
 
 }
 
+.slider {
+  width: 1400px; 
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+
+.slider::-webkit-scrollbar {
+  display: none; 
+}
+
+.slider .hp-product-container {
+  flex-shrink: 0;
+}
+
 .hp-new-this-week .hp-container{
     display: flex;
     justify-content:flex-start;
