@@ -2902,6 +2902,8 @@ body{
     display: flex;
     justify-content: flex-start;
     gap: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
     
 }
 
@@ -2951,26 +2953,30 @@ body{
     font-weight: bold;
     padding: 20px;
     background: #f3f3f3;
-    border-bottom: 1px dashed rgba(201, 201, 201, 1);
     display: flex;
     justify-content: space-between;
-    gap:90px;
     background-color: transparent;
+    width: 100%;
+    align-items: center;
 
 }
 
 .p-products .p-menu-container .p-menu .p-menu-title span img{
     width: 80%;
     height: 80%;
-
 }
 
 .p-products .p-menu-container .p-menu .p-sub-menu{
-    display: none;
+    display: block;
     padding: 10px;
     margin-left: 10px;
-    
+    border-bottom: 1px dashed rgba(201, 201, 201, 1);
 }
+
+.p-products .p-menu-container .p-menu .p-sub-menu.closed{
+    display: none;
+}
+
 .p-products .p-menu-container .p-size-title{
     margin-bottom: 1rem;
 }
@@ -2985,12 +2991,69 @@ body{
 .p-products .p-menu-container .p-menu .p-sub-menu input{
     display: inline;
     height: 60%;
-    width: 10%;
+    width: 100%;
 }
 
 .p-products .p-menu-container .p-menu .p-sub-menu p{
     display: inline;
     text-align: center;
+}
+
+.p-products .p-menu-container .p-menu .p-sub-menu .p-ratings{
+    display: flex;
+    justify-content: space-between;
+}
+
+.p-products .p-menu-container .p-menu .p-sub-menu .p-min-price::placeholder{
+    font-family: Beatrice Deck Trial;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: 2px;
+    color: rgba(1, 1, 1, 0.66);
+}
+
+.p-products .p-menu-container .p-menu .p-sub-menu .p-max-price::placeholder{
+    font-family: Beatrice Deck Trial;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: 2px;
+    color: rgba(1, 1, 1, 0.66);
+}
+
+.p-products .p-menu-container .p-menu .p-sub-menu .p-min-price{
+    margin-top: 1rem;
+    background-color: rgba(217, 217, 217, 1);
+    opacity: 1;
+    border: none;
+    padding: 5px;
+}
+
+.p-products .p-menu-container .p-menu .p-sub-menu .p-max-price{
+    padding: 5px;
+    background-color: rgba(217, 217, 217, 1);
+    opacity: 1;
+    border: none;
+}
+
+.p-products .p-menu-container .p-menu .p-sub-menu .p-color-input{
+    padding: 5px;
+    background-color: rgba(217, 217, 217, 1);
+    opacity: 1;
+    border: none;
+}
+
+.p-products .p-menu-container .p-menu .p-sub-menu .p-color-input::placeholder{
+    font-family: Beatrice Deck Trial;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: 2px;
+    color: rgba(1, 1, 1, 0.66);
 }
 .p-products .p-menu-container .p-menu .p-sub-menu li {
     padding: 5px 0;

@@ -171,7 +171,8 @@
         "white"
     ],
     "category": "shirts",
-    "photo": "images/yellow-shirt.jpg"
+    "photo": "images/yellow-shirt.jpg",
+    "rating": "1"
 },
 
 {
@@ -187,7 +188,8 @@
         "white"
     ],
     "category": "shirt",
-    "photo": "images/buyyed-product.jpg"
+    "photo": "images/buyyed-product.jpg",
+    "rating": "2"
 },
 
 {
@@ -203,7 +205,8 @@
         "white"
     ],
     "category": "t-shirt",
-    "photo":"images/sleeve-zipper.jpg"
+    "photo":"images/sleeve-zipper.jpg",
+    "rating": "3"
 },
 
 {
@@ -219,7 +222,8 @@
         "white"
     ],
     "category": "polo shirts",
-    "photo":"images/cotton-shirt.jpg"
+    "photo":"images/cotton-shirt.jpg",
+    "rating": "4"
 },
 
 {
@@ -235,7 +239,8 @@
         "white"
     ],
     "category": "new",
-    "photo":"images/black-clothes.jpg"
+    "photo":"images/black-clothes.jpg",
+    "rating": "4"
 },
 
 {
@@ -251,7 +256,8 @@
         "white"
     ],
     "category": "new",
-    "photo":"images/blue-shirt.jpg"
+    "photo":"images/blue-shirt.jpg",
+    "rating": "5"
 }
 ]
 }

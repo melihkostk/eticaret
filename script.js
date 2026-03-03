@@ -230,9 +230,164 @@ if(document.body.className === "p"){
     const menuOpener = document.querySelector(".p-filter-opener");
     const menu = document.querySelector(".p-menu-container");
     const menuTitle = document.querySelectorAll(".p-menu-title");
-    
+
+
     menuOpener.addEventListener("click" , () => {
         menu.classList.toggle("closed");
+    })
+
+   menuTitle.forEach(item=>{
+        item.addEventListener("click", function(){
+            const subMenu = this.nextElementSibling;
+    
+            subMenu.classList.toggle("closed")
+            const menuImg = this.querySelector("img")
+            
+        })
+   })
+
+   const pRange = document.querySelector(".p-range");
+   
+   pRange.addEventListener("input",()=>{
+        let selectedRating = pRange.value;
+        fetch("product.json")
+            .then(response => response.json())
+            .then(data => {
+                const filteredProducts = data.products.filter(product => product.rating === selectedRating);  
+                const productContainer = filteredProducts.map(product => ` 
+                    <div class="p-product-container">
+                        <img class="p-product-img" src="${product.photo}">
+                        <p class="p-product-t">${product.type}</p>
+                        <p class="p-product-d">${product.name}<span class="cost">${product.price}</span></p>
+                    </div>
+                `).join(''); 
+
+                document.querySelector(".p-bottom").innerHTML = productContainer;
+            })
+   })
+
+   const maxPriceInput = document.querySelector(".p-max-price");
+
+   maxPriceInput.addEventListener("input",()=>{
+    let maxPrice = maxPriceInput.value;
+        fetch("product.json")
+            .then(response => response.json())
+            .then(data => {
+                const filteredProducts = data.products.filter(product => Number(product.price.replace("$","")) < maxPrice);  
+                const productContainer = filteredProducts.map(product => ` 
+                    <div class="p-product-container">
+                        <img class="p-product-img" src="${product.photo}">
+                        <p class="p-product-t">${product.type}</p>
+                        <p class="p-product-d">${product.name}<span class="cost">${product.price}</span></p>
+                    </div>
+                `).join(''); 
+
+                document.querySelector(".p-bottom").innerHTML = productContainer;
+            })
+   })
+
+   const minPriceInput = document.querySelector(".p-min-price");
+
+   minPriceInput.addEventListener("input",()=>{
+    let minPrice = minPriceInput.value;
+        fetch("product.json")
+            .then(response => response.json())
+            .then(data => {
+                const filteredProducts = data.products.filter(product => Number(product.price.replace("$","")) > minPrice);  
+                const productContainer = filteredProducts.map(product => ` 
+                    <div class="p-product-container">
+                        <img class="p-product-img" src="${product.photo}">
+                        <p class="p-product-t">${product.type}</p>
+                        <p class="p-product-d">${product.name}<span class="cost">${product.price}</span></p>
+                    </div>
+                `).join(''); 
+
+                document.querySelector(".p-bottom").innerHTML = productContainer;
+            })
+   })
+
+   const sizes = document.querySelector(".p-sizes")
+   const size = sizes.querySelectorAll("div")
+
+   size.forEach(item => {
+        item.addEventListener("click",function(){
+            fetch("product.json")
+            .then(response => response.json())
+            .then(data => {
+                const filteredProducts = data.products.filter(product => product.sizes.includes(this.textContent));  
+                const productContainer = filteredProducts.map(product => ` 
+                    <div class="p-product-container">
+                        <img class="p-product-img" src=${product.photo}>
+                        <p class="p-product-t">${product.type}</p>
+                        <p class="p-product-d">${product.name}<span class="cost">${product.price}</span></p>
+                    </div>
+                `).join(''); 
+
+                document.querySelector(".p-bottom").innerHTML = productContainer;
+            })
+        })
+   })
+
+    const colorInput = document.querySelector(".p-color-input");
+    
+    colorInput.addEventListener("input",()=>{
+        const enteredColor = colorInput.value;
+        fetch("product.json")
+            .then(response => response.json())
+            .then(data => {
+                const filteredProducts = data.products.filter(product => product.colors.includes(enteredColor));  
+                const productContainer = filteredProducts.map(product => ` 
+                    <div class="p-product-container">
+                        <img class="p-product-img" src=${product.photo}>
+                        <p class="p-product-t">${product.type}</p>
+                        <p class="p-product-d">${product.name}<span class="cost">${product.price}</span></p>
+                    </div>
+                `).join(''); 
+
+                document.querySelector(".p-bottom").innerHTML = productContainer;
+            })
+    })
+
+    const resetFilter = document.querySelector(".p-reset-filter")
+
+    resetFilter.addEventListener("click",()=>{
+
+         document.querySelector(".p-bottom").innerHTML = ""
+        document.querySelector(".p-bottom").innerHTML += `
+                 <div class="p-product-container">
+                    <img class="p-product-img" src="images/yellow-shirt.jpg">
+                    <p class="p-product-t">Cotton T Shirt</p>
+                    <div class="p-color-box"></div>
+                    <p class="p-product-d">Basic Slim Fit T-Shirt<span class="p-cost">$199</span></p>
+                </div>
+                <div class="p-product-container">
+                    <img class="p-product-img" src="images/buyyed-product.jpg">
+                    <p class="p-product-t">Crewneck T-Shirt</p>
+                    <div class="p-color-box"></div>
+                    <p class="p-product-d">Basic Heavy Weight T-shirt<span class="p-cost">$199</span></p>
+                </div>
+                <div class="p-product-container">
+                    <img class="p-product-img" src="images/sleeve-zipper.jpg">
+                    <p class="p-product-t">Cotton T Shirt</p>
+                    <p class="p-product-d">Full Sleeve Zipper<span class="p-cost">$199</span></p>   
+                </div>
+                <div class="p-product-container">
+                    <img class="p-product-img" src="images/cotton-shirt.jpg">
+                    <p class="p-product-t">Cotton T Shirt</p>
+                    <p class="p-product-d">Basic Slim Fit T-Shirt<span class="p-cost">$199</span></p>  
+                </div>
+                <div class="p-product-container">
+                    <img class="p-product-img" src="images/black-clothes.jpg">
+                    <p class="p-product-t">Cotton T Shirt</p>
+                    <p class="p-product-d">Basic Slim Fit T-Shirt<span class="p-cost">$199</span></p>    
+                </div>
+                <div class="p-product-container">
+                    <img class="p-product-img" src="images/blue-shirt.jpg">
+                    <p class="p-product-t">Cotton T Shirt</p>
+                    <p class="p-product-d">Basic Slim Fit T-Shirt<span class="p-cost">$199</span></p>  
+                </div>
+            </div>
+        `;
     })
 }
 
