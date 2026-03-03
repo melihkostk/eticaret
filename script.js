@@ -227,8 +227,6 @@ if(document.body.className === "p"){
             item.textContent = data.products[index+9].price; 
             });
         })
-        
-
     const menuOpener = document.querySelector(".p-filter-opener");
     const menu = document.querySelector(".p-menu-container");
     const menuTitle = document.querySelectorAll(".p-menu-title");
@@ -454,7 +452,7 @@ if(document.body.className ==="sbp"){
             <div class="sbp-product-container" data-index="${index}">
                 <img class="sbp-product-img" src="${item.photo}">
                 <p class="sbp-product-t">${item.title}</p>
-                <p class="sbp-product-d">${item.description}</p>
+                <p class="sbp-product-d">${item.description.replace(/\$\w+/g, '')}</p>
                 <div class = "sbp-p-info">
                     <p class="sbp-cost">${item.price}</p>
                 </div>
@@ -503,11 +501,11 @@ if(document.body.className ==="sbp"){
 
     let cost = 0;
     cart.forEach(item => {
-       cost += parseInt(item.price.replace("$",""))
+       cost += parseInt(item.price.replace("$","")) * Number(item.quantity)
        subT.textContent = "$"+cost
        totalCost.textContent = "$" + parseInt(cost + Number(shippingCost.textContent.replace("$","")))
     })
-  
+
     const amount = document.querySelectorAll('.sbp-amount');
     const increaseButton = document.querySelectorAll(".sbp-increase")
     increaseButton.forEach((button, index) => {
