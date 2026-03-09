@@ -1,7 +1,7 @@
 //HOME PAGE SCRIPTLERI
 if(document.body.className === "hp"){
 
-     fetch("header.html")
+    fetch("header.html")
         .then(response => response.text())
         .then(data => {
             document.querySelector("header").innerHTML = data;
@@ -23,22 +23,200 @@ if(document.body.className === "hp"){
             totalProduct.textContent = total;
         });
 
-    const forwardButton = document.querySelectorAll(".hp-forward-button")
-    const backButton = document.querySelectorAll(".hp-back-button")
+    const newThisWeek = document.querySelector(".hp-new-this-week");
+    let newThisWeekContainer = newThisWeek.querySelector(".hp-container");
 
-    const slider = document.querySelector(".slider")
+    const collection = document.querySelector(".hp-collections");
+    let collectionContainer = collection.querySelector(".hp-bottom")
+
+    const newCollection = document.querySelector(".hp-new-colection");
+    let newCollectionContainer = newCollection.querySelector(".hp-right-part")
+
+    const menFilter = document.querySelector(".men")
+    const womanFilter = document.querySelector(".woman")
+    const kidsFilter = document.querySelector(".kids")
     
+    menFilter.addEventListener("click",function(){
+        fetch("product.json")
+        .then(response => response.json())
+        .then(data => {
+            const menProductsC = data.products.filter(product => product.gender === "Men" && product.group ==="New Collections")
+            document.querySelector(".hp-right-part").innerHTML = menProductsC.map(product=>`
+                <img src = ${product.photo}>   
+            `).join("")
 
-    forwardButton.forEach(item => {
-        item.addEventListener("click" ,() => {
-            slider.scrollBy({ left: 400, behavior: 'smooth' }); //https://developer.mozilla.org/en-US/docs/Web/API/Window/scroll'd scroll fonsksiyonuna baktım
+            const menProductsW = data.products.filter(product => product.gender === "Men" && product.group ==="New This Week")
+            const ntw = document.querySelector(".hp-new-this-week")
+            ntw.querySelector(".hp-container").innerHTML = menProductsW.map(product=>`
+            
+                <div class ="hp-product-container"> 
+                    <img class="hp-product-img" src="${product.photo}" alt="">
+                    <div class="hp-add-button">
+                        <img src="icons/add-icon.png" alt="">
+                    </div>
+                    <p class = "hp-product-type">${product.type}</p>
+                    <p class ="hp-product-description">${product.name}<span class="cost">${product.price}</span></p>  
+                </div> 
+            `).join("")
         })
     })
 
-    backButton.forEach(item => {
-        item.addEventListener("click",() => {
-            slider.scrollBy({left:-400, behavior:'smooth'})
+    womanFilter.addEventListener("click",function(){
+        fetch("product.json")
+        .then(response => response.json())
+        .then(data => {
+            const womanProductC = data.products.filter(product => product.gender === "Woman" && product.group ==="New Collections")
+            document.querySelector(".hp-right-part").innerHTML = womanProductC.map(product=>`
+                <img src = ${product.photo}>   
+            `).join("")
+
+            const womanProductsW = data.products.filter(product => product.gender === "Woman" && product.group ==="New This Week")
+            const ntw = document.querySelector(".hp-new-this-week")
+            ntw.querySelector(".hp-container").innerHTML = womanProductsW.map(product=>`
+            
+                <div class ="hp-product-container"> 
+                    <img class="hp-product-img" src="${product.photo}" alt="">
+                    <div class="hp-add-button">
+                        <img src="icons/add-icon.png" alt="">
+                    </div>
+                    <p class = "hp-product-type">${product.type}</p>
+                    <p class ="hp-product-description">${product.name}<span class="cost">${product.price}</span></p>  
+                </div> 
+            `).join("")
         })
+    })
+
+    kidsFilter.addEventListener("click",function(){
+        fetch("product.json")
+        .then(response => response.json())
+        .then(data => {
+            const kidsProducts = data.products.filter(product => product.gender === "Kids" && product.group ==="New Collections")
+            document.querySelector(".hp-right-part").innerHTML = kidsProducts.map(product=>`
+                <img src = ${product.photo}>   
+            `).join("")
+
+            const kidsProductsW = data.products.filter(product => product.gender === "Kids" && product.group ==="New This Week")
+            const ntw = document.querySelector(".hp-new-this-week")
+            ntw.querySelector(".hp-container").innerHTML = kidsProductsW.map(product=>`
+            
+                <div class ="hp-product-container"> 
+                    <img class="hp-product-img" src="${product.photo}" alt="">
+                    <div class="hp-add-button">
+                        <img src="icons/add-icon.png" alt="">
+                    </div>
+                    <p class = "hp-product-type">${product.type}</p>
+                    <p class ="hp-product-description">${product.name}<span class="cost">${product.price}</span></p>  
+                </div> 
+            `).join("")
+        })
+    })
+
+
+    fetch("product.json")
+    .then(response => response.json())
+    .then(data => {
+        const newThisWeekProduct = data.products.filter(product => product.group === "New This Week");
+        const collectionsProduct = data.products.filter(product => product.group === "24-Collections");
+        const newProduct = data.products.filter(product => product.group === "New Collections");
+
+        newThisWeekContainer.innerHTML = newThisWeekProduct.map(product => `
+            <div class="hp-product-container"> 
+                <img class="hp-product-img" src="${product.photo}" alt="">
+                <div class="hp-add-button">
+                    <img src="icons/add-icon.png" alt="">
+                </div>
+                <p class="hp-product-type">${product.type}</p>
+                <p class="hp-product-description">${product.name}<span class="cost">${product.price}</span></p>  
+            </div>
+        `).join("");
+
+        collectionContainer.innerHTML = collectionsProduct.map(product => `
+           <div class="hp-bottom">
+                <div class = "hp-product-container">
+                    <img class="hp-product-img" src="${product.photo}" alt="">
+                    <div class="hp-add-button">
+                        <img src="icons/add-icon.png" alt="">
+                    </div>
+                    <p class="hp-product-type">${product.type}</p>
+                    <p class = "hp-product-description">${product.name}<span class="cost">${product.price}</span></p>
+                </div>
+            </div>
+        `).join("");
+
+        newCollectionContainer.innerHTML = newProduct.map(product => `
+            <img src = ${product.photo}>   
+        `).join("");
+
+        const productImage = document.querySelectorAll(".hp-product-img")
+        const productTitle = document.querySelectorAll(".hp-product-description")
+
+        productImage.forEach((item,index) => {
+        item.addEventListener("click" , () => {
+            window.location.href = `products-page.html?id=${index+1}`;
+            })
+        })
+
+        productTitle.forEach((item,index) => {
+        item.addEventListener("click" , () => {
+            window.location.href = `products-page.html?id=${index+1}`;
+            })
+        })
+
+        const addButton = document.querySelectorAll(".hp-add-button");
+
+        addButton.forEach((button,index)=>{
+            button.addEventListener("click" , function(){
+
+                const productCard = this.closest(".hp-product-container");
+
+                const product = {
+                    title: productCard.querySelector(".hp-product-type").textContent,
+                    description: productCard.querySelector(".hp-product-description").textContent,
+                    price: productCard.querySelector(".cost").textContent,
+                    photo: productCard.querySelector(".hp-product-img").src,
+                    size:null,
+                    color:null,
+                    quantity:1
+                }
+            
+                let cart = JSON.parse(localStorage.getItem("Cart")) || [];
+
+                cart.push(product);
+
+                localStorage.setItem("Cart", JSON.stringify(cart));
+
+                alert("Product sucessfully added to basket")
+                
+        })
+    })
+    });
+
+    const forwardButton = document.querySelectorAll(".hp-forward-button")
+    const backButton = document.querySelectorAll(".hp-back-button")
+
+    const firstForwardButton = forwardButton[0];
+    const firstBackButton = backButton[0];
+
+    const secondForwardButton = forwardButton[1];
+    const secondBackButton = backButton[1];
+
+    const slider = document.querySelector(".slider")
+    const newSlider = document.querySelector(".new-slider")
+
+    firstForwardButton.addEventListener("click", () => {
+        newSlider.scrollBy({left:400, behavior:"smooth"});
+    })
+
+    firstBackButton.addEventListener("click", () => {
+        newSlider.scrollBy({left:-400, behavior:"smooth"});
+    })
+
+    secondForwardButton.addEventListener("click",() => {
+        slider.scroll({left:650, behavior:"smooth"})
+    })
+
+    secondBackButton.addEventListener("click",() => {
+        slider.scroll({left:-650, behavior:"smooth"})
     })
 
     const closeMenu = document.querySelector(".close-menu");
@@ -51,22 +229,6 @@ if(document.body.className === "hp"){
         window.location.replace("products.html")
     })
 
-    const productImage = document.querySelectorAll(".hp-product-img")
-    const productTitle = document.querySelectorAll(".hp-product-description")
-
-
-    productImage.forEach((item,index) => {
-    item.addEventListener("click" , () => {
-        window.location.href = `products-page.html?id=${index+1}`;
-        })
-    })
-
-    productTitle.forEach((item,index) => {
-    item.addEventListener("click" , () => {
-        window.location.href = `products-page.html?id=${index+1}`;
-        })
-    })
-
     const seeAllButton = document.querySelector(".hp-see-all")
     seeAllButton.addEventListener("click" , () => {
         window.location.replace("products.html")
@@ -76,55 +238,45 @@ if(document.body.className === "hp"){
     const products = document.querySelectorAll(".hp-product-container");
 
     searchInput.addEventListener("input", function () {
+        const searchValue = this.value.toLowerCase();
 
-    const searchValue = this.value.toLowerCase();
+        fetch("product.json")
+            .then(res => res.json())
+            .then(data => {
+                
+                const filteredProductsW = data.products.filter(product =>product.name.toLowerCase().includes(searchValue.toLowerCase()) && product.group === "New This Week");
 
-    products.forEach(product => {
+                const ntw = document.querySelector(".hp-new-this-week")
+                const ntwContainer = ntw.querySelector(".hp-container");
+                ntwContainer.innerHTML = filteredProductsW.map(product => `
+                <div class ="hp-product-container"> 
+                    <img class="hp-product-img" src="${product.photo}" alt="">
+                    <div class="hp-add-button">
+                        <img src="icons/add-icon.png" alt="">
+                    </div>
+                    <p class = "hp-product-type">${product.type}</p>
+                    <p class ="hp-product-description">${product.name}<span class="cost">${product.price}</span></p>  
+                </div> 
+                `).join("");
 
-        const title = product
-            .querySelector(".hp-product-description")
-            .textContent
-            .toLowerCase();
-
-        if (title.includes(searchValue)) {
-            product.style.display = "block";
-        } 
-        
-        else {
-            product.style.display = "none";
-        }
-
-        });
+                const filteredProductsC = data.products.filter(product => product.name.toLowerCase().includes(searchValue.toLowerCase()) && product.group === "24-Collections");
+                
+                const coll = document.querySelector(".hp-collections")
+                const collContainer = coll.querySelector(".hp-bottom");
+                collContainer.innerHTML = filteredProductsC.map(product => `
+                <div class ="hp-product-container"> 
+                    <img class="hp-product-img" src="${product.photo}" alt="">
+                    <div class="hp-add-button">
+                        <img src="icons/add-icon.png" alt="">
+                    </div>
+                    <p class = "hp-product-type">${product.type}</p>
+                    <p class ="hp-product-description">${product.name}<span class="cost">${product.price}</span></p>  
+                </div> 
+                `).join("");
+            });
     });
 
-    const addButton = document.querySelectorAll(".hp-add-button");
 
-    addButton.forEach((button,index)=>{
-        button.addEventListener("click" , function(){
-
-            const productCard = this.closest(".hp-product-container");
-
-            const product = {
-                title: productCard.querySelector(".hp-product-type").textContent,
-                description: productCard.querySelector(".hp-product-description").textContent,
-                price: productCard.querySelector(".cost").textContent,
-                photo: productCard.querySelector(".hp-product-img").src,
-                size:null,
-                color:null,
-                quantity:1
-            }
-        
-            let cart = JSON.parse(localStorage.getItem("Cart")) || [];
-
-            cart.push(product);
-
-            localStorage.setItem("Cart", JSON.stringify(cart));
-
-            alert("Ürün başarıyla sepete eklendi")
-              
-        })
-    })
-    
     fetch("footer.html")
         .then(response => response.text())
         .then(data => {
@@ -389,6 +541,68 @@ if(document.body.className === "p"){
             </div>
         `;
     })
+
+    const avaiButton = document.querySelector(".avai")
+    avaiButton.addEventListener("click",()=>{
+           fetch("product.json")
+            .then(response => response.json())
+            .then(data => {
+                const filteredProducts = data.products.filter(product => product.availability === "Available");  
+                const productContainer = filteredProducts.map(product => ` 
+                    <div class="p-product-container">
+                        <img class="p-product-img" src=${product.photo}>
+                        <p class="p-product-t">${product.type}</p>
+                        <p class="p-product-d">${product.name}<span class="cost">${product.price}</span></p>
+                    </div>
+                `).join(''); 
+
+                document.querySelector(".p-bottom").innerHTML = productContainer;
+                
+
+            })
+    })
+
+    fetch("product.json")
+            .then(response => response.json())
+            .then(data => {
+                let availableCount = 0;
+                let outOfStockCount = 0;
+
+                data.products.forEach(product=>{
+
+                    if(product.availability === "Out of stock"){
+                        outOfStockCount++;
+                    }
+
+                    if (product.availability === "Available") {
+                        availableCount++;
+                    } 
+                })
+
+            const avaiNumber = document.querySelector(".avai-number");
+            const oosNumber = document.querySelector(".oos-number")
+            avaiNumber.textContent = "(" + availableCount + ")";
+            oosNumber.textContent = "(" + outOfStockCount + ")";   
+    })
+ 
+
+    const oosButton = document.querySelector(".oos")
+    oosButton.addEventListener("click",()=>{
+        fetch("product.json")
+            .then(response => response.json())
+            .then(data => {
+                const filteredProducts = data.products.filter(product => product.availability === "Out of stock");  
+                const productContainer = filteredProducts.map(product => ` 
+                    <div class="p-product-container">
+                        <img class="p-product-img" src=${product.photo}>
+                        <p class="p-product-t">${product.type}</p>
+                        <p class="p-product-d">${product.name}<span class="cost">${product.price}</span></p>
+                    </div>
+                `).join(''); 
+
+                document.querySelector(".p-bottom").innerHTML = productContainer;
+            })
+    }) 
 }
 
 //PRODUCT PAGE SCRIPTLERI 
@@ -535,7 +749,7 @@ if(document.body.className === "pp"){
 
             localStorage.setItem("Cart", JSON.stringify(cart));
 
-            alert("Ürün başarıyla sepete eklendi")
+            alert("Product sucessfully added to basket")
 
             window.location.replace("shopping-bag-page.html");
         } 

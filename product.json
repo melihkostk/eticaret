@@ -13,7 +13,10 @@
     "cream"
   ],
   "category": "t-shirt",
-  "photo":"images/basic-shirt.jpg"
+  "photo":"images/basic-shirt.jpg",
+  "availability":"Available",
+  "group":"New This Week",
+  "gender":"Men"
   
 },
 
@@ -33,7 +36,10 @@
     ],
 
     "category": "shorts",
-    "photo":"images/seer-shirt.jpg"
+    "photo":"images/seer-shirt.jpg",
+    "availability":"Out of stock",
+    "group":"New This Week",
+    "gender":"Woman"
 },
 
 {
@@ -52,7 +58,10 @@
     ],
 
     "category": "jackets",
-    "photo":"images/henley-shirt.jpg"
+    "photo":"images/henley-shirt.jpg",
+    "availability":"Available",
+    "group":"New This Week",
+    "gender":"Kids"
 },
 
 {
@@ -71,7 +80,10 @@
     ],
 
     "category": "jackets",
-    "photo":"images/fit.jpg"
+    "photo":"images/fit.jpg",
+    "availability":"Out of stock",
+    "group":"New This Week",
+    "gender":"Men"
 },
 
 {
@@ -88,7 +100,10 @@
     ],
 
     "category": "jeans",
-    "photo":"images/grey.jpg"
+    "photo":"images/grey.jpg",
+    "availability":"Available",
+    "group":"New This Week",
+    "gender":"Woman"
 },
 
 {
@@ -105,7 +120,10 @@
     ],
 
     "category": "jeans",
-    "photo":"images/blue-black.jpg"
+    "photo":"images/blue-black.jpg",
+    "availability":"Out of stock",
+    "group":"New This Week",
+    "gender":"Kids"
 },
 
 {
@@ -124,7 +142,10 @@
     ],
 
     "category": "coats",
-    "photo":"images/cotton-shirt.jpg"
+    "photo":"images/cotton-shirt.jpg",
+    "availability":"Available",
+    "group":"24-Collections",
+    "gender":"Men"
 },
 
 {
@@ -139,7 +160,10 @@
     ],
 
     "category": "suits",
-    "photo":"images/white-clothes.jpg"
+    "photo":"images/white-clothes.jpg",
+    "availability":"Out of stock",
+    "group":"24-Collections",
+    "gender":"Woman"
 },
 
 {
@@ -155,7 +179,10 @@
         "white"
     ],
     "category": "best sellers",
-    "photo":"images/yellow-shirt.jpg"
+    "photo":"images/yellow-shirt.jpg",
+    "availability":"Available",
+    "group":"24-Collections",
+    "gender":"Kids"
 },
 
 {
@@ -172,7 +199,10 @@
     ],
     "category": "shirts",
     "photo": "images/yellow-shirt.jpg",
-    "rating": "1"
+    "rating": "1",
+    "availability":"Available",
+    "group":"24-Collections",
+    "gender":"Men"
 },
 
 {
@@ -189,7 +219,10 @@
     ],
     "category": "shirt",
     "photo": "images/buyyed-product.jpg",
-    "rating": "2"
+    "rating": "2",
+    "availability":"Out of stock",
+    "group":"New Collections",
+    "gender":"Woman"
 },
 
 {
@@ -206,7 +239,10 @@
     ],
     "category": "t-shirt",
     "photo":"images/sleeve-zipper.jpg",
-    "rating": "3"
+    "rating": "3",
+    "availability":"Available",
+    "group":"New Collections",
+    "gender":"Kids"
 },
 
 {
@@ -223,7 +259,10 @@
     ],
     "category": "polo shirts",
     "photo":"images/cotton-shirt.jpg",
-    "rating": "4"
+    "rating": "4",
+    "availability":"Out of stock",
+    "group":"New Collections",
+    "gender":"Men"
 },
 
 {
@@ -240,7 +279,10 @@
     ],
     "category": "new",
     "photo":"images/black-clothes.jpg",
-    "rating": "4"
+    "rating": "4",
+    "availability":"Available",
+    "group":"New Collections",
+    "gender":"Woman"
 },
 
 {
@@ -257,7 +299,10 @@
     ],
     "category": "new",
     "photo":"images/blue-shirt.jpg",
-    "rating": "5"
+    "rating": "5",
+    "availability":"Out of stock",
+    "group":"New Collections",
+    "gender":"Kids"
 }
 ]
 }
