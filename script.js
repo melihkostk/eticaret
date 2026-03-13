@@ -1,7 +1,7 @@
 //HOME PAGE SCRIPTLERI
 if(document.body.className === "hp"){
 
-    fetch("/header.html")
+    fetch(location.origin +"/header.html")
         .then(response => response.text())
         .then(data => {
             document.querySelector("header").innerHTML = data;
@@ -37,7 +37,7 @@ if(document.body.className === "hp"){
     const kidsFilter = document.querySelector(".kids")
     
     menFilter.addEventListener("click",function(){
-        fetch("/product.json")
+        fetch(location.origin + "/product.json")
         .then(response => response.json())
         .then(data => {
             const menProductsC = data.products.filter(product => product.gender === "Men" && product.group ==="New Collections")
@@ -62,7 +62,7 @@ if(document.body.className === "hp"){
     })
 
     womanFilter.addEventListener("click",function(){
-        fetch("/product.json")
+        fetch(location.origin + "/product.json")
         .then(response => response.json())
         .then(data => {
             const womanProductC = data.products.filter(product => product.gender === "Woman" && product.group ==="New Collections")
@@ -87,7 +87,7 @@ if(document.body.className === "hp"){
     })
 
     kidsFilter.addEventListener("click",function(){
-        fetch("/product.json")
+        fetch(location.origin + "/product.json")
         .then(response => response.json())
         .then(data => {
             const kidsProducts = data.products.filter(product => product.gender === "Kids" && product.group ==="New Collections")
@@ -112,7 +112,7 @@ if(document.body.className === "hp"){
     })
 
 
-    fetch("/product.json")
+    fetch(location.origin + "/product.json")
     .then(response => response.json())
     .then(data => {
         const newThisWeekProduct = data.products.filter(product => product.group === "New This Week");
@@ -240,7 +240,7 @@ if(document.body.className === "hp"){
     searchInput.addEventListener("input", function () {
         const searchValue = this.value.toLowerCase();
 
-        fetch("/product.json")
+        fetch(location.origin + "/product.json")
             .then(res => res.json())
             .then(data => {
                 
@@ -277,7 +277,7 @@ if(document.body.className === "hp"){
     });
 
 
-    fetch("/footer.html")
+    fetch(location.origin + "/footer.html")
         .then(response => response.text())
         .then(data => {
             document.querySelector("footer").innerHTML = data;
@@ -287,7 +287,7 @@ if(document.body.className === "hp"){
 //PRODUCTS SCRIPTLERI
 if(document.body.className === "p"){
 
-       fetch("/header.html")
+       fetch(location.origin + "/header.html")
         .then(response => response.text())
         .then(data => {
             document.querySelector("header").innerHTML = data;
@@ -302,11 +302,12 @@ if(document.body.className === "p"){
                 
             let total = 0;
 
-            cart.forEach(item => {
+            if(cart){
+                cart.forEach(item => {
                 total += Number(item.quantity); 
+                totalProduct.textContent = total;
             });
-
-            totalProduct.textContent = total;
+            }
         });
 
     const closeMenu = document.querySelector(".close-menu");
@@ -319,7 +320,7 @@ if(document.body.className === "p"){
     cateButtons.forEach(function(button) {
     button.addEventListener("click", function() {
         const category = this.textContent.toLowerCase();
-        fetch("/product.json")
+        fetch(location.origin + "/product.json")
             .then(response => response.json())
             .then(data => {
                 const filteredProducts = data.products.filter(product => product.category === category);  //Map ekleme fikrini kod yazdırmadan ChatGPT ye sordum 
@@ -371,7 +372,7 @@ if(document.body.className === "p"){
 
     const productCost = document.querySelectorAll(".p-cost")
    
-    fetch("/product.json")
+    fetch(location.origin + "/product.json")
         .then(res => res.json())
         .then(data => {
             productCost.forEach((item,index) => {
@@ -402,7 +403,7 @@ if(document.body.className === "p"){
    
    pRange.addEventListener("input",()=>{
         let selectedRating = pRange.value;
-        fetch("/product.json")
+        fetch(location.origin + "/product.json")
             .then(response => response.json())
             .then(data => {
                 const filteredProducts = data.products.filter(product => product.rating === selectedRating);  
@@ -422,7 +423,7 @@ if(document.body.className === "p"){
 
    maxPriceInput.addEventListener("input",()=>{
     let maxPrice = maxPriceInput.value;
-        fetch("/product.json")
+        fetch(location.origin + "/product.json")
             .then(response => response.json())
             .then(data => {
                 const filteredProducts = data.products.filter(product => Number(product.price.replace("$","")) < maxPrice);  
@@ -442,7 +443,7 @@ if(document.body.className === "p"){
 
    minPriceInput.addEventListener("input",()=>{
     let minPrice = minPriceInput.value;
-        fetch("/product.json")
+        fetch(location.origin + "/product.json")
             .then(response => response.json())
             .then(data => {
                 const filteredProducts = data.products.filter(product => Number(product.price.replace("$","")) > minPrice);  
@@ -463,7 +464,7 @@ if(document.body.className === "p"){
 
    size.forEach(item => {
         item.addEventListener("click",function(){
-            fetch("/product.json")
+            fetch(location.origin + "/product.json")
             .then(response => response.json())
             .then(data => {
                 const filteredProducts = data.products.filter(product => product.sizes.includes(this.textContent));  
@@ -484,7 +485,7 @@ if(document.body.className === "p"){
     
     colorInput.addEventListener("input",()=>{
         const enteredColor = colorInput.value;
-        fetch("/product.json")
+        fetch(location.origin + "/product.json")
             .then(response => response.json())
             .then(data => {
                 const filteredProducts = data.products.filter(product => product.colors.includes(enteredColor));  
@@ -544,7 +545,7 @@ if(document.body.className === "p"){
 
     const avaiButton = document.querySelector(".avai")
     avaiButton.addEventListener("click",()=>{
-           fetch("/product.json")
+           fetch(location.origin + "/product.json")
             .then(response => response.json())
             .then(data => {
                 const filteredProducts = data.products.filter(product => product.availability === "Available");  
@@ -562,7 +563,7 @@ if(document.body.className === "p"){
             })
     })
 
-    fetch("/product.json")
+    fetch(location.origin + "/product.json")
             .then(response => response.json())
             .then(data => {
                 let availableCount = 0;
@@ -588,7 +589,7 @@ if(document.body.className === "p"){
 
     const oosButton = document.querySelector(".oos")
     oosButton.addEventListener("click",()=>{
-        fetch("/product.json")
+        fetch(location.origin + "/product.json")
             .then(response => response.json())
             .then(data => {
                 const filteredProducts = data.products.filter(product => product.availability === "Out of stock");  
@@ -608,7 +609,7 @@ if(document.body.className === "p"){
 //PRODUCT PAGE SCRIPTLERI 
 if(document.body.className === "pp"){
 
-    fetch("/header.html")
+    fetch(location.origin + "/header.html")
         .then(response => response.text())
         .then(data => {
             document.querySelector("header").innerHTML = data;
@@ -652,7 +653,7 @@ if(document.body.className === "pp"){
     document.querySelector(".pp-size").innerHTML = "";
     document.querySelector(".pp-colors").innerHTML = "";
 
-    fetch('/product.json')
+    fetch(location.origin + '/product.json')
         .then(res =>res.json())
         .then(data => {
             data.products.forEach((item) => {
@@ -781,7 +782,7 @@ if(document.body.className === "pp"){
 //SHOPPING-BAG-PAGE SCRIPTLERI 
 if(document.body.className ==="sbp"){
 
-      fetch("/header.html")
+      fetch(location.origin + "/header.html")
         .then(response => response.text())
         .then(data => {
             document.querySelector("header").innerHTML = data;
